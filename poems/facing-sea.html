@@ -92,6 +92,23 @@
         .hero-gradient {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
+
+        .fade-bottom {
+            -webkit-mask-image: linear-gradient(to bottom, 
+                rgba(0,0,0,1) 0%, 
+                rgba(0,0,0,1) 60%, 
+                rgba(0,0,0,0.8) 75%, 
+                rgba(0,0,0,0.5) 85%, 
+                rgba(0,0,0,0.2) 95%, 
+                rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to bottom, 
+                rgba(0,0,0,1) 0%, 
+                rgba(0,0,0,1) 60%, 
+                rgba(0,0,0,0.8) 75%, 
+                rgba(0,0,0,0.5) 85%, 
+                rgba(0,0,0,0.2) 95%, 
+                rgba(0,0,0,0) 100%);
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -117,7 +134,7 @@
     <main id="poem-content" class="min-h-screen hidden">
         <!-- Hero 背景图 -->
         <div id="hero-section" class="relative h-96 md:h-[500px] flex items-center justify-center overflow-hidden">
-            <img id="poem-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover">
+            <img id="poem-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover fade-bottom">
             <div class="absolute inset-0 bg-black/40"></div>
             
             <!-- 标题区域 -->
@@ -132,14 +149,6 @@
                 <p id="poem-date" class="text-xl font-light opacity-80 opacity-0" style="animation: fadeInUp 1s ease-out 0.8s forwards;">
                 </p>
                 
-                <!-- 向下滚动提示 -->
-                <div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 opacity-0" style="animation: fadeInUp 0.8s ease-out 1.5s forwards;">
-                    <div class="animate-bounce">
-                        <svg class="w-6 h-6 text-white/60 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
-                    </div>
-                </div>
             </div>
         </div>
 
