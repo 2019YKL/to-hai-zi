@@ -124,15 +124,16 @@
 </head>
 <body class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
-    <header class="hero-gradient min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
+    <header class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
+        <!-- 海子照片背景 -->
+        <div class="absolute inset-0">
+            <img src="image-haizi.png" alt="海子" class="w-full h-full object-cover opacity-10 grayscale">
+            <div class="absolute inset-0 bg-gradient-to-b from-gray-50/80 via-gray-50/60 to-gray-50/80"></div>
+        </div>
+        
         <!-- Subtle decorative elements -->
         <div class="absolute top-20 left-20 w-32 h-32 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
         <div class="absolute bottom-32 right-32 w-48 h-48 bg-purple-100 rounded-full opacity-20 blur-3xl"></div>
-        
-        <!-- 海子照片背景 -->
-        <div class="absolute inset-0 flex items-center justify-center">
-            <img src="image-haizi.png" alt="海子" class="w-[640px] h-[640px] object-cover opacity-10 grayscale blur-sm rounded-full">
-        </div>
         
         <div class="text-center max-w-4xl mx-auto px-8 relative">
             <!-- Main title -->
