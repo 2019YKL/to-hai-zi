@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">海子诗歌</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'LXGWWenKai';
+            src: url('../LXGWWenKai-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        :root {
+            --poem-font: 'LXGWWenKai', 'Noto Serif SC', Georgia, serif;
+            --ui-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+
+        body {
+            font-family: var(--ui-font);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .poem-font {
+            font-family: var(--poem-font);
+        }
+
+        .poem-line {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .poem-line:nth-child(1) { animation-delay: 1.8s; }
+        .poem-line:nth-child(2) { animation-delay: 1.9s; }
+        .poem-line:nth-child(3) { animation-delay: 2.0s; }
+        .poem-line:nth-child(4) { animation-delay: 2.1s; }
+        .poem-line:nth-child(5) { animation-delay: 2.2s; }
+        .poem-line:nth-child(6) { animation-delay: 2.3s; }
+        .poem-line:nth-child(7) { animation-delay: 2.4s; }
+        .poem-line:nth-child(8) { animation-delay: 2.5s; }
+        .poem-line:nth-child(9) { animation-delay: 2.6s; }
+        .poem-line:nth-child(10) { animation-delay: 2.7s; }
+        .poem-line:nth-child(11) { animation-delay: 2.8s; }
+        .poem-line:nth-child(12) { animation-delay: 2.9s; }
+        .poem-line:nth-child(13) { animation-delay: 3.0s; }
+        .poem-line:nth-child(14) { animation-delay: 3.1s; }
+        .poem-line:nth-child(15) { animation-delay: 3.2s; }
+        .poem-line:nth-child(16) { animation-delay: 3.3s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #1f2937;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .glass-bg {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="fixed top-8 left-8 z-50">
+        <a href="../index.html" class="inline-flex items-center px-6 py-3 glass-bg text-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-medium border border-white/20">
+            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            返回首页
+        </a>
+    </nav>
+
+    <!-- 加载动画 -->
+    <div id="loading" class="loading">
+        <div class="text-center">
+            <div class="spinner mx-auto mb-4"></div>
+            <p class="text-gray-500 font-light">正在加载诗歌...</p>
+        </div>
+    </div>
+
+    <!-- 诗歌内容 -->
+    <main id="poem-content" class="min-h-screen hidden">
+        <!-- Hero 背景图 -->
+        <div id="hero-section" class="relative h-screen flex items-center justify-center overflow-hidden">
+            <img id="poem-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40"></div>
+            
+            <!-- 标题区域 -->
+            <div class="relative text-center text-white max-w-4xl mx-auto px-8">
+                <h1 id="poem-title" class="text-6xl md:text-7xl font-bold mb-6 tracking-tight poem-font opacity-0 drop-shadow-2xl" style="animation: fadeInUp 1.2s ease-out 0.3s forwards;">
+                </h1>
+                
+                <div class="flex justify-center mb-6 opacity-0" style="animation: fadeInUp 0.8s ease-out 0.6s forwards;">
+                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
+                </div>
+                
+                <p id="poem-date" class="text-xl font-light opacity-80 opacity-0" style="animation: fadeInUp 1s ease-out 0.8s forwards;">
+                </p>
+                
+                <!-- 向下滚动提示 -->
+                <div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 opacity-0" style="animation: fadeInUp 0.8s ease-out 1.5s forwards;">
+                    <div class="animate-bounce">
+                        <svg class="w-6 h-6 text-white/60 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 诗歌正文 -->
+        <div class="relative bg-white">
+            <div class="max-w-4xl mx-auto px-8 py-32">
+                <article class="glass-bg rounded-3xl p-16 shadow-xl border border-white/20 opacity-0" style="animation: fadeInUp 1s ease-out 0.8s forwards;">
+                    <!-- 诗歌内容 -->
+                    <div id="poem-text" class="text-center space-y-8 text-2xl leading-relaxed text-gray-800 poem-font font-light mb-16">
+                        <!-- 诗句将通过 JavaScript 动态生成 -->
+                    </div>
+
+                    <!-- 作者签名 -->
+                    <footer class="text-right border-t border-gray-200 pt-8">
+                        <p class="text-xl text-gray-600 poem-font font-light italic opacity-0" style="animation: fadeInUp 1s ease-out 3.5s forwards;">
+                            —— 海子
+                        </p>
+                    </footer>
+                </article>
+            </div>
+        </div>
+
+        <!-- 导航按钮 -->
+        <div class="bg-white border-t border-gray-100">
+            <div class="max-w-4xl mx-auto px-8 py-16">
+                <div class="flex justify-between items-center">
+                    <button id="prev-poem" class="hidden group">
+                        <div class="flex items-center px-8 py-4 glass-bg rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+                            <svg class="w-5 h-5 mr-4 text-gray-600 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                            <div class="text-left">
+                                <div class="text-sm text-gray-500 font-light">上一首</div>
+                                <div id="prev-title" class="font-medium text-gray-800 poem-font"></div>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button id="next-poem" class="hidden group">
+                        <div class="flex items-center px-8 py-4 glass-bg rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500 font-light">下一首</div>
+                                <div id="next-title" class="font-medium text-gray-800 poem-font"></div>
+                            </div>
+                            <svg class="w-5 h-5 ml-4 text-gray-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 引入诗歌数据和内容管理系统 -->
+    <script src="../js/poems-data.js"></script>
+    <script src="../js/content-manager.js"></script>
+    <script>
+        class PoemDetailPage {
+            constructor() {
+                this.poemSlug = this.getPoemSlugFromURL();
+                this.loadContent();
+                this.initializeScrollBehavior();
+            }
+
+            getPoemSlugFromURL() {
+                const path = window.location.pathname;
+                const filename = path.split('/').pop();
+                return filename.replace('.html', '');
+            }
+
+            async loadContent() {
+                try {
+                    await contentManager.loadPoems();
+                    const poem = contentManager.getPoemBySlug(this.poemSlug);
+                    
+                    if (poem) {
+                        this.renderPoem(poem);
+                        this.setupNavigation(poem);
+                        this.hideLoading();
+                    } else {
+                        this.showError('诗歌未找到');
+                    }
+                } catch (error) {
+                    console.error('加载内容失败:', error);
+                    this.showError('加载失败，请刷新页面重试');
+                }
+            }
+
+            renderPoem(poem) {
+                // 设置页面标题
+                document.getElementById('page-title').textContent = `${poem.title} - 海子诗歌集`;
+                document.getElementById('poem-title').textContent = poem.title;
+                document.getElementById('poem-date').textContent = poem.date;
+                document.getElementById('poem-image').src = poem.image;
+                document.getElementById('poem-image').alt = poem.title;
+
+                // 渲染诗歌内容
+                const poemText = document.getElementById('poem-text');
+                const lines = poem.content.split(/\r?\n/);
+                
+                poemText.innerHTML = '';
+                
+                lines.forEach((line, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'poem-line';
+                    
+                    if (line.trim() === '') {
+                        div.classList.add('py-6');
+                        div.innerHTML = '&nbsp;';
+                    } else {
+                        div.textContent = line;
+                    }
+                    
+                    poemText.appendChild(div);
+                });
+            }
+
+            setupNavigation(currentPoem) {
+                const adjacentPoems = contentManager.getAdjacentPoems(currentPoem.slug);
+                
+                // 上一首
+                if (adjacentPoems.previous) {
+                    const prevBtn = document.getElementById('prev-poem');
+                    const prevTitle = document.getElementById('prev-title');
+                    
+                    prevTitle.textContent = adjacentPoems.previous.title;
+                    prevBtn.classList.remove('hidden');
+                    prevBtn.onclick = () => {
+                        window.location.href = `${adjacentPoems.previous.slug}.html`;
+                    };
+                }
+
+                // 下一首
+                if (adjacentPoems.next) {
+                    const nextBtn = document.getElementById('next-poem');
+                    const nextTitle = document.getElementById('next-title');
+                    
+                    nextTitle.textContent = adjacentPoems.next.title;
+                    nextBtn.classList.remove('hidden');
+                    nextBtn.onclick = () => {
+                        window.location.href = `${adjacentPoems.next.slug}.html`;
+                    };
+                }
+
+                // 键盘导航
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft' && adjacentPoems.previous) {
+                        window.location.href = `${adjacentPoems.previous.slug}.html`;
+                    } else if (e.key === 'ArrowRight' && adjacentPoems.next) {
+                        window.location.href = `${adjacentPoems.next.slug}.html`;
+                    }
+                });
+            }
+
+            initializeScrollBehavior() {
+                // 点击向下滚动指示器
+                document.addEventListener('click', (e) => {
+                    if (e.target.closest('.animate-bounce')) {
+                        document.querySelector('#poem-text').scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            }
+
+            hideLoading() {
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('poem-content').classList.remove('hidden');
+            }
+
+            showError(message) {
+                document.getElementById('loading').innerHTML = 
+                    `<div class="text-center text-red-500 font-light">${message}</div>`;
+            }
+        }
+
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', () => {
+            new PoemDetailPage();
+        });
+    </script>
+</body>
+</html>
