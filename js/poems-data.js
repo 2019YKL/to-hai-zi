@@ -4,7 +4,7 @@ const poemsData = [
         title: "面朝大海，春暖花开",
         date: "1989年1月",
         slug: "facing-sea",
-        image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=1200&h=600&fit=crop&crop=center",
+        image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1200&h=600&fit=crop&crop=center",
         order: 1,
         preview: "从明天起，做一个幸福的人\n喂马，劈柴，周游世界\n从明天起，关心粮食和蔬菜\n我有一所房子，面朝大海，春暖花开",
         content: `从明天起，做一个幸福的人
