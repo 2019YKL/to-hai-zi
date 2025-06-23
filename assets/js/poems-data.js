@@ -1,365 +1,2496 @@
-// 诗歌数据 - 从 markdown 文件提取的内容
+// 海子诗歌数据 - 自动生成
+// 生成时间: 2025-06-23 18:43:54
+
 const poemsData = [
-    {
-        title: "面朝大海，春暖花开",
-        date: "1989年1月",
-        slug: "facing-sea",
-        image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1200&h=600&fit=crop&crop=center",
-        order: 1,
-        preview: "从明天起，做一个幸福的人\n喂马，劈柴，周游世界\n从明天起，关心粮食和蔬菜\n我有一所房子，面朝大海，春暖花开",
-        content: `从明天起，做一个幸福的人
-喂马，劈柴，周游世界
-从明天起，关心粮食和蔬菜
-我有一所房子，面朝大海，春暖花开
-
-从明天起，和每一个亲人通信
-告诉他们我的幸福
-那幸福的闪电告诉我的
-我将告诉每一个人
-
-给每一条河每一座山取一个温暖的名字
-陌生人，我也为你祝福
-愿你有一个灿烂的前程
-愿你有情人终成眷属
-愿你在尘世获得幸福
-我只愿面朝大海，春暖花开`
-    },
-    {
-        title: "春天，十个海子",
-        date: "1989年",
-        slug: "spring",
-        image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&h=400&fit=crop&crop=center",
-        order: 2,
-        preview: "春天，十个海子全都复活\n在光明的景色中\n嘲笑这一个野蛮而悲伤的海子\n你一无所有",
-        content: `春天，十个海子全都复活
-在光明的景色中
-嘲笑这一个野蛮而悲伤的海子
-你一无所有
-你为什么不给我们歌唱
-
-春天，十个海子低低地怒吼
-围着你和我跳舞、唱歌
-扯乱你的黑头发，骑上你飞奔而去，尘土飞扬
-你被劈开的疼痛在大地弥漫
-
-在春天，野蛮而复仇的海子
-就剩这一个，最后一个
-这是黑夜的儿子，沉浸于冬天，倾心死亡
-不能自拔，热爱着空虚而寒冷的乡村`
-    },
-    {
-        title: "回答",
-        date: "1988年",
-        slug: "answer",
-        image: "https://images.unsplash.com/photo-1516298773066-c48f8e9bd92b?w=800&h=400&fit=crop&crop=center",
-        order: 3,
-        preview: "麦地\n别人看见你\n觉得你温暖，美丽\n我则站在你痛苦质问的中心",
-        content: `麦地
-别人看见你
-觉得你温暖，美丽
-我则站在你痛苦质问的中心
-被你灼伤
-
-我站在太阳 痛苦的芒上
-麦地
-神秘的质问者啊
-当我痛苦地站在你的面前
-你不能说我一无所有
-你不能说我两手空空`
-    },
-    {
-        title: "日记",
-        date: "1988年",
-        slug: "diary",
-        image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&h=400&fit=crop&crop=center",
-        order: 4,
-        preview: "姐姐，今夜我在德令哈\n这是雨水中一座荒凉的城\n除了那些路过的和居住的\n德令哈......今夜",
-        content: `姐姐，今夜我在德令哈，夜色笼罩
-姐姐，我今夜只有戈壁
-草木，今夜我什么也不关心，我只想念你
-我记得你曾经说："我要做远方的忠诚的儿子"
-和物质的短暂情人
-
-和所有以梦为马的诗人一样
-我不得不和烈士和小丑走在同一道路上
-万人都要将火熄灭  我一人独将此火高高举起
-此火为大  开花落英于神圣的祖国
-
-和所有以梦为马的诗人一样
-我也愿将牢底坐穿
-众人都说你不该选择这样的道路
-姐姐，今夜我在德令哈`
-    },
-    {
-        title: "麦地",
-        date: "1988年",
-        slug: "wheat",
-        image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=400&fit=crop&crop=center",
-        order: 5,
-        preview: "别人看见你\n觉得你温暖，美丽\n我则站在你痛苦质问的中心\n被你灼伤",
-        content: `别人看见你
-觉得你温暖，美丽
-我则站在你痛苦质问的中心
-被你灼伤
-我站在太阳 痛苦的芒上
-
-麦地
-神秘的质问者啊
-当我痛苦地站在你的面前
-你不能说我一无所有
-你不能说我两手空空`
-    },
-    {
-        title: "村庄",
-        date: "1986年",
-        slug: "village",
-        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=400&fit=crop&crop=center",
-        order: 6,
-        preview: "村庄，在五谷丰登的村庄\n我安顿下来\n我顺手摸到的东西越少越好\n珍惜黄昏的村庄",
-        content: `村庄，在五谷丰登的村庄
-我安顿下来
-我顺手摸到的东西越少越好
-珍惜黄昏的村庄，珍惜雨水的村庄
-万里无云如同我永恒的悲伤
-
-村庄
-在夜里野狗哀嚎的时候
-整个村庄一片死寂
-只有我在黑夜中独自看守麦田
-看守着村庄黑夜中麦浪的起伏
-
-那时我成了麦田的看守者
-丰收之后荒凉得只剩下我`
-    },
-    {
-        title: "以梦为马",
-        date: "1987年",
-        slug: "horse",
-        image: "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=400&fit=crop&crop=center",
-        order: 7,
-        preview: "我要做远方的忠诚的儿子\n和物质的短暂情人\n和所有以梦为马的诗人一样\n我不得不和烈士和小丑走在同一道路上",
-        content: `我要做远方的忠诚的儿子
-和物质的短暂情人
-和所有以梦为马的诗人一样
-我不得不和烈士和小丑走在同一道路上
-
-万人都要将火熄灭
-我一人独将此火高高举起
-此火为大 开花落英于神圣的祖国
-和所有以梦为马的诗人一样
-我也愿将牢底坐穿
-
-众人都说你不该选择这样的道路
-父亲说你该做个孝顺的儿子
-情人说你该做个忠诚的恋人
-
-我要做远方的忠诚的儿子
-和物质的短暂情人
-和所有以梦为马的诗人一样
-我选择永恒的事业`
-    },
-    {
-        title: "秋日黄昏",
-        date: "1987年",
-        slug: "autumn",
-        image: "https://images.unsplash.com/photo-1507371341162-763b5e419618?w=800&h=400&fit=crop&crop=center",
-        order: 8,
-        preview: "在秋日的黄昏\n青草深处\n我向你慢慢走来\n将黄昏献给你",
-        content: `在秋日的黄昏
-青草深处
-我向你慢慢走来
-将黄昏献给你
-
-远山苍茫
-落日圆
-你是人间的珍品
-纯净的少女
-
-你的眼睛是蓝色的
-你走过的地方
-庄稼成熟
-水果满园
-
-在秋日的黄昏
-我们一起
-走在回家的路上`
-    },
-    {
-        title: "祖国（或以梦为马）",
-        date: "1987年",
-        slug: "motherland",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop&crop=center",
-        order: 9,
-        preview: "我要做远方的忠诚的儿子\n和物质的短暂情人\n和所有以梦为马的诗人一样\n我不得不和烈士和小丑走在同一道路上",
-        content: `我要做远方的忠诚的儿子
-和物质的短暂情人
-和所有以梦为马的诗人一样
-我不得不和烈士和小丑走在同一道路上
-
-万人都要将火熄灭 我一人独将此火高高举起
-此火为大 开花落英于神圣的祖国
-和所有以梦为马的诗人一样
-我也愿将牢底坐穿
-
-众人都说你不该选择这样的道路
-父亲说：你该做个孝顺的儿子
-情人说：你该做个忠诚的恋人
-
-我要做远方的忠诚的儿子
-和物质的短暂情人
-和所有以梦为马的诗人一样
-我选择永恒的事业`
-    },
-    {
-        title: "黑夜的献诗",
-        date: "1987年",
-        slug: "night-poem",
-        image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&h=400&fit=crop&crop=center",
-        order: 10,
-        preview: "黑夜从大地上升起\n遮住了光明的天空\n收获你的黑色的眼睛\n收获你的眼睛",
-        content: `黑夜从大地上升起
-遮住了光明的天空
-收获你的黑色的眼睛
-收获你的眼睛
-
-黑夜 从你内部升起
-你从远方来 我到远方去
-遥远的路程经过这里
-天空一无所有
-
-为什么给我安慰
-黑夜来了我却要歌唱
-白昼的歌，黑夜来了
-黑夜来了 你却要歌唱白昼的歌
-
-你从远方来 我到远方去
-遥远的路程经过这里
-我的头颅被风雪覆盖
-黑夜来了 我还要歌唱`
-    },
-    {
-        title: "九月",
-        date: "1986年",
-        slug: "september",
-        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=400&fit=crop&crop=center",
-        order: 11,
-        preview: "目击众神死亡的草原上野花一片\n远在远方的风比远方更远\n我的琴声呜咽 泪水全无",
-        content: `目击众神死亡的草原上野花一片
-远在远方的风比远方更远
-我的琴声呜咽 泪水全无
-我把这远方的远归还草原
-
-一个叫马头的男人带领他的部落走过
-荒凉的山冈 沿着鸟飞的路线
-他的部落消失在山的那边
-
-几千年来 ，美丽而忧伤的海子
-只有在春天的夜晚 
-你才能听见我的琴声
-在这里 在这遥远的地方
-
-我的名字叫马头
-我的名字叫马头`
-    },
-    {
-        title: "亚洲铜",
-        date: "1984年",
-        slug: "asian-copper",
-        image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=400&fit=crop&crop=center",
-        order: 12,
-        preview: "亚洲铜，亚洲铜\n祖父死在这里，父亲死在这里，我也将死在这里\n你是唯一的一块埋人的地方",
-        content: `亚洲铜，亚洲铜
-祖父死在这里，父亲死在这里，我也将死在这里
-你是唯一的一块埋人的地方
-
-亚洲铜，你的祖父叫红铜，你的父亲叫赤铜
-你叫亚洲铜
-亚洲铜，你的祖母是现代的铜，你的母亲是近代的铜
-你是当代的铜
-
-你的祖先全死在这里，你也将死在这里
-我也将死在这里
-死在唯一的一块埋人的地方
-
-亚洲铜，亚洲铜
-爱怀疑和忧伤的地方
-埋葬我们的地方`
-    },
-    {
-        title: "重建家园",
-        date: "1986年",
-        slug: "rebuild-home",
-        image: "https://images.unsplash.com/photo-1574482620831-29d5faea4c3a?w=800&h=400&fit=crop&crop=center",
-        order: 13,
-        preview: "我的身体将怎样穿过你亲爱的河流\n我是一个痛苦的人 雨在前面\n我的家乡无比的穷苦 无比的美丽",
-        content: `我的身体将怎样穿过你亲爱的河流
-我是一个痛苦的人 雨在前面
-雨在我们的前面 雨在前面
-我是一个痛苦的人
-
-我的家乡无比的穷苦 无比的美丽
-今夜在雨中我想念它 想念那黑暗的村庄
-我的家乡 无比的穷苦
-
-粮食和蔬菜住满了我的房屋
-我的妻子和我的孩子
-以及我的孩子的孩子
-我是一个痛苦的人
-
-今夜在雨中我想念家乡的三条河
-我是一个痛苦的人
-雨在前面 河流在前面
-家乡的三条河 月亮照耀的三条河`
-    },
-    {
-        title: "四姐妹",
-        date: "1988年",
-        slug: "four-sisters",
-        image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&h=400&fit=crop&crop=center",
-        order: 14,
-        preview: "荒凉的山冈上站着四姐妹\n所有的风只向她们吹\n所有的日子都为她们破碎",
-        content: `荒凉的山冈上站着四姐妹
-所有的风只向她们吹
-所有的日子都为她们破碎
-
-第一个是芬兰的农妇 抱着血红的花束
-第二个是苹果园中的新娘
-第三个是我早年恋爱的少女 
-第四个是我现在的妻子
-
-春天的山冈，春天的山冈，春天的山冈...
-
-所有的时日都向她们汇合
-诸河流奔向海
-太阳也为她们四个人照耀
-
-所有的青草都为她们生长 
-所有的马匹都为她们奔驰
-所有的血都为她们流淌`
-    },
-    {
-        title: "历史",
-        date: "1987年",
-        slug: "history",
-        image: "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=400&fit=crop&crop=center",
-        order: 15,
-        preview: "我跪在历史的身上\n喝她滚烫的血\n为了忘却，我愿意忘记一切",
-        content: `我跪在历史的身上
-喝她滚烫的血
-
-为了忘却，我愿意忘记一切
-像蒙住了眼睛，在棺木前睡觉
-谈论昨天，就像谈论死人
-
-但总有一天，我会爬出，像虫子
-抖掉身上，历史的灰尘
-睁开眼睛，像一盏原始的青灯
-
-照亮灯下惊惶的，死人和活人
-凝望从历史身上溅下的那些污血
-正在凝结，像黑色的玫瑰
-
-为了忘却，我愿意忘记一切
-为了永远记忆，我更愿意忘记一切`
-    }
+  {
+    "title": "七月不远",
+    "slug": "七月不远",
+    "path": "01-short-poems-1983-1986/七月不远.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "——给青海湖，请熄灭我的爱情\n七月不远\n性别的诞生不远\n爱情不远——马鼻子下",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "——给青海湖，请熄灭我的爱情\n七月不远\n性别的诞生不远\n爱情不远——马鼻子下"
+  },
+  {
+    "title": "七月的大海",
+    "slug": "七月的大海",
+    "path": "01-short-poems-1983-1986/七月的大海.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "老乡们，谁能在海上见到你们真是幸福！\n我们全都背叛自己的故乡\n我们会把幸福当成祖传的职业\n放下手中痛苦的诗篇",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "老乡们，谁能在海上见到你们真是幸福！\n我们全都背叛自己的故乡\n我们会把幸福当成祖传的职业\n放下手中痛苦的诗篇"
+  },
+  {
+    "title": "不幸",
+    "slug": "不幸",
+    "path": "01-short-poems-1983-1986/不幸.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "有一座绿色悬崖倒在牧羊人怀中\n两匹马\n在山上飞\n两匹马",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "有一座绿色悬崖倒在牧羊人怀中\n两匹马\n在山上飞\n两匹马"
+  },
+  {
+    "title": "不要问我那绿色是什么",
+    "slug": "不要问我那绿色是什么",
+    "path": "01-short-poems-1983-1986/不要问我那绿色是什么.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "头发\n灌满阳光和大沙\n我是荒野上第一根被晒坏的石柱\n耕种黑麦",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "头发\n灌满阳光和大沙\n我是荒野上第一根被晒坏的石柱\n耕种黑麦"
+  },
+  {
+    "title": "东方山脉",
+    "slug": "东方山脉",
+    "path": "01-short-poems-1983-1986/东方山脉.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "三角洲和碎花的笑\n一起甩到脑后\n一块大陆在愤怒地骚动\n北方平原上红高粱",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "三角洲和碎花的笑\n一起甩到脑后\n一块大陆在愤怒地骚动\n北方平原上红高粱"
+  },
+  {
+    "title": "中午",
+    "slug": "中午",
+    "path": "01-short-poems-1983-1986/中午.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "中午是一丛眼睛画成的树枝\n看着你\n看着你从门前走过\n或是走进我的门",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "中午是一丛眼睛画成的树枝\n看着你\n看着你从门前走过\n或是走进我的门"
+  },
+  {
+    "title": "中国器乐",
+    "slug": "中国器乐",
+    "path": "01-short-poems-1983-1986/中国器乐.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "锣鼓声\n锵锵\n音乐的墙壁上所有的影子集合\n去寻找一个人",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "锣鼓声\n锵锵\n音乐的墙壁上所有的影子集合\n去寻找一个人"
+  },
+  {
+    "title": "为了美丽",
+    "slug": "为了美丽",
+    "path": "01-short-poems-1983-1986/为了美丽.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "为了美丽\n我砸了一个坑\n也是为了下雨\n清亮的积水上",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "为了美丽\n我砸了一个坑\n也是为了下雨\n清亮的积水上"
+  },
+  {
+    "title": "主人",
+    "slug": "主人",
+    "path": "01-short-poems-1983-1986/主人.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我的白天\n客人笨拙",
+    "date": "1985.1",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/01/033",
+    "content_preview": "我的白天\n客人笨拙"
+  },
+  {
+    "title": "亚洲铜",
+    "slug": "亚洲铜",
+    "path": "01-short-poems-1983-1986/亚洲铜.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "亚洲铜，亚洲铜\n祖父死在这里，父亲死在这里，我也将死在这里\n你是唯一的一块埋人的地方\n亚洲铜，亚洲铜",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "亚洲铜，亚洲铜\n祖父死在这里，父亲死在这里，我也将死在这里\n你是唯一的一块埋人的地方\n亚洲铜，亚洲铜"
+  },
+  {
+    "title": "从六月到十月",
+    "slug": "从六月到十月",
+    "path": "01-short-poems-1983-1986/从六月到十月.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "六月积水的妇人，囤积月光的妇人\n七月的妇人，贩卖棉花的妇人\n八月的树下\n洗耳朵的妇人",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "六月积水的妇人，囤积月光的妇人\n七月的妇人，贩卖棉花的妇人\n八月的树下\n洗耳朵的妇人"
+  },
+  {
+    "title": "你的手",
+    "slug": "你的手",
+    "path": "01-short-poems-1983-1986/你的手.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "北方\n拉着你的手\n摘下手套\n她们就是两盏小灯",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "北方\n拉着你的手\n摘下手套\n她们就是两盏小灯"
+  },
+  {
+    "title": "八月尾",
+    "slug": "八月尾",
+    "path": "01-short-poems-1983-1986/八月尾.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "既使我是一个粗枝大叶的人\n我也看见了红豹子、绿豹子\n当流水淙淙\n八月的泉水",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "既使我是一个粗枝大叶的人\n我也看见了红豹子、绿豹子\n当流水淙淙\n八月的泉水"
+  },
+  {
+    "title": "写给脖子上的菩萨",
+    "slug": "写给脖子上的菩萨",
+    "path": "01-short-poems-1983-1986/写给脖子上的菩萨.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "呼吸，呼吸\n我们是装满热气的\n两只小瓶\n被菩萨放在一起",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "呼吸，呼吸\n我们是装满热气的\n两只小瓶\n被菩萨放在一起"
+  },
+  {
+    "title": "农耕民族",
+    "slug": "农耕民族",
+    "path": "01-short-poems-1983-1986/农耕民族.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "在发蓝的河水里\n洗洗双手\n洗洗参加过古代战争的双手\n围猎已是很遥远的事",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "在发蓝的河水里\n洗洗双手\n洗洗参加过古代战争的双手\n围猎已是很遥远的事"
+  },
+  {
+    "title": "北方门前",
+    "slug": "北方门前",
+    "path": "01-short-poems-1983-1986/北方门前.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "北方门前\n一个小女人\n在摇铃\n我愿意",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "北方门前\n一个小女人\n在摇铃\n我愿意"
+  },
+  {
+    "title": "半截的诗",
+    "slug": "半截的诗",
+    "path": "01-short-poems-1983-1986/半截的诗.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "你是我的\n半截的诗\n半截用心爱着\n半截用肉体埋着",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "你是我的\n半截的诗\n半截用心爱着\n半截用肉体埋着"
+  },
+  {
+    "title": "单翅鸟",
+    "slug": "单翅鸟",
+    "path": "01-short-poems-1983-1986/单翅鸟.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "单翅鸟为什么要飞呢\n为什么\n头朝着天地\n躺着许多束朴素的光线",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "单翅鸟为什么要飞呢\n为什么\n头朝着天地\n躺着许多束朴素的光线"
+  },
+  {
+    "title": "印度之夜",
+    "slug": "印度之夜",
+    "path": "01-short-poems-1983-1986/印度之夜.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "月亮神秘地西渡\n恒河，佛洞里摆满了别人的牙齿\n星星和菜豆\n天地间一串紫色的连线，真正的连线",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "月亮神秘地西渡\n恒河，佛洞里摆满了别人的牙齿\n星星和菜豆\n天地间一串紫色的连线，真正的连线"
+  },
+  {
+    "title": "哑脊背",
+    "slug": "哑脊背",
+    "path": "01-short-poems-1983-1986/哑脊背.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "一个穿雨衣的陌生人\n来到这座干旱已久的城\n（阳光下\n他水国的口音很重）",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "一个穿雨衣的陌生人\n来到这座干旱已久的城\n（阳光下\n他水国的口音很重）"
+  },
+  {
+    "title": "哭泣",
+    "slug": "哭泣",
+    "path": "01-short-poems-1983-1986/哭泣.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我要把你接进我的屋子\n屋顶上有两位天使拥抱在一起\n哭泣——我是湖面上最后一只天鹅\n黑色的天鹅像我黑色的头发在湖水中燃烧",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我要把你接进我的屋子\n屋顶上有两位天使拥抱在一起\n哭泣——我是湖面上最后一只天鹅\n黑色的天鹅像我黑色的头发在湖水中燃烧"
+  },
+  {
+    "title": "喜马拉雅",
+    "slug": "喜马拉雅",
+    "path": "01-short-poems-1983-1986/喜马拉雅.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "高原悬在天空\n天空向我滚来\n我丢失了一切\n面前只有大海",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "高原悬在天空\n天空向我滚来\n我丢失了一切\n面前只有大海"
+  },
+  {
+    "title": "在昌平的孤独",
+    "slug": "在昌平的孤独",
+    "path": "01-short-poems-1983-1986/在昌平的孤独.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "孤独是一只鱼筐\n是鱼筐中的泉水\n放在泉水中\n孤独是泉水中睡着的鹿王",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "孤独是一只鱼筐\n是鱼筐中的泉水\n放在泉水中\n孤独是泉水中睡着的鹿王"
+  },
+  {
+    "title": "坐在纸箱上想起疯了的朋友们",
+    "slug": "坐在纸箱上想起疯了的朋友们",
+    "path": "01-short-poems-1983-1986/坐在纸箱上想起疯了的朋友们.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "旧菊花安全\n旧枣花安全\n扪摸过的一切\n都很安全",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "旧菊花安全\n旧枣花安全\n扪摸过的一切\n都很安全"
+  },
+  {
+    "title": "坛子",
+    "slug": "坛子",
+    "path": "01-short-poems-1983-1986/坛子.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我头一次也是最后一次进入这坛子\n因为我知道只有一次\n脖颈围着野兽的线条\n水流拥抱的",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我头一次也是最后一次进入这坛子\n因为我知道只有一次\n脖颈围着野兽的线条\n水流拥抱的"
+  },
+  {
+    "title": "城里",
+    "slug": "城里",
+    "path": "01-short-poems-1983-1986/城里.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "任何一个人\n这城里\n有我的一份工资\n有我的一份水",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "任何一个人\n这城里\n有我的一份工资\n有我的一份水"
+  },
+  {
+    "title": "夏天的太阳",
+    "slug": "夏天的太阳",
+    "path": "01-short-poems-1983-1986/夏天的太阳.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "夏天\n如果这条街没有鞋匠\n我就打赤脚\n站到太阳下看太阳",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "夏天\n如果这条街没有鞋匠\n我就打赤脚\n站到太阳下看太阳"
+  },
+  {
+    "title": "大自然",
+    "slug": "大自然",
+    "path": "01-short-poems-1983-1986/大自然.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "让我来告诉你\n她是一位美丽结实的女子\n蓝色小鱼是她的水罐\n也是她脱下的服装",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "让我来告诉你\n她是一位美丽结实的女子\n蓝色小鱼是她的水罐\n也是她脱下的服装"
+  },
+  {
+    "title": "天鹅",
+    "slug": "天鹅",
+    "path": "01-short-poems-1983-1986/天鹅.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我身体里的河水\n呼应着她们\n当她们飞越生日的泥土、黄昏的泥土\n有一只天鹅受伤",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我身体里的河水\n呼应着她们\n当她们飞越生日的泥土、黄昏的泥土\n有一只天鹅受伤"
+  },
+  {
+    "title": "太阳·土地篇",
+    "slug": "太阳·土地篇",
+    "path": "01-short-poems-1983-1986/太阳·土地篇.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "“土地死去了\n用欲望能代替他吗？”\n————————————",
+    "date": "1987.8",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/04/42/42-00",
+    "content_preview": "“土地死去了\n用欲望能代替他吗？”\n————————————"
+  },
+  {
+    "title": "太阳·弑",
+    "slug": "太阳·弑",
+    "path": "01-short-poems-1983-1986/太阳·弑.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "————————————————\n（三幕三十场）\n（非情节剧，程式和祭祀歌舞剧，为几只童谣而写，为一个皇帝和一场革命而写，为两个浪子而写）\n（三联剧之一）",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "————————————————\n（三幕三十场）\n（非情节剧，程式和祭祀歌舞剧，为几只童谣而写，为一个皇帝和一场革命而写，为两个浪子而写）\n（三联剧之一）"
+  },
+  {
+    "title": "太阳·弥赛亚",
+    "slug": "太阳·弥赛亚",
+    "path": "01-short-poems-1983-1986/太阳·弥赛亚.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "————————————————\n（《太阳》中天堂大合唱）\n但是这并不意味着它是一首“诗”——它不是。\n——斯宾格勒",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "————————————————\n（《太阳》中天堂大合唱）\n但是这并不意味着它是一首“诗”——它不是。\n——斯宾格勒"
+  },
+  {
+    "title": "太阳·断头篇",
+    "slug": "太阳·断头篇",
+    "path": "01-short-poems-1983-1986/太阳·断头篇.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "**　海子计划中要写而为写完部分。下同",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/04/41/41-00",
+    "content_preview": "**　海子计划中要写而为写完部分。下同"
+  },
+  {
+    "title": "太阳·诗剧",
+    "slug": "太阳·诗剧",
+    "path": "01-short-poems-1983-1986/太阳·诗剧.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "————————————————",
+    "date": "1988.6",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/04/46/46-00",
+    "content_preview": "————————————————"
+  },
+  {
+    "title": "女孩子",
+    "slug": "女孩子",
+    "path": "01-short-poems-1983-1986/女孩子.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "她走来\n断断续续走来\n洁净的脚印\n沾满清凉的露水",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "她走来\n断断续续走来\n洁净的脚印\n沾满清凉的露水"
+  },
+  {
+    "title": "妻子和鱼",
+    "slug": "妻子和鱼",
+    "path": "01-short-poems-1983-1986/妻子和鱼.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我怀抱妻子\n就象水儿抱鱼\n我一边伸出手去\n试着摸到小雨水，并且嘴唇开花",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我怀抱妻子\n就象水儿抱鱼\n我一边伸出手去\n试着摸到小雨水，并且嘴唇开花"
+  },
+  {
+    "title": "孤独的东方人",
+    "slug": "孤独的东方人",
+    "path": "01-short-poems-1983-1986/孤独的东方人.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "孤独的东方人第一次感到月光遍地\n月亮如轻盈的野兽\n踩入林中\n孤独的东方人第一次随我这月亮爬行",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "孤独的东方人第一次感到月光遍地\n月亮如轻盈的野兽\n踩入林中\n孤独的东方人第一次随我这月亮爬行"
+  },
+  {
+    "title": "幸福",
+    "slug": "幸福",
+    "path": "01-short-poems-1983-1986/幸福.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "当云朵清楚极了\n听得见你我嘴唇\n这两朵神秘火焰\n这是我母亲给我的嘴唇",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "当云朵清楚极了\n听得见你我嘴唇\n这两朵神秘火焰\n这是我母亲给我的嘴唇"
+  },
+  {
+    "title": "得不到你",
+    "slug": "得不到你",
+    "path": "01-short-poems-1983-1986/得不到你.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "得不到你\n我用河水做成的妻子\n得不到你\n我的有弱点的妇女",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "得不到你\n我用河水做成的妻子\n得不到你\n我的有弱点的妇女"
+  },
+  {
+    "title": "思念前生",
+    "slug": "思念前生",
+    "path": "01-short-poems-1983-1986/思念前生.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "庄子在水中洗手\n洗完了手，手掌上一片寂静\n庄子在水中洗身\n身子是一匹布",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "庄子在水中洗手\n洗完了手，手掌上一片寂静\n庄子在水中洗身\n身子是一匹布"
+  },
+  {
+    "title": "我们坐在一棵木头中",
+    "slug": "我们坐在一棵木头中",
+    "path": "01-short-poems-1983-1986/我们坐在一棵木头中.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我坐在一棵木头中，如同多年没有走路的瞎子\n忘却了走路的声音\n我的耳朵是被春天晒红的花朵和虫豸",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/01/063",
+    "content_preview": "我坐在一棵木头中，如同多年没有走路的瞎子\n忘却了走路的声音\n我的耳朵是被春天晒红的花朵和虫豸"
+  },
+  {
+    "title": "我感到魅惑",
+    "slug": "我感到魅惑",
+    "path": "01-short-poems-1983-1986/我感到魅惑.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "天上的音乐不会是手指所动\n手指本是四肢安排的花豆\n我的身子是一份甜蜜的田亩\n我感到魅惑",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "天上的音乐不会是手指所动\n手指本是四肢安排的花豆\n我的身子是一份甜蜜的田亩\n我感到魅惑"
+  },
+  {
+    "title": "我热爱的诗人——荷尔德林",
+    "slug": "我热爱的诗人——荷尔德林",
+    "path": "01-short-poems-1983-1986/我热爱的诗人——荷尔德林.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "1. 在《黑格尔通信百封》这本书里，提到了荷尔德林不幸的命运。他两岁失去了生父，九岁失去了继父，1788年进入图宾根神学院，与黑格尔、谢林是同学和好友。1798年秋天因不幸的爱情离开法兰克福。1801年离开德国去法国的波尔多城做家庭教师。次年夏天，他得到了在他作品中被理想化为狄奥蒂玛的情人的死讯，突然离开波尔多。波尔多在法国西部，靠近大西洋海岸。他徒步横穿法国回到家乡，神经有些错乱，后又经亲人照料，大为好转，写出不少著名的诗篇，还翻译了索福克勒斯的《安提戈涅》和《俄狄浦斯王》。精神病后又经刺激复发，1806年进图宾根精神病院医治。后来住在一个叫齐默尔的木匠家里。有几位诗人于1826年出版了他的诗集。他于1843谢世，在神智混乱的“黑夜”中活了36个年头，是尼采“黑夜时间”的好几倍。荷尔德林一生不幸，死后仍默默无闻，直到20世纪人们才发现他诗歌中的灿烂和光辉。和歌德一样，他是德国贡献出的世界诗人。哲学家海德格尔曾专门解说荷尔德林的诗歌。\n2．荷尔德林的诗，歌唱生命的痛苦，令人灵魂颤抖。他写道：\n待到英雄们在铁铸的摇篮中长成，\n勇敢的心灵像从前一样，",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "1. 在《黑格尔通信百封》这本书里，提到了荷尔德林不幸的命运。他两岁失去了生父，九岁失去了继父，1788年进入图宾根神学院，与黑格尔、谢林是同学和好友。1798年秋天因不幸的爱情离开法兰克福。1801年离开德国去法国的波尔多城做家庭教师。次年夏天，他得到了在他作品中被理想化为狄奥蒂玛的情人的死讯，突然离开波尔多。波尔多在法国西部，靠近大西洋海岸。他徒步横穿法国回到家乡，神经有些错乱，后又经亲人照料，大为好转，写出不少著名的诗篇，还翻译了索福克勒斯的《安提戈涅》和《俄狄浦斯王》。精神病后又经刺激复发，1806年进图宾根精神病院医治。后来住在一个叫齐默尔的木匠家里。有几位诗人于1826年出版了他的诗集。他于1843谢世，在神智混乱的“黑夜”中活了36个年头，是尼采“黑夜时间”的好几倍。荷尔德林一生不幸，死后仍默默无闻，直到20世纪人们才发现他诗歌中的灿烂和光辉。和歌德一样，他是德国贡献出的世界诗人。哲学家海德格尔曾专门解说荷尔德林的诗歌。\n2．荷尔德林的诗，歌唱生命的痛苦，令人灵魂颤抖。他写道：\n待到英雄们在铁铸的摇篮中长成，\n勇敢的心灵像从前一样，"
+  },
+  {
+    "title": "我的窗户里埋着一只为你祝福的杯子",
+    "slug": "我的窗户里埋着一只为你祝福的杯子",
+    "path": "01-short-poems-1983-1986/我的窗户里埋着一只为你祝福的杯子.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "那是我最后一次想起的中午\n那是我沉下海水的尸体\n回忆起一个普通的中午\n记得那个美丽的",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "那是我最后一次想起的中午\n那是我沉下海水的尸体\n回忆起一个普通的中午\n记得那个美丽的"
+  },
+  {
+    "title": "我请求：雨",
+    "slug": "我请求雨",
+    "path": "01-short-poems-1983-1986/我请求雨.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我请求熄灭\n生铁的光、爱人的光和阳光\n我请求下雨\n我请求",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我请求熄灭\n生铁的光、爱人的光和阳光\n我请求下雨\n我请求"
+  },
+  {
+    "title": "我，以及其他的证人",
+    "slug": "我以及其他的证人",
+    "path": "01-short-poems-1983-1986/我以及其他的证人.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "故乡的星和羊群\n像一支支白色美丽的流水\n跑过\n小鹿跑过",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "故乡的星和羊群\n像一支支白色美丽的流水\n跑过\n小鹿跑过"
+  },
+  {
+    "title": "房屋",
+    "slug": "房屋",
+    "path": "01-short-poems-1983-1986/房屋.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "遮蔽母亲也遮蔽儿子\n遮蔽你也遮蔽我",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/01/041",
+    "content_preview": "遮蔽母亲也遮蔽儿子\n遮蔽你也遮蔽我"
+  },
+  {
+    "title": "打钟",
+    "slug": "打钟",
+    "path": "01-short-poems-1983-1986/打钟.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "一枝火焰里\n皇帝在恋爱\n恋爱，印满了红铜兵器的\n神秘山谷",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "一枝火焰里\n皇帝在恋爱\n恋爱，印满了红铜兵器的\n神秘山谷"
+  },
+  {
+    "title": "抱着白虎走过海洋",
+    "slug": "抱着白虎走过海洋",
+    "path": "01-short-poems-1983-1986/抱着白虎走过海洋.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "倾向于宏伟的母亲\n抱着白虎走过海洋\n陆地上有堂屋五间\n一只病床卧于故乡",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "倾向于宏伟的母亲\n抱着白虎走过海洋\n陆地上有堂屋五间\n一只病床卧于故乡"
+  },
+  {
+    "title": "敦煌",
+    "slug": "敦煌",
+    "path": "01-short-poems-1983-1986/敦煌.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "挂着一只只木桶\n乳汁的声音滴破耳朵——\n像远方草原上撕破的耳朵上\n悬挂着花朵",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "挂着一只只木桶\n乳汁的声音滴破耳朵——\n像远方草原上撕破的耳朵上\n悬挂着花朵"
+  },
+  {
+    "title": "日光",
+    "slug": "日光",
+    "path": "01-short-poems-1983-1986/日光.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "一种万物生长的鞭子和血！",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/01/038",
+    "content_preview": "一种万物生长的鞭子和血！"
+  },
+  {
+    "title": "早祷与枭",
+    "slug": "早祷与枭",
+    "path": "01-short-poems-1983-1986/早祷与枭.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "1.\n早祷时刻\n请你接住我，枭\n用胸脯接住我",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "1.\n早祷时刻\n请你接住我，枭\n用胸脯接住我"
+  },
+  {
+    "title": "明天醒来我会在哪一只鞋子里",
+    "slug": "明天醒来我会在哪一只鞋子里",
+    "path": "01-short-poems-1983-1986/明天醒来我会在哪一只鞋子里.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我想我已经够小心翼翼的\n我的脚趾正好十个\n我的手指正好十个\n我生下来时哭几声",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我想我已经够小心翼翼的\n我的脚趾正好十个\n我的手指正好十个\n我生下来时哭几声"
+  },
+  {
+    "title": "春天",
+    "slug": "春天",
+    "path": "01-short-poems-1983-1986/春天.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "春天是我的品质",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/01/064",
+    "content_preview": "春天是我的品质"
+  },
+  {
+    "title": "春天的夜晚和早晨",
+    "slug": "春天的夜晚和早晨",
+    "path": "01-short-poems-1983-1986/春天的夜晚和早晨.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "夜里\n我把古老的根\n背到地里去\n青蛙绿色的小腿月亮绿色的眼窝",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "夜里\n我把古老的根\n背到地里去\n青蛙绿色的小腿月亮绿色的眼窝"
+  },
+  {
+    "title": "月",
+    "slug": "月",
+    "path": "01-short-poems-1983-1986/月.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "月亮是惨笑的河流上的白猿\n多少回天上的伤口淌血\n白猿流过钟楼\n流过南方老人的头顶",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "月亮是惨笑的河流上的白猿\n多少回天上的伤口淌血\n白猿流过钟楼\n流过南方老人的头顶"
+  },
+  {
+    "title": "木鱼儿",
+    "slug": "木鱼儿",
+    "path": "01-short-poems-1983-1986/木鱼儿.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "八千年三万里\n问你何在？\n猫的笑声\n穿过生锈的铁羽毛",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "八千年三万里\n问你何在？\n猫的笑声\n穿过生锈的铁羽毛"
+  },
+  {
+    "title": "村庄",
+    "slug": "村庄-1",
+    "path": "01-short-poems-1983-1986/村庄-1.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我顺手摸到的东西越少越好！\n珍惜黄昏的村庄，珍惜雨水的村庄\n万里无云如同我永恒的悲伤",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/01/059",
+    "content_preview": "我顺手摸到的东西越少越好！\n珍惜黄昏的村庄，珍惜雨水的村庄\n万里无云如同我永恒的悲伤"
+  },
+  {
+    "title": "村庄",
+    "slug": "村庄",
+    "path": "01-short-poems-1983-1986/村庄.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "母亲和儿子\n儿子静静地长大\n母亲静静地注视\n芦花丛中",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "母亲和儿子\n儿子静静地长大\n母亲静静地注视\n芦花丛中"
+  },
+  {
+    "title": "果园",
+    "slug": "果园",
+    "path": "01-short-poems-1983-1986/果园.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "鹿的角\n打下果实\n打下果实中\n劳动的妇人",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "鹿的角\n打下果实\n打下果实中\n劳动的妇人"
+  },
+  {
+    "title": "梭罗这人有脑子",
+    "slug": "梭罗这人有脑子",
+    "path": "01-short-poems-1983-1986/梭罗这人有脑子.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "1．\n梭罗这人有脑子\n像鱼有水、鸟有翅\n云彩有天空",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "1．\n梭罗这人有脑子\n像鱼有水、鸟有翅\n云彩有天空"
+  },
+  {
+    "title": "歌或哭",
+    "slug": "歌或哭",
+    "path": "01-short-poems-1983-1986/歌或哭.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我把包袱埋在果树下\n我是在马厩里歌唱\n是在歌唱\n木床上病中的亲属",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我把包袱埋在果树下\n我是在马厩里歌唱\n是在歌唱\n木床上病中的亲属"
+  },
+  {
+    "title": "民间艺人",
+    "slug": "民间艺人",
+    "path": "01-short-poems-1983-1986/民间艺人.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "平原上有三个瞎子\n要出远门\n红色的手鼓在半夜\n突然敲响",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "平原上有三个瞎子\n要出远门\n红色的手鼓在半夜\n突然敲响"
+  },
+  {
+    "title": "活在珍贵的人间",
+    "slug": "活在珍贵的人间",
+    "path": "01-short-poems-1983-1986/活在珍贵的人间.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "活在这珍贵的人间\n太阳强烈\n水波温柔\n一层层白云覆盖着",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "活在这珍贵的人间\n太阳强烈\n水波温柔\n一层层白云覆盖着"
+  },
+  {
+    "title": "海上",
+    "slug": "海上",
+    "path": "01-short-poems-1983-1986/海上.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "穷苦的渔夫\n肉疙瘩象一卷笨拙的绳索\n在波浪上展开\n想抓住远方",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "穷苦的渔夫\n肉疙瘩象一卷笨拙的绳索\n在波浪上展开\n想抓住远方"
+  },
+  {
+    "title": "海上婚礼",
+    "slug": "海上婚礼",
+    "path": "01-short-poems-1983-1986/海上婚礼.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "海湾\n蓝色的手掌\n睡满了沉船和岛屿\n一对对桅杆",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "海湾\n蓝色的手掌\n睡满了沉船和岛屿\n一对对桅杆"
+  },
+  {
+    "title": "海子小夜曲",
+    "slug": "海子小夜曲",
+    "path": "01-short-poems-1983-1986/海子小夜曲.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "以前的夜里我们静静地坐着\n我们双膝如木\n我们支起了耳朵\n我们听得见平原上的水和诗歌",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "以前的夜里我们静静地坐着\n我们双膝如木\n我们支起了耳朵\n我们听得见平原上的水和诗歌"
+  },
+  {
+    "title": "海水没顶",
+    "slug": "海水没顶",
+    "path": "01-short-poems-1983-1986/海水没顶.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "原始的妈妈\n躲避一位农民\n把他的柴刀丢地在里\n把自己的婴儿溺死井中",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "原始的妈妈\n躲避一位农民\n把他的柴刀丢地在里\n把自己的婴儿溺死井中"
+  },
+  {
+    "title": "海滩上为女士算命",
+    "slug": "海滩上为女士算命",
+    "path": "01-short-poems-1983-1986/海滩上为女士算命.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "你不用算命\n命早就在算你\n你举着筷子\n你坐在碗沿上",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "你不用算命\n命早就在算你\n你举着筷子\n你坐在碗沿上"
+  },
+  {
+    "title": "煤堆",
+    "slug": "煤堆",
+    "path": "01-short-poems-1983-1986/煤堆.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "闯进冬天的\n黑色主人\n拉着大家的手\n径直走进房屋",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "闯进冬天的\n黑色主人\n拉着大家的手\n径直走进房屋"
+  },
+  {
+    "title": "熟了麦子",
+    "slug": "熟了麦子",
+    "path": "01-short-poems-1983-1986/熟了麦子.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "那一年\n兰州一带的新麦\n熟了\n在水面上",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "那一年\n兰州一带的新麦\n熟了\n在水面上"
+  },
+  {
+    "title": "爱情故事",
+    "slug": "爱情故事",
+    "path": "01-short-poems-1983-1986/爱情故事.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "两个陌生人\n朝你的城市走来\n今天夜晚\n语言秘密前进",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "两个陌生人\n朝你的城市走来\n今天夜晚\n语言秘密前进"
+  },
+  {
+    "title": "爱情诗集",
+    "slug": "爱情诗集",
+    "path": "01-short-poems-1983-1986/爱情诗集.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "坐在烛台上\n我是一只花圈\n想着另一只花圈\n不知道何时献上",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "坐在烛台上\n我是一只花圈\n想着另一只花圈\n不知道何时献上"
+  },
+  {
+    "title": "秋天",
+    "slug": "秋天",
+    "path": "01-short-poems-1983-1986/秋天.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "跪在地上\n小花死在回家的路上\n泪水打湿\n鸽子的后脑勺",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "跪在地上\n小花死在回家的路上\n泪水打湿\n鸽子的后脑勺"
+  },
+  {
+    "title": "粮食",
+    "slug": "粮食",
+    "path": "01-short-poems-1983-1986/粮食.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "粮食\n是图画中的妻子\n西边山上\n九只母狼",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "粮食\n是图画中的妻子\n西边山上\n九只母狼"
+  },
+  {
+    "title": "给1986",
+    "slug": "给1986",
+    "path": "01-short-poems-1983-1986/给1986.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "“就像两个凶狠的僧侣点火烧着了野菊花地\n——这就是我今年的心脏”\n（或者绿宝石的湖泊中马匹淹没时仅剩的头颅）\n马脑袋里无尽的恐惧！无尽的对于水和果实的恐惧！",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "“就像两个凶狠的僧侣点火烧着了野菊花地\n——这就是我今年的心脏”\n（或者绿宝石的湖泊中马匹淹没时仅剩的头颅）\n马脑袋里无尽的恐惧！无尽的对于水和果实的恐惧！"
+  },
+  {
+    "title": "给卡夫卡",
+    "slug": "给卡夫卡",
+    "path": "01-short-poems-1983-1986/给卡夫卡.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "囚徒核桃的双脚\n在冬天放火的囚徒\n无疑非常需要温暖\n这是亲如母亲的火光",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "囚徒核桃的双脚\n在冬天放火的囚徒\n无疑非常需要温暖\n这是亲如母亲的火光"
+  },
+  {
+    "title": "给安徒生",
+    "slug": "给安徒生",
+    "path": "01-short-poems-1983-1986/给安徒生.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "1．\n让我们砍下树枝做好木床\n一对天鹅的眼睛照亮\n一块可供下蛋的岩石",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "1．\n让我们砍下树枝做好木床\n一对天鹅的眼睛照亮\n一块可供下蛋的岩石"
+  },
+  {
+    "title": "给托尔斯泰",
+    "slug": "给托尔斯泰",
+    "path": "01-short-poems-1983-1986/给托尔斯泰.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我想起你如一位俄国农妇暴跳如雷\n补一只旧鞋的\n时时停顿\n这手掌混同于",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我想起你如一位俄国农妇暴跳如雷\n补一只旧鞋的\n时时停顿\n这手掌混同于"
+  },
+  {
+    "title": "给萨福",
+    "slug": "给萨福",
+    "path": "01-short-poems-1983-1986/给萨福.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "美丽如同花园的女诗人们\n相互热爱，坐在谷仓中\n用一只嘴唇摘取另一只嘴唇\n我听见青年中时时传言道：萨福",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "美丽如同花园的女诗人们\n相互热爱，坐在谷仓中\n用一只嘴唇摘取另一只嘴唇\n我听见青年中时时传言道：萨福"
+  },
+  {
+    "title": "自杀者之歌",
+    "slug": "自杀者之歌",
+    "path": "01-short-poems-1983-1986/自杀者之歌.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "伏在下午的水中\n窗帘一掀一掀\n一两根树枝伸过来\n肉体，水面的宝石",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "伏在下午的水中\n窗帘一掀一掀\n一两根树枝伸过来\n肉体，水面的宝石"
+  },
+  {
+    "title": "自画像",
+    "slug": "自画像",
+    "path": "01-short-poems-1983-1986/自画像.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "镜子是摆在桌上的\n一只碗\n我的脸\n是碗中的土豆",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "镜子是摆在桌上的\n一只碗\n我的脸\n是碗中的土豆"
+  },
+  {
+    "title": "船尾之梦",
+    "slug": "船尾之梦",
+    "path": "01-short-poems-1983-1986/船尾之梦.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "上游祖先吹灯后死去\n只留下\n河水\n有一根桨",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "上游祖先吹灯后死去\n只留下\n河水\n有一根桨"
+  },
+  {
+    "title": "莫扎特在《安魂曲》中说",
+    "slug": "莫扎特在安魂曲中说",
+    "path": "01-short-poems-1983-1986/莫扎特在安魂曲中说.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我所能看见的妇女\n水中的妇女\n请在麦地之中\n清理好我的骨头",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我所能看见的妇女\n水中的妇女\n请在麦地之中\n清理好我的骨头"
+  },
+  {
+    "title": "莲界慈航",
+    "slug": "莲界慈航",
+    "path": "01-short-poems-1983-1986/莲界慈航.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "七叶树下\n九根香\n照见菩萨的\n第一次失恋",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "七叶树下\n九根香\n照见菩萨的\n第一次失恋"
+  },
+  {
+    "title": "葡萄园之西的话语",
+    "slug": "葡萄园之西的话语",
+    "path": "01-short-poems-1983-1986/葡萄园之西的话语.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "也好\n我感到\n我被抬向一面贫穷而圣洁的雪地\n我被种下，被一双双劳动的大手",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "也好\n我感到\n我被抬向一面贫穷而圣洁的雪地\n我被种下，被一双双劳动的大手"
+  },
+  {
+    "title": "蓝姬的巢",
+    "slug": "蓝姬的巢",
+    "path": "01-short-poems-1983-1986/蓝姬的巢.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "木塔那儿\n一共有两个人\n蓝姬她是一张小圆脸\n蓝姬的丈夫是一位卖高粱的皇帝",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "木塔那儿\n一共有两个人\n蓝姬她是一张小圆脸\n蓝姬的丈夫是一位卖高粱的皇帝"
+  },
+  {
+    "title": "让我把脚丫搁在黄昏中一位木匠的工具箱上",
+    "slug": "让我把脚丫搁在黄昏中一位木匠的工具箱上",
+    "path": "01-short-poems-1983-1986/让我把脚丫搁在黄昏中一位木匠的工具箱上.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我坐在中午，苍白如同水中的鸟\n苍白如同一位户内的木匠\n在我钉成一支十字木头的时刻\n在我自己故乡和门前",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我坐在中午，苍白如同水中的鸟\n苍白如同一位户内的木匠\n在我钉成一支十字木头的时刻\n在我自己故乡和门前"
+  },
+  {
+    "title": "诗学：一份提纲",
+    "slug": "诗学一份提纲",
+    "path": "01-short-poems-1983-1986/诗学一份提纲.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "一、\n辩　解\n我写长诗总是迫不得已。出于某种巨大的元素对我的召唤，也是因为我有太多的话要说，这些元素和伟大材料的东西总会涨破我的诗歌外壳。为了诗歌本身——和现代世界艺术对精神的垄断和优势——我得舍弃我大部分的精神材料，直到它们成为诗歌。\n在一首诗（《土地》）里，我要说的是，由于丧失了土地，这些现代的漂泊无依的灵魂必须寻找一种代替品——那就是欲望，肤浅的欲望。大地本身恢宏的生命力只能用欲望来代替和指称，可见我们已丧失了多少东西。",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "一、\n辩　解\n我写长诗总是迫不得已。出于某种巨大的元素对我的召唤，也是因为我有太多的话要说，这些元素和伟大材料的东西总会涨破我的诗歌外壳。为了诗歌本身——和现代世界艺术对精神的垄断和优势——我得舍弃我大部分的精神材料，直到它们成为诗歌。\n在一首诗（《土地》）里，我要说的是，由于丧失了土地，这些现代的漂泊无依的灵魂必须寻找一种代替品——那就是欲望，肤浅的欲望。大地本身恢宏的生命力只能用欲望来代替和指称，可见我们已丧失了多少东西。"
+  },
+  {
+    "title": "诗集",
+    "slug": "诗集",
+    "path": "01-short-poems-1983-1986/诗集.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "珠宝的粪筐\n母牛的眼睛把她的手搁在诗集上\n忧伤的灯把她的手搁在诗集上\n没有一棵树是我的",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "珠宝的粪筐\n母牛的眼睛把她的手搁在诗集上\n忧伤的灯把她的手搁在诗集上\n没有一棵树是我的"
+  },
+  {
+    "title": "跳跃者",
+    "slug": "跳跃者",
+    "path": "01-short-poems-1983-1986/跳跃者.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "老鼻子橡树\n夹住了我的蓝鞋子\n我却是跳跃的\n跳过榆钱儿",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "老鼻子橡树\n夹住了我的蓝鞋子\n我却是跳跃的\n跳过榆钱儿"
+  },
+  {
+    "title": "门关户闭",
+    "slug": "门关户闭",
+    "path": "01-short-poems-1983-1986/门关户闭.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "门关户闭\n诗歌的乞讨人\n一只布口袋\n装满女儿的三顿剩饭",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "门关户闭\n诗歌的乞讨人\n一只布口袋\n装满女儿的三顿剩饭"
+  },
+  {
+    "title": "阿尔的太阳",
+    "slug": "阿尔的太阳",
+    "path": "01-short-poems-1983-1986/阿尔的太阳.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "——给我的瘦哥哥\n“一切我所向着的自然创作的，是栗子，从火中取出来的。啊，那不信仰太阳的人是背弃了神的人。”**\n到南方去\n到南方去",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "——给我的瘦哥哥\n“一切我所向着的自然创作的，是栗子，从火中取出来的。啊，那不信仰太阳的人是背弃了神的人。”**\n到南方去\n到南方去"
+  },
+  {
+    "title": "麦地",
+    "slug": "麦地",
+    "path": "01-short-poems-1983-1986/麦地.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "我要歌颂月亮\n月亮下\n连夜种麦的父亲\n身上像流动金子",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我要歌颂月亮\n月亮下\n连夜种麦的父亲\n身上像流动金子"
+  },
+  {
+    "title": "黄金草原",
+    "slug": "黄金草原",
+    "path": "01-short-poems-1983-1986/黄金草原.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "草原上的羊群\n在水泊上照亮了自己\n像白色温柔的灯\n睡在男人怀抱中",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "草原上的羊群\n在水泊上照亮了自己\n像白色温柔的灯\n睡在男人怀抱中"
+  },
+  {
+    "title": "黎明",
+    "slug": "黎明",
+    "path": "01-short-poems-1983-1986/黎明.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "月光照耀仲夏之夜的脖子\n秋天收割的脖子。我的百姓\n秋天收起八九尺的水\n水深杀我，河流的丈夫",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "月光照耀仲夏之夜的脖子\n秋天收割的脖子。我的百姓\n秋天收起八九尺的水\n水深杀我，河流的丈夫"
+  },
+  {
+    "title": "黑风",
+    "slug": "黑风",
+    "path": "01-short-poems-1983-1986/黑风.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "那第四次的\n口粮和旗帜\n就要来了！\n聚拢的马群将被劫走",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "那第四次的\n口粮和旗帜\n就要来了！\n聚拢的马群将被劫走"
+  },
+  {
+    "title": "龙",
+    "slug": "龙",
+    "path": "01-short-poems-1983-1986/龙.md",
+    "section": "第一编　短诗（1983—1986）",
+    "section_order": 1,
+    "preview": "火光\n在高原上\n云朵\n家乡",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "火光\n在高原上\n云朵\n家乡"
+  },
+  {
+    "title": "但是水、水",
+    "slug": "但是水水",
+    "path": "02-long-poems-1984-1985/但是水水.md",
+    "section": "第二编　长诗（1984—1985）",
+    "section_order": 2,
+    "preview": "翻动诗经\n我手指如刀\n一下一下\n砍伤我自己",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "翻动诗经\n我手指如刀\n一下一下\n砍伤我自己"
+  },
+  {
+    "title": "公鸡",
+    "slug": "公鸡",
+    "path": "02-long-poems-1984-1985/公鸡.md",
+    "section": "第二编　长诗（1984—1985）",
+    "section_order": 2,
+    "preview": "老黑头今年快六十了，膝下无儿无女，老夫妻和和睦睦地过着日子。不久前，他外出进山贩运木材，历经千辛万苦，靠着这条河流和自己的血汁，一把老筋骨，攒下了一些钱。他要在今年春上盖四间房子。事情就这么定了。\n他家有一只羽毛似血的漂亮公鸡。\n老黑头挑好了地基，背后是一望无际的洼地。只有一些杂树林，那是自然生长出来的。还有一些摸不清年代的古老乱坟，那是人们与这片洼地最早结下的契约，现在这契约早被人们遗忘。人们只守着门前的几母薄土过日子，淡漠了身后无边的洼地。风水先生说这片洼地属卧龙之相，如果老黑头命根子深，他家就会添子成龙。老黑头心里半信半疑。每到黄昏时分，他就在洼地里乱转。他和洼地逐渐由陌生而熟悉，最终结成了一种密不可分的关系。尤其在黄昏，他们能互相体会，体会得很深很深。西边的落日突然在树丛间垂直落下，被微微腾起的积尘和炊烟掩埋。老黑头的心像这一片洼地为黑夜的降临而轻轻抖动。他觉得老天有负于他，这么一个老实巴交的人，居然不能享有一个儿子。老黑头走出洼地的时候，吐了一口唾沫。天黑得很快。老伴又守着小灯等他回去吃晚饭了。在盖房之前的那天夜里，没有人知道，老黑头对着他的老朋友——那片洼地磕了几个响头。\n盖房那天上午，砖瓦匠们摸摸嘴巴上的油，提着瓦刀，立在四周。一位方头脑的家伙拎着那只漂亮的红公鸡走到中央。他对着鸡脖子砍了一刀。殷红的血涌了出来，急促的扑打到褐色的地面上，像一朵烈艳的异花不断在积尘上绽开。鞭炮声响起来了。老黑头递一支纸烟给那方头大汉。就在他伸出一支手接烟的当口，那只大红公鸡拖着脖子从他手里挣脱出来，径直飞越目瞪口呆的人群，流着血，直扑洼地而去，不一会儿，就消失在乱树丛后面。老黑头这才回过味来和大伙一起，拥向洼地。但那只公鸡像是地遁了似的，连血迹和羽毛也没见到。大伙跟着老黑头踏入这片陌生的洼地，暗暗地纳闷着，继续向深处走去。突然，前面传来了婴儿的啼哭声，人们放大了步子，加快了速度，向前搜索着，不时地互相传递着惊异的表情。杂树枝上一些叶片刚从乌黑的笨重的躯壳里挣扎出来，惊喜的瞧着这渴望奇迹的人们，甚至用柔韧的躯体去接触他们，摸摸他们头顶的黑发。洼地满怀信心地迎接并容纳着人们。大伙终于发现了一位用红布小褂包裹的男婴。他躺在两座古老坟包之间，哇哇直哭。说也奇怪，在婴儿的额上居然发现了两滴潮红的血和一片羽毛。那羽毛很像那只的红公鸡的。不过也没准是鸟儿追逐时啄落下来的。就是血迹不太好解释。公鸡终于没有找到。",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "老黑头今年快六十了，膝下无儿无女，老夫妻和和睦睦地过着日子。不久前，他外出进山贩运木材，历经千辛万苦，靠着这条河流和自己的血汁，一把老筋骨，攒下了一些钱。他要在今年春上盖四间房子。事情就这么定了。\n他家有一只羽毛似血的漂亮公鸡。\n老黑头挑好了地基，背后是一望无际的洼地。只有一些杂树林，那是自然生长出来的。还有一些摸不清年代的古老乱坟，那是人们与这片洼地最早结下的契约，现在这契约早被人们遗忘。人们只守着门前的几母薄土过日子，淡漠了身后无边的洼地。风水先生说这片洼地属卧龙之相，如果老黑头命根子深，他家就会添子成龙。老黑头心里半信半疑。每到黄昏时分，他就在洼地里乱转。他和洼地逐渐由陌生而熟悉，最终结成了一种密不可分的关系。尤其在黄昏，他们能互相体会，体会得很深很深。西边的落日突然在树丛间垂直落下，被微微腾起的积尘和炊烟掩埋。老黑头的心像这一片洼地为黑夜的降临而轻轻抖动。他觉得老天有负于他，这么一个老实巴交的人，居然不能享有一个儿子。老黑头走出洼地的时候，吐了一口唾沫。天黑得很快。老伴又守着小灯等他回去吃晚饭了。在盖房之前的那天夜里，没有人知道，老黑头对着他的老朋友——那片洼地磕了几个响头。\n盖房那天上午，砖瓦匠们摸摸嘴巴上的油，提着瓦刀，立在四周。一位方头脑的家伙拎着那只漂亮的红公鸡走到中央。他对着鸡脖子砍了一刀。殷红的血涌了出来，急促的扑打到褐色的地面上，像一朵烈艳的异花不断在积尘上绽开。鞭炮声响起来了。老黑头递一支纸烟给那方头大汉。就在他伸出一支手接烟的当口，那只大红公鸡拖着脖子从他手里挣脱出来，径直飞越目瞪口呆的人群，流着血，直扑洼地而去，不一会儿，就消失在乱树丛后面。老黑头这才回过味来和大伙一起，拥向洼地。但那只公鸡像是地遁了似的，连血迹和羽毛也没见到。大伙跟着老黑头踏入这片陌生的洼地，暗暗地纳闷着，继续向深处走去。突然，前面传来了婴儿的啼哭声，人们放大了步子，加快了速度，向前搜索着，不时地互相传递着惊异的表情。杂树枝上一些叶片刚从乌黑的笨重的躯壳里挣扎出来，惊喜的瞧着这渴望奇迹的人们，甚至用柔韧的躯体去接触他们，摸摸他们头顶的黑发。洼地满怀信心地迎接并容纳着人们。大伙终于发现了一位用红布小褂包裹的男婴。他躺在两座古老坟包之间，哇哇直哭。说也奇怪，在婴儿的额上居然发现了两滴潮红的血和一片羽毛。那羽毛很像那只的红公鸡的。不过也没准是鸟儿追逐时啄落下来的。就是血迹不太好解释。公鸡终于没有找到。"
+  },
+  {
+    "title": "南方",
+    "slug": "南方",
+    "path": "02-long-poems-1984-1985/南方.md",
+    "section": "第二编　长诗（1984—1985）",
+    "section_order": 2,
+    "preview": "",
+    "date": "1985.8",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/02/24/24-6",
+    "content_preview": ""
+  },
+  {
+    "title": "木船",
+    "slug": "木船",
+    "path": "02-long-poems-1984-1985/木船.md",
+    "section": "第二编　长诗（1984—1985）",
+    "section_order": 2,
+    "preview": "终于，这一天到了，他合上了双眼。他留下了遗嘱：要在他的床前对着河流焚烧那幅画。就在灰烬冉冉升上无边的天空的时候，那条木船又出现了。它逆流而上，在村边靠了岸。人们把这位船的儿子的尸首抬上船去，发现船上没有一个人。船舱内盛放着五种不同颜色的泥土。那条木船载着他向上游驶去，向他们共同的诞生地和归宿驶去。有开始就有结束。也许在它消失的地方有一棵树会静静长起。",
+    "date": "1985.5.25",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/02/24/24-2",
+    "content_preview": "终于，这一天到了，他合上了双眼。他留下了遗嘱：要在他的床前对着河流焚烧那幅画。就在灰烬冉冉升上无边的天空的时候，那条木船又出现了。它逆流而上，在村边靠了岸。人们把这位船的儿子的尸首抬上船去，发现船上没有一个人。船舱内盛放着五种不同颜色的泥土。那条木船载着他向上游驶去，向他们共同的诞生地和归宿驶去。有开始就有结束。也许在它消失的地方有一棵树会静静长起。"
+  },
+  {
+    "title": "龟王",
+    "slug": "龟王",
+    "path": "02-long-poems-1984-1985/龟王.md",
+    "section": "第二编　长诗（1984—1985）",
+    "section_order": 2,
+    "preview": "第二年大旱。人们摆上了香案。十几条汉子把这块石龟王抬到干涸的河道中间，挖了一个大坑，埋下了它。一注清泉涌出。雨云相合。以后这块平原再也没有发生过旱灾和水灾。人们平安地过着日子。石匠和龟王被忘记了。也许我是世界上最大的一个傻瓜，居然提起这件大家都已忘记的年代久远的事来。\n1985.5.23夜深",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/02/24/24-1",
+    "content_preview": "第二年大旱。人们摆上了香案。十几条汉子把这块石龟王抬到干涸的河道中间，挖了一个大坑，埋下了它。一注清泉涌出。雨云相合。以后这块平原再也没有发生过旱灾和水灾。人们平安地过着日子。石匠和龟王被忘记了。也许我是世界上最大的一个傻瓜，居然提起这件大家都已忘记的年代久远的事来。\n1985.5.23夜深"
+  },
+  {
+    "title": "一滴水中的黑夜",
+    "slug": "一滴水中的黑夜",
+    "path": "03-short-poems-1987-1989/一滴水中的黑夜.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "一滴水中的黑夜\n一滴泪水中的全部黑夜\n一滴无名的泪水\n在乡村长大的泪水",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "一滴水中的黑夜\n一滴泪水中的全部黑夜\n一滴无名的泪水\n在乡村长大的泪水"
+  },
+  {
+    "title": "七百年前",
+    "slug": "七百年前",
+    "path": "03-short-poems-1987-1989/七百年前.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "七百年前辉煌的王城今天是一座肮脏的小镇\n当年我打马进城　手提一袋青稞\n当年我用一袋青稞换取十八颗人头\n还有九颗，葬在城中，下落不明",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "七百年前辉煌的王城今天是一座肮脏的小镇\n当年我打马进城　手提一袋青稞\n当年我用一袋青稞换取十八颗人头\n还有九颗，葬在城中，下落不明"
+  },
+  {
+    "title": "不幸",
+    "slug": "不幸",
+    "path": "03-short-poems-1987-1989/不幸.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "——给荷尔德林\n1.病中的酒\n拾起了一张病床\n我的荷尔德林　他就躺在这张床上",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "——给荷尔德林\n1.病中的酒\n拾起了一张病床\n我的荷尔德林　他就躺在这张床上"
+  },
+  {
+    "title": "两座村庄",
+    "slug": "两座村庄",
+    "path": "03-short-poems-1987-1989/两座村庄.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "和平与情欲的村庄\n诗的村庄\n村庄母亲昙花一现\n村庄母亲美丽绝伦",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "和平与情欲的村庄\n诗的村庄\n村庄母亲昙花一现\n村庄母亲美丽绝伦"
+  },
+  {
+    "title": "两行诗",
+    "slug": "两行诗",
+    "path": "03-short-poems-1987-1989/两行诗.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "1.\n海水点亮我\n垂死的头颅\n2.",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "1.\n海水点亮我\n垂死的头颅\n2."
+  },
+  {
+    "title": "为什么你不生活在沙漠上",
+    "slug": "为什么你不生活在沙漠上",
+    "path": "03-short-poems-1987-1989/为什么你不生活在沙漠上.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "为什么你不生活在沙漠上\n英雄的可怜而可爱的伴侣\n我那唯一的人在何方？\n用酒调着火所能留下的灰　写下几首诗？",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "为什么你不生活在沙漠上\n英雄的可怜而可爱的伴侣\n我那唯一的人在何方？\n用酒调着火所能留下的灰　写下几首诗？"
+  },
+  {
+    "title": "九寨之星",
+    "slug": "九寨之星",
+    "path": "03-short-poems-1987-1989/九寨之星.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "很久很久的一盏灯\n很久很久以前女神点亮的一盏灯\n落满岁月尘土的一盏灯\n当她面对湖水",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "很久很久的一盏灯\n很久很久以前女神点亮的一盏灯\n落满岁月尘土的一盏灯\n当她面对湖水"
+  },
+  {
+    "title": "九月的云",
+    "slug": "九月的云",
+    "path": "03-short-poems-1987-1989/九月的云.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "九月的云\n展开殓布\n九月的云\n晴朗的云",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "九月的云\n展开殓布\n九月的云\n晴朗的云"
+  },
+  {
+    "title": "九首诗的村庄",
+    "slug": "九首诗的村庄",
+    "path": "03-short-poems-1987-1989/九首诗的村庄.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "秋夜美丽\n使我旧情难忘\n我坐在微温的地上\n陪伴粮食和水",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "秋夜美丽\n使我旧情难忘\n我坐在微温的地上\n陪伴粮食和水"
+  },
+  {
+    "title": "五月的麦地",
+    "slug": "五月的麦地",
+    "path": "03-short-poems-1987-1989/五月的麦地.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "全世界的兄弟们\n要在麦地里拥抱\n东方，南方，北方和西方\n麦地里的四兄弟，好兄弟",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "全世界的兄弟们\n要在麦地里拥抱\n东方，南方，北方和西方\n麦地里的四兄弟，好兄弟"
+  },
+  {
+    "title": "但丁来到此时此地",
+    "slug": "但丁来到此时此地",
+    "path": "03-short-poems-1987-1989/但丁来到此时此地.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "自杀者各自逃离树枝\n但丁来到此时此地\n自杀者各自逃离树枝\n罪人在地狱",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "自杀者各自逃离树枝\n但丁来到此时此地\n自杀者各自逃离树枝\n罪人在地狱"
+  },
+  {
+    "title": "你和桃花",
+    "slug": "你和桃花",
+    "path": "03-short-poems-1987-1989/你和桃花.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "旷野上头发在十分疲倦地飘动\n像太阳飞过花园时留下的阳光\n温暖而又有些冰凉的桃花\n红色堆积的叛乱的脑髓",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "旷野上头发在十分疲倦地飘动\n像太阳飞过花园时留下的阳光\n温暖而又有些冰凉的桃花\n红色堆积的叛乱的脑髓"
+  },
+  {
+    "title": "光棍",
+    "slug": "光棍",
+    "path": "03-short-poems-1987-1989/光棍.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "在春天用了一把大火\n烧光家园　使众人受伤\n大家伤心唏嘘不已\n穷得丁当响的酒柜上",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "在春天用了一把大火\n烧光家园　使众人受伤\n大家伤心唏嘘不已\n穷得丁当响的酒柜上"
+  },
+  {
+    "title": "八月　黑色的火把",
+    "slug": "八月-黑色的火把",
+    "path": "03-short-poems-1987-1989/八月-黑色的火把.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "太阳映红的旷原\n垂下衰老的乳房\n一如黑夜的火把\n人是八月的田野上血肉模糊的火把",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "太阳映红的旷原\n垂下衰老的乳房\n一如黑夜的火把\n人是八月的田野上血肉模糊的火把"
+  },
+  {
+    "title": "八月之杯",
+    "slug": "八月之杯",
+    "path": "03-short-poems-1987-1989/八月之杯.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "八月逝去　山峦清晰\n河水平滑起伏\n此刻才见天空\n天空高过往日",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "八月逝去　山峦清晰\n河水平滑起伏\n此刻才见天空\n天空高过往日"
+  },
+  {
+    "title": "公爵的私生女",
+    "slug": "公爵的私生女",
+    "path": "03-short-poems-1987-1989/公爵的私生女.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "——给波德莱尔\n我们偶然相遇\n没有留下痕迹\n那个庸俗的故事",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "——给波德莱尔\n我们偶然相遇\n没有留下痕迹\n那个庸俗的故事"
+  },
+  {
+    "title": "冬天的雨",
+    "slug": "冬天的雨",
+    "path": "03-short-poems-1987-1989/冬天的雨.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "一只船停在荒凉的河岸\n那就是你居住的城市\n我的外套肮脏，扔在河岸上\n我的心情开始平静而开朗",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "一只船停在荒凉的河岸\n那就是你居住的城市\n我的外套肮脏，扔在河岸上\n我的心情开始平静而开朗"
+  },
+  {
+    "title": "北方的树林",
+    "slug": "北方的树林",
+    "path": "03-short-poems-1987-1989/北方的树林.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "槐树在山脚开花\n我们一路走来\n躺在山坡上　感受茫茫黄昏\n远山像幻觉　默默停留一会",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "槐树在山脚开花\n我们一路走来\n躺在山坡上　感受茫茫黄昏\n远山像幻觉　默默停留一会"
+  },
+  {
+    "title": "十四行：夜晚的月亮",
+    "slug": "十四行夜晚的月亮",
+    "path": "03-short-poems-1987-1989/十四行夜晚的月亮.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "推开树林\n太阳把血\n放入灯盏\n我静静坐在",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "推开树林\n太阳把血\n放入灯盏\n我静静坐在"
+  },
+  {
+    "title": "十四行：王冠",
+    "slug": "十四行王冠",
+    "path": "03-short-poems-1987-1989/十四行王冠.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "我所热爱的少女\n河流的少女\n头发变成了树叶\n两臂变成了树干",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我所热爱的少女\n河流的少女\n头发变成了树叶\n两臂变成了树干"
+  },
+  {
+    "title": "十四行：玫瑰花",
+    "slug": "十四行玫瑰花",
+    "path": "03-short-poems-1987-1989/十四行玫瑰花.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "玫瑰花　蜜一样的身体\n玫瑰花园　黑夜一样的头发\n覆盖了白雪隆起的乳房\n白雪的门　白雪的门外被白雪盖住的两只酒盅",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "玫瑰花　蜜一样的身体\n玫瑰花园　黑夜一样的头发\n覆盖了白雪隆起的乳房\n白雪的门　白雪的门外被白雪盖住的两只酒盅"
+  },
+  {
+    "title": "十四行：玫瑰花园",
+    "slug": "十四行玫瑰花园",
+    "path": "03-short-poems-1987-1989/十四行玫瑰花园.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "明亮的夜晚\n我来到玫瑰花园\n脱下诗歌的王冠\n和沉重的土地的盔甲",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "明亮的夜晚\n我来到玫瑰花园\n脱下诗歌的王冠\n和沉重的土地的盔甲"
+  },
+  {
+    "title": "叙事诗",
+    "slug": "叙事诗",
+    "path": "03-short-poems-1987-1989/叙事诗.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "——一个民间故事\n有一个人深夜来投宿\n这个旅店死气沉沉\n形状十分吓人",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "——一个民间故事\n有一个人深夜来投宿\n这个旅店死气沉沉\n形状十分吓人"
+  },
+  {
+    "title": "吊半坡并给擅入都市的农民",
+    "slug": "吊半坡并给擅入都市的农民",
+    "path": "03-short-poems-1987-1989/吊半坡并给擅入都市的农民.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "径直走入\n潮湿的泥土\n堆起小小的农民\n——对粮食的嘴",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "径直走入\n潮湿的泥土\n堆起小小的农民\n——对粮食的嘴"
+  },
+  {
+    "title": "四姐妹",
+    "slug": "四姐妹",
+    "path": "03-short-poems-1987-1989/四姐妹.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "荒凉的山冈上站着四姐妹\n所有的风只向她们吹\n所有的日子都为她们破碎\n空气中的一棵麦子",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "荒凉的山冈上站着四姐妹\n所有的风只向她们吹\n所有的日子都为她们破碎\n空气中的一棵麦子"
+  },
+  {
+    "title": "四行诗",
+    "slug": "四行诗",
+    "path": "03-short-poems-1987-1989/四行诗.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "1.思　念\n像此刻的风\n骤然吹起\n我要抱着你",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "1.思　念\n像此刻的风\n骤然吹起\n我要抱着你"
+  },
+  {
+    "title": "土地·忧郁·死亡",
+    "slug": "土地·忧郁·死亡",
+    "path": "03-short-poems-1987-1989/土地·忧郁·死亡.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "黄昏，我流着血污的脉管不能使大羊生殖。\n黎明，我仿佛从子宫中升起，如剥皮的兔子摆上早餐。\n夜晚，我从星辰上坠落，使墓地的群马阉割或受孕。\n白天，我在河上漂浮的棺材竟拼凑成目前的桥梁或婚娶之船。",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "黄昏，我流着血污的脉管不能使大羊生殖。\n黎明，我仿佛从子宫中升起，如剥皮的兔子摆上早餐。\n夜晚，我从星辰上坠落，使墓地的群马阉割或受孕。\n白天，我在河上漂浮的棺材竟拼凑成目前的桥梁或婚娶之船。"
+  },
+  {
+    "title": "在一个阿拉伯沙漠的村镇上",
+    "slug": "在一个阿拉伯沙漠的村镇上",
+    "path": "03-short-poems-1987-1989/在一个阿拉伯沙漠的村镇上.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "镇子\n而今我一无是处\n坐在镇子的一头\n这是一个不守诺言的时刻",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "镇子\n而今我一无是处\n坐在镇子的一头\n这是一个不守诺言的时刻"
+  },
+  {
+    "title": "在大草原上预感到海的降临",
+    "slug": "在大草原上预感到海的降临",
+    "path": "03-short-poems-1987-1989/在大草原上预感到海的降临.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "我的双手触到草原，\n黑色孤独的夜的女儿。\n我为我自己铺下干草\n夜的女儿，我也为你。",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我的双手触到草原，\n黑色孤独的夜的女儿。\n我为我自己铺下干草\n夜的女儿，我也为你。"
+  },
+  {
+    "title": "在家乡",
+    "slug": "在家乡",
+    "path": "03-short-poems-1987-1989/在家乡.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "鸟　在家乡如一只蓝色的手或者子宫\n手和子宫\n你从石头死寂中茫然无知地上升\n羊群……许多蹄子来了又去　反复灭绝",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "鸟　在家乡如一只蓝色的手或者子宫\n手和子宫\n你从石头死寂中茫然无知地上升\n羊群……许多蹄子来了又去　反复灭绝"
+  },
+  {
+    "title": "夜晚　亲爱的朋友",
+    "slug": "夜晚-亲爱的朋友",
+    "path": "03-short-poems-1987-1989/夜晚-亲爱的朋友.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "在什么树林，你酒瓶倒倾\n你和泪饮酒，在什么树林，把亲人埋葬\n在什么河岸，你最寂寞\n搬进了空荡的房屋，你最寂寞，点亮灯火",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "在什么树林，你酒瓶倒倾\n你和泪饮酒，在什么树林，把亲人埋葬\n在什么河岸，你最寂寞\n搬进了空荡的房屋，你最寂寞，点亮灯火"
+  },
+  {
+    "title": "夜色",
+    "slug": "夜色",
+    "path": "03-short-poems-1987-1989/夜色.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "我有三次受难：流浪、爱情、生存\n我有三种幸福：诗歌、王位、太阳\n1988.2.28.夜",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/03/069",
+    "content_preview": "我有三次受难：流浪、爱情、生存\n我有三种幸福：诗歌、王位、太阳\n1988.2.28.夜"
+  },
+  {
+    "title": "大草原　大雪封山",
+    "slug": "大草原-大雪封山",
+    "path": "03-short-poems-1987-1989/大草原-大雪封山.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "公社里\n有一个人\n歌唱雨雪\n和倾斜的山坡",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "公社里\n有一个人\n歌唱雨雪\n和倾斜的山坡"
+  },
+  {
+    "title": "大风",
+    "slug": "大风",
+    "path": "03-short-poems-1987-1989/大风.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "万风之王起舞\n化为树木受伤",
+    "date": "1988.2.4",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/03/091",
+    "content_preview": "万风之王起舞\n化为树木受伤"
+  },
+  {
+    "title": "太平洋上的贾宝玉",
+    "slug": "太平洋上的贾宝玉",
+    "path": "03-short-poems-1987-1989/太平洋上的贾宝玉.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "贾宝玉　太平洋上的贾宝玉\n太平洋上：粮食用绳子捆好\n贾宝玉坐在粮食上\n美好而破碎的世界",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "贾宝玉　太平洋上的贾宝玉\n太平洋上：粮食用绳子捆好\n贾宝玉坐在粮食上\n美好而破碎的世界"
+  },
+  {
+    "title": "太平洋的献诗",
+    "slug": "太平洋的献诗",
+    "path": "03-short-poems-1987-1989/太平洋的献诗.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "太平洋　丰收之后的荒凉的海\n太平洋　在劳动后的休息\n劳动以前　劳动之中　劳动以后\n太平洋是所有的劳动和休息",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "太平洋　丰收之后的荒凉的海\n太平洋　在劳动后的休息\n劳动以前　劳动之中　劳动以后\n太平洋是所有的劳动和休息"
+  },
+  {
+    "title": "太阳和野花",
+    "slug": "太阳和野花",
+    "path": "03-short-poems-1987-1989/太阳和野花.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "——给ＡＰ\n太阳是他自己的头\n野花是她自己的诗\n我对你说",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "——给ＡＰ\n太阳是他自己的头\n野花是她自己的诗\n我对你说"
+  },
+  {
+    "title": "尼采，你使我想起悲伤的热带",
+    "slug": "尼采你使我想起悲伤的热带",
+    "path": "03-short-poems-1987-1989/尼采你使我想起悲伤的热带.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "别人的诗：金黄的秋收俯伏在希腊的大理石上\n一只陶罐上\n镌刻一尾鱼\n我住在鱼头",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "别人的诗：金黄的秋收俯伏在希腊的大理石上\n一只陶罐上\n镌刻一尾鱼\n我住在鱼头"
+  },
+  {
+    "title": "山楂树",
+    "slug": "山楂树",
+    "path": "03-short-poems-1987-1989/山楂树.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "今夜我不会遇见你\n今夜我遇见了世上的一切\n但不会遇见你\n一棵夏季最后",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "今夜我不会遇见你\n今夜我遇见了世上的一切\n但不会遇见你\n一棵夏季最后"
+  },
+  {
+    "title": "幸福的一日",
+    "slug": "幸福的一日",
+    "path": "03-short-poems-1987-1989/幸福的一日.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "致秋天的花楸树\n我无限的热爱着新的一日\n今天的太阳　今天的马　今天的花楸树\n使我健康　富足　拥有一生",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "致秋天的花楸树\n我无限的热爱着新的一日\n今天的太阳　今天的马　今天的花楸树\n使我健康　富足　拥有一生"
+  },
+  {
+    "title": "我飞遍草原的天空",
+    "slug": "我飞遍草原的天空",
+    "path": "03-short-poems-1987-1989/我飞遍草原的天空.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "草原上的天空不可阻挡\n互相击碎的刀剑飞回家乡\n佩在姐妹的脖子上\n让乳房裸露，子夜的金银顺河流淌",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "草原上的天空不可阻挡\n互相击碎的刀剑飞回家乡\n佩在姐妹的脖子上\n让乳房裸露，子夜的金银顺河流淌"
+  },
+  {
+    "title": "折梅",
+    "slug": "折梅",
+    "path": "03-short-poems-1987-1989/折梅.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "山坡上的梅花\n寂静的太平洋上一封信\n寂静的太平洋上一人站在那里折梅花\n折梅人在天上",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "山坡上的梅花\n寂静的太平洋上一封信\n寂静的太平洋上一人站在那里折梅花\n折梅人在天上"
+  },
+  {
+    "title": "拂晓",
+    "slug": "拂晓",
+    "path": "03-short-poems-1987-1989/拂晓.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "穿上你好久没穿的旧裙子，跟我走\n夜的女儿，朝霞的姐妹，黎明\n穿过这些山峰，坐落\n在这些粗笨的远方和近处",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "穿上你好久没穿的旧裙子，跟我走\n夜的女儿，朝霞的姐妹，黎明\n穿过这些山峰，坐落\n在这些粗笨的远方和近处"
+  },
+  {
+    "title": "无名的野花",
+    "slug": "无名的野花",
+    "path": "03-short-poems-1987-1989/无名的野花.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "看不见你，十六岁的你\n看不见无名的，芳香的\n正在开花的你。\n看不见提着鞋子　在雨中",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "看不见你，十六岁的你\n看不见无名的，芳香的\n正在开花的你。\n看不见提着鞋子　在雨中"
+  },
+  {
+    "title": "日出",
+    "slug": "日出",
+    "path": "03-short-poems-1987-1989/日出.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "在黑暗的尽头\n太阳，扶着我站起来\n我的身体像一个亲爱的祖国，血液流遍\n我是一个完全幸福的人",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "在黑暗的尽头\n太阳，扶着我站起来\n我的身体像一个亲爱的祖国，血液流遍\n我是一个完全幸福的人"
+  },
+  {
+    "title": "日落时分的部落",
+    "slug": "日落时分的部落",
+    "path": "03-short-poems-1987-1989/日落时分的部落.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "日落时分的部落\n晚霞映着血红的皇后\n夜晚的血，梦中的火\n照亮了破碎的城市",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "日落时分的部落\n晚霞映着血红的皇后\n夜晚的血，梦中的火\n照亮了破碎的城市"
+  },
+  {
+    "title": "昌平柿子树",
+    "slug": "昌平柿子树",
+    "path": "03-short-poems-1987-1989/昌平柿子树.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "柿子树\n镇子边的柿子树\n枝叶稀疏的秋之树\n我只能站在路口望着她",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "柿子树\n镇子边的柿子树\n枝叶稀疏的秋之树\n我只能站在路口望着她"
+  },
+  {
+    "title": "星",
+    "slug": "星",
+    "path": "03-short-poems-1987-1989/星.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "是——他是你们的哥哥。\n诗人高喊\n带火者，上山来！\n牵着骆驼",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "是——他是你们的哥哥。\n诗人高喊\n带火者，上山来！\n牵着骆驼"
+  },
+  {
+    "title": "春天",
+    "slug": "春天",
+    "path": "03-short-poems-1987-1989/春天.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "舔着十指上的鲜血\n春天空空荡荡\n培养欲望　鼓吹死亡\n风是这样大",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "舔着十指上的鲜血\n春天空空荡荡\n培养欲望　鼓吹死亡\n风是这样大"
+  },
+  {
+    "title": "春天，十个海子",
+    "slug": "春天十个海子",
+    "path": "03-short-poems-1987-1989/春天十个海子.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "春天，十个海子全部复活\n在光明的景色中\n嘲笑这一个野蛮而悲伤的海子\n你这么长久地沉睡究竟为了什么?",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "春天，十个海子全部复活\n在光明的景色中\n嘲笑这一个野蛮而悲伤的海子\n你这么长久地沉睡究竟为了什么?"
+  },
+  {
+    "title": "晨雨时光",
+    "slug": "晨雨时光",
+    "path": "03-short-poems-1987-1989/晨雨时光.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "小马在草坡上一跳一跳\n这青色麦地晚风吹拂\n在这个时刻　我没有想到\n五盏灯竟会同时亮起",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "小马在草坡上一跳一跳\n这青色麦地晚风吹拂\n在这个时刻　我没有想到\n五盏灯竟会同时亮起"
+  },
+  {
+    "title": "最后一夜和第一日的献诗",
+    "slug": "最后一夜和第一日的献诗",
+    "path": "03-short-poems-1987-1989/最后一夜和第一日的献诗.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "今夜你的黑头发\n是岩石上寂寞的黑夜\n牧羊人用雪白的羊群\n填满飞机场周围的黑暗",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "今夜你的黑头发\n是岩石上寂寞的黑夜\n牧羊人用雪白的羊群\n填满飞机场周围的黑暗"
+  },
+  {
+    "title": "月光",
+    "slug": "月光",
+    "path": "03-short-poems-1987-1989/月光.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "照着月光\n饮水和盐的马\n和声音\n今夜美丽的月光　你看多美丽",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "照着月光\n饮水和盐的马\n和声音\n今夜美丽的月光　你看多美丽"
+  },
+  {
+    "title": "月全食",
+    "slug": "月全食",
+    "path": "03-short-poems-1987-1989/月全食.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "我的爱人住在县城的伞中\n我的爱人住在贫穷山区的伞中，双手捧着我的鲜血\n一把斧子浸在我自己的鲜血中\n火把头朝下在海水中燃烧",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我的爱人住在县城的伞中\n我的爱人住在贫穷山区的伞中，双手捧着我的鲜血\n一把斧子浸在我自己的鲜血中\n火把头朝下在海水中燃烧"
+  },
+  {
+    "title": "枫",
+    "slug": "枫",
+    "path": "03-short-poems-1987-1989/枫.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "相抢（？）于此秋天\n刀刃闪闪发亮\n人头落地　血迹殷红\n一只空空的杯子权做诗歌之棺",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "相抢（？）于此秋天\n刀刃闪闪发亮\n人头落地　血迹殷红\n一只空空的杯子权做诗歌之棺"
+  },
+  {
+    "title": "桃树林",
+    "slug": "桃树林",
+    "path": "03-short-poems-1987-1989/桃树林.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "内脏外的太阳\n照着内脏内的太阳\n寂静\n血红",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "内脏外的太阳\n照着内脏内的太阳\n寂静\n血红"
+  },
+  {
+    "title": "桃花",
+    "slug": "桃花",
+    "path": "03-short-poems-1987-1989/桃花.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "像一座囚笼流尽了鲜血\n像两只刀斧流尽了鲜血\n像刀斧手的家园\n流尽了鲜血",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "像一座囚笼流尽了鲜血\n像两只刀斧流尽了鲜血\n像刀斧手的家园\n流尽了鲜血"
+  },
+  {
+    "title": "桃花开放",
+    "slug": "桃花开放",
+    "path": "03-short-poems-1987-1989/桃花开放.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "秋天的火把断了　是别的花在开放\n冬天的火把是梅花\n现在是春天的火把\n被砍断",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "秋天的火把断了　是别的花在开放\n冬天的火把是梅花\n现在是春天的火把\n被砍断"
+  },
+  {
+    "title": "桃花时节",
+    "slug": "桃花时节",
+    "path": "03-short-poems-1987-1989/桃花时节.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "桃花开放\n太阳的头盖骨一动一动，火焰和手从头中伸出\n一群群野兽舔着火焰　刃\n走向没落的河谷尽头",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "桃花开放\n太阳的头盖骨一动一动，火焰和手从头中伸出\n一群群野兽舔着火焰　刃\n走向没落的河谷尽头"
+  },
+  {
+    "title": "水抱屈原",
+    "slug": "水抱屈原",
+    "path": "03-short-poems-1987-1989/水抱屈原.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "举着火把、捕捉落入\n水的人\n水抱屈原：如夜打门的火把倒向怀中\n水中之墓呼唤鱼群",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "举着火把、捕捉落入\n水的人\n水抱屈原：如夜打门的火把倒向怀中\n水中之墓呼唤鱼群"
+  },
+  {
+    "title": "海底卧室",
+    "slug": "海底卧室",
+    "path": "03-short-poems-1987-1989/海底卧室.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "月亮，喂养耳朵的宝石\n杯子，水中的鸡群\n草，那嘴唇的发动——花朵\n日子，闪电中的七人",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "月亮，喂养耳朵的宝石\n杯子，水中的鸡群\n草，那嘴唇的发动——花朵\n日子，闪电中的七人"
+  },
+  {
+    "title": "灯",
+    "slug": "灯",
+    "path": "03-short-poems-1987-1989/灯.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "我们火光通明\n我们做梦的胳膊搂在一起\n我们栖息的桌子飘向麦地\n我们安坐的灯火涌向星辰",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我们火光通明\n我们做梦的胳膊搂在一起\n我们栖息的桌子飘向麦地\n我们安坐的灯火涌向星辰"
+  },
+  {
+    "title": "献给太平洋",
+    "slug": "献给太平洋",
+    "path": "03-short-poems-1987-1989/献给太平洋.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "我的婚礼染红太平洋\n我的新娘是太平洋\n连亚洲也是我悲伤而平静的新娘\n你自己的血染红你内部孤独的天空",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我的婚礼染红太平洋\n我的新娘是太平洋\n连亚洲也是我悲伤而平静的新娘\n你自己的血染红你内部孤独的天空"
+  },
+  {
+    "title": "献给韩波：诗歌的烈士",
+    "slug": "献给韩波诗歌的烈士",
+    "path": "03-short-poems-1987-1989/献给韩波诗歌的烈士.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "反对月亮\n反对月亮肚子上绿色浇灌天空\n韩波，我的生理之王\n韩波，我远嫁他方姐妹早夭之子",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "反对月亮\n反对月亮肚子上绿色浇灌天空\n韩波，我的生理之王\n韩波，我远嫁他方姐妹早夭之子"
+  },
+  {
+    "title": "生日",
+    "slug": "生日",
+    "path": "03-short-poems-1987-1989/生日.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "我电亮烛火点亮新娘的两只耳朵\n其他的人和马的耳朵\n竖在北方——那一夜的屋顶\n1988.5删",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我电亮烛火点亮新娘的两只耳朵\n其他的人和马的耳朵\n竖在北方——那一夜的屋顶\n1988.5删"
+  },
+  {
+    "title": "病少女",
+    "slug": "病少女",
+    "path": "03-short-poems-1987-1989/病少女.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "白蛾子像美丽\n黄昏的伤口\n在诗人的眼里想起黄昏\n听见村庄在外被风吹拂",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "白蛾子像美丽\n黄昏的伤口\n在诗人的眼里想起黄昏\n听见村庄在外被风吹拂"
+  },
+  {
+    "title": "眺望北方",
+    "slug": "眺望北方",
+    "path": "03-short-poems-1987-1989/眺望北方.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "我在海边为什么却想到了你\n不幸而美丽的人　我的命运\n想起你　我在岩石上凿出窗户\n眺望光明的七星",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我在海边为什么却想到了你\n不幸而美丽的人　我的命运\n想起你　我在岩石上凿出窗户\n眺望光明的七星"
+  },
+  {
+    "title": "神秘的二月的时光",
+    "slug": "神秘的二月的时光",
+    "path": "03-short-poems-1987-1989/神秘的二月的时光.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "噙住泪水，在神秘的\n二月的时光\n神秘的二月的时光\n经过北方单调的平原",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "噙住泪水，在神秘的\n二月的时光\n神秘的二月的时光\n经过北方单调的平原"
+  },
+  {
+    "title": "秋",
+    "slug": "秋-1",
+    "path": "03-short-poems-1987-1989/秋-1.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "神的故乡鹰在言语\n秋天深了，王在写诗\n在这个世界上秋天深了\n得到的尚未得到",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "神的故乡鹰在言语\n秋天深了，王在写诗\n在这个世界上秋天深了\n得到的尚未得到"
+  },
+  {
+    "title": "秋",
+    "slug": "秋",
+    "path": "03-short-poems-1987-1989/秋.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "掩盖我们横陈于地上的骸骨——\n秋已来临。\n没有丝毫的宽恕和温情：秋已来临",
+    "date": "1987.8",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "https://haizi.huhaitai.com/03/056",
+    "content_preview": "掩盖我们横陈于地上的骸骨——\n秋已来临。\n没有丝毫的宽恕和温情：秋已来临"
+  },
+  {
+    "title": "秋天",
+    "slug": "秋天",
+    "path": "03-short-poems-1987-1989/秋天.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "树叶安睡大地\n果实沉落桶底\n发出闷闷声响\n让镰刀平放",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "树叶安睡大地\n果实沉落桶底\n发出闷闷声响\n让镰刀平放"
+  },
+  {
+    "title": "秋天的祖国",
+    "slug": "秋天的祖国",
+    "path": "03-short-poems-1987-1989/秋天的祖国.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "——致毛泽东，他说“一万年太久”。\n一万次秋天的河流拉着头颅　犁过烈火燎烈的城邦\n心还张开着春天的欲望滋生的每一道伤口\n秋雷隐隐　圣火燎烈",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "——致毛泽东，他说“一万年太久”。\n一万次秋天的河流拉着头颅　犁过烈火燎烈的城邦\n心还张开着春天的欲望滋生的每一道伤口\n秋雷隐隐　圣火燎烈"
+  },
+  {
+    "title": "秋日山谷",
+    "slug": "秋日山谷",
+    "path": "03-short-poems-1987-1989/秋日山谷.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "我手捧秋天脱下的盔甲\n崇山峻岭大火熊熊\n秋天宛若昨日的梦境\n我们脱落的睫毛　在山谷变成火把",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我手捧秋天脱下的盔甲\n崇山峻岭大火熊熊\n秋天宛若昨日的梦境\n我们脱落的睫毛　在山谷变成火把"
+  },
+  {
+    "title": "秋日黄昏",
+    "slug": "秋日黄昏",
+    "path": "03-short-poems-1987-1989/秋日黄昏.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "火焰的顶端\n落日的脚下\n茫茫黄昏　华美而无上\n在秋天的悲哀中成熟",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "火焰的顶端\n落日的脚下\n茫茫黄昏　华美而无上\n在秋天的悲哀中成熟"
+  },
+  {
+    "title": "粮食两节",
+    "slug": "粮食两节",
+    "path": "03-short-poems-1987-1989/粮食两节.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "1.\n在人类的遭遇中\n在远方亲人的手中\n为什么有这样的简朴",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "1.\n在人类的遭遇中\n在远方亲人的手中\n为什么有这样的简朴"
+  },
+  {
+    "title": "给伦敦",
+    "slug": "给伦敦",
+    "path": "03-short-poems-1987-1989/给伦敦.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "马克思、维特根施坦\n两个人，来到伦敦\n一前一后，来到这个大雾弥漫的\n岛国之城",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "马克思、维特根施坦\n两个人，来到伦敦\n一前一后，来到这个大雾弥漫的\n岛国之城"
+  },
+  {
+    "title": "给安庆",
+    "slug": "给安庆",
+    "path": "03-short-poems-1987-1989/给安庆.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "五岁的黎明\n五岁的马\n你面朝江水\n坐下",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "五岁的黎明\n五岁的马\n你面朝江水\n坐下"
+  },
+  {
+    "title": "绿松石",
+    "slug": "绿松石",
+    "path": "03-short-poems-1987-1989/绿松石.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "这时候　绿色小公主\n来到我的身边。\n青海湖，绿色小公主\n你曾是谁的故乡",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "这时候　绿色小公主\n来到我的身边。\n青海湖，绿色小公主\n你曾是谁的故乡"
+  },
+  {
+    "title": "美丽白杨树",
+    "slug": "美丽白杨树",
+    "path": "03-short-poems-1987-1989/美丽白杨树.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "灵魂像山腰或者山顶四只恼人的蹄子\n移动步履，幻变无常的人类\n可还记得白色的杨树　平静而美丽\n可还记得　一阵雷声　自远方滚来",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "灵魂像山腰或者山顶四只恼人的蹄子\n移动步履，幻变无常的人类\n可还记得白色的杨树　平静而美丽\n可还记得　一阵雷声　自远方滚来"
+  },
+  {
+    "title": "花儿为什么这样红",
+    "slug": "花儿为什么这样红",
+    "path": "03-short-poems-1987-1989/花儿为什么这样红.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "透过泪水看见马车上堆满了鲜花。\n豹子和鸟，惊慌地倒下，像一滴泪水\n——透过泪水看见\n马车上堆满了鲜花。",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "透过泪水看见马车上堆满了鲜花。\n豹子和鸟，惊慌地倒下，像一滴泪水\n——透过泪水看见\n马车上堆满了鲜花。"
+  },
+  {
+    "title": "西藏",
+    "slug": "西藏",
+    "path": "03-short-poems-1987-1989/西藏.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "没有任何夜晚能使我沉睡\n没有任何黎明能使我醒来\n一块孤独的石头坐满整个天空\n他说：在这一千年里我只热爱我自己",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "没有任何夜晚能使我沉睡\n没有任何黎明能使我醒来\n一块孤独的石头坐满整个天空\n他说：在这一千年里我只热爱我自己"
+  },
+  {
+    "title": "跳伞塔",
+    "slug": "跳伞塔",
+    "path": "03-short-poems-1987-1989/跳伞塔.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "我在一个北方的寂寞的上午\n一个北方的上午\n思念着一个人\n我是一些诗歌草稿",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我在一个北方的寂寞的上午\n一个北方的上午\n思念着一个人\n我是一些诗歌草稿"
+  },
+  {
+    "title": "远方",
+    "slug": "远方",
+    "path": "03-short-poems-1987-1989/远方.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "遥远的青稞地\n除了青稞　一无所有\n更远的地方　更加孤独\n远方啊　除了遥远　一无所有",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "遥远的青稞地\n除了青稞　一无所有\n更远的地方　更加孤独\n远方啊　除了遥远　一无所有"
+  },
+  {
+    "title": "遥远的路程",
+    "slug": "遥远的路程-1",
+    "path": "03-short-poems-1987-1989/遥远的路程-1.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "雨水中出现了平原上的麦子\n这些雨水中的景色有些陌生\n天已黑了，下着雨\n我坐在水上给你写信",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "雨水中出现了平原上的麦子\n这些雨水中的景色有些陌生\n天已黑了，下着雨\n我坐在水上给你写信"
+  },
+  {
+    "title": "遥远的路程",
+    "slug": "遥远的路程",
+    "path": "03-short-poems-1987-1989/遥远的路程.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "——十四行献给89年初的雪\n我的灯和酒坛上落满灰尘\n而遥远的路程上却干干净净\n我站在元月七日的大雪中，还是四年以前的我",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "——十四行献给89年初的雪\n我的灯和酒坛上落满灰尘\n而遥远的路程上却干干净净\n我站在元月七日的大雪中，还是四年以前的我"
+  },
+  {
+    "title": "酒杯",
+    "slug": "酒杯",
+    "path": "03-short-poems-1987-1989/酒杯.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "酒，石头的牢房囚禁又释放的满天奔腾的闪电\n昨天一夜明亮的闪电使我的杯子又满又空\n看哪！河水带来的泥沙堆起孤独的房屋\n看哪！你的房子小得像一只酒杯",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "酒，石头的牢房囚禁又释放的满天奔腾的闪电\n昨天一夜明亮的闪电使我的杯子又满又空\n看哪！河水带来的泥沙堆起孤独的房屋\n看哪！你的房子小得像一只酒杯"
+  },
+  {
+    "title": "酒杯：情诗一束",
+    "slug": "酒杯情诗一束",
+    "path": "03-short-poems-1987-1989/酒杯情诗一束.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "1.火热的嘴唇\n两万只酒杯从你诞生\n万物的疾病从你诞生\n2.月　亮",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "1.火热的嘴唇\n两万只酒杯从你诞生\n万物的疾病从你诞生\n2.月　亮"
+  },
+  {
+    "title": "重建家园",
+    "slug": "重建家园",
+    "path": "03-short-poems-1987-1989/重建家园.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "在水上　放弃智慧\n停止仰望长空\n为了生存你要流下屈辱的泪水\n来浇灌家园",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "在水上　放弃智慧\n停止仰望长空\n为了生存你要流下屈辱的泪水\n来浇灌家园"
+  },
+  {
+    "title": "野花",
+    "slug": "野花",
+    "path": "03-short-poems-1987-1989/野花.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "和平与情歌\n的村庄\n女儿的女儿\n野花",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "和平与情歌\n的村庄\n女儿的女儿\n野花"
+  },
+  {
+    "title": "野鸽子",
+    "slug": "野鸽子",
+    "path": "03-short-poems-1987-1989/野鸽子.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "当我面朝火光\n野鸽子　在我家门前的细树上\n吐粗黑色的阴影的火焰\n野鸽子",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "当我面朝火光\n野鸽子　在我家门前的细树上\n吐粗黑色的阴影的火焰\n野鸽子"
+  },
+  {
+    "title": "长发飞舞的姑娘",
+    "slug": "长发飞舞的姑娘",
+    "path": "03-short-poems-1987-1989/长发飞舞的姑娘.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "（五月之歌）\n玫瑰谢了，玫瑰谢了\n如早嫁的姐妹漂落，漂落四方\n我红色的姐姐，我白色的妹妹",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "（五月之歌）\n玫瑰谢了，玫瑰谢了\n如早嫁的姐妹漂落，漂落四方\n我红色的姐姐，我白色的妹妹"
+  },
+  {
+    "title": "雨",
+    "slug": "雨",
+    "path": "03-short-poems-1987-1989/雨.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "又弱又小的麦子!\n然后在神像前把火把熄灭\n我们沉默地靠在一起\n你是一个仙女，住在庄园的深处",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "又弱又小的麦子!\n然后在神像前把火把熄灭\n我们沉默地靠在一起\n你是一个仙女，住在庄园的深处"
+  },
+  {
+    "title": "雨鞋",
+    "slug": "雨鞋",
+    "path": "03-short-poems-1987-1989/雨鞋.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "我自己被塞进像框，挂在故乡\n那粘土和石头的房子，房子里用木生火\n潮湿的木条上冒着烟\n我把撕碎的诗稿和被雨打湿",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "我自己被塞进像框，挂在故乡\n那粘土和石头的房子，房子里用木生火\n潮湿的木条上冒着烟\n我把撕碎的诗稿和被雨打湿"
+  },
+  {
+    "title": "雪",
+    "slug": "雪",
+    "path": "03-short-poems-1987-1989/雪.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "雪山，我的草原因你的乳房而明亮\n冰冷而灿烂\n我的病已好\n雪的日子　我只想到雪中去死",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "雪山，我的草原因你的乳房而明亮\n冰冷而灿烂\n我的病已好\n雪的日子　我只想到雪中去死"
+  },
+  {
+    "title": "青海湖",
+    "slug": "青海湖",
+    "path": "03-short-poems-1987-1989/青海湖.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "这骄傲的酒杯\n为谁举起\n荒凉的高原\n天空上的鸟和盐　为谁举起",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "这骄傲的酒杯\n为谁举起\n荒凉的高原\n天空上的鸟和盐　为谁举起"
+  },
+  {
+    "title": "面朝大海，春暖花开",
+    "slug": "面朝大海春暖花开",
+    "path": "03-short-poems-1987-1989/面朝大海春暖花开.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "从明天起，做一个幸福的人\n喂马，劈柴，周游世界\n从明天起，关心粮食和蔬菜\n我有一所房子，面朝大海，春暖花开",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "从明天起，做一个幸福的人\n喂马，劈柴，周游世界\n从明天起，关心粮食和蔬菜\n我有一所房子，面朝大海，春暖花开"
+  },
+  {
+    "title": "马、火、灰——鼎",
+    "slug": "马火灰——鼎",
+    "path": "03-short-poems-1987-1989/马火灰——鼎.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "有了安慰，马飞来了，甚至有了盐，有了死亡\n有了安慰，有了爪子，有了牙，甚至有了故乡，不缺乏春天\n仍然缺少一具多么坚强的骷髅牢牢锁住我　多么牢固\n我的舞蹈举起一片消费人血的灯",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "有了安慰，马飞来了，甚至有了盐，有了死亡\n有了安慰，有了爪子，有了牙，甚至有了故乡，不缺乏春天\n仍然缺少一具多么坚强的骷髅牢牢锁住我　多么牢固\n我的舞蹈举起一片消费人血的灯"
+  },
+  {
+    "title": "马雅可夫斯基自传",
+    "slug": "马雅可夫斯基自传",
+    "path": "03-short-poems-1987-1989/马雅可夫斯基自传.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "微微发紫的光线里一个胎儿、一朵向日葵\n诗人在小镇一角度完一生\n在那家残破的灯下\n旅馆破旧",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "微微发紫的光线里一个胎儿、一朵向日葵\n诗人在小镇一角度完一生\n在那家残破的灯下\n旅馆破旧"
+  },
+  {
+    "title": "麦地　或遥远",
+    "slug": "麦地-或遥远",
+    "path": "03-short-poems-1987-1989/麦地-或遥远.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "发自内心的困扰　饱含麦粒的麦地\n内心暴烈\n麦粒在手上缠绕\n麦粒　大地的裸露",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "发自内心的困扰　饱含麦粒的麦地\n内心暴烈\n麦粒在手上缠绕\n麦粒　大地的裸露"
+  },
+  {
+    "title": "麦地与诗人",
+    "slug": "麦地与诗人",
+    "path": "03-short-poems-1987-1989/麦地与诗人.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "询　问\n在青麦地上跑着\n雪和太阳的光芒\n诗人，你无力偿还",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "询　问\n在青麦地上跑着\n雪和太阳的光芒\n诗人，你无力偿还"
+  },
+  {
+    "title": "黎明和黄昏",
+    "slug": "黎明和黄昏",
+    "path": "03-short-poems-1987-1989/黎明和黄昏.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "——两次嫁妆，两位姐妹\n黄昏自我断送\n夜色美好\n夜色在山上越长越大",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "——两次嫁妆，两位姐妹\n黄昏自我断送\n夜色美好\n夜色在山上越长越大"
+  },
+  {
+    "title": "黎明：一首小诗",
+    "slug": "黎明一首小诗",
+    "path": "03-short-poems-1987-1989/黎明一首小诗.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "黎明\n我挣脱\n一只陶罐\n或大地的边缘",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "黎明\n我挣脱\n一只陶罐\n或大地的边缘"
+  },
+  {
+    "title": "黑夜的献诗",
+    "slug": "黑夜的献诗",
+    "path": "03-short-poems-1987-1989/黑夜的献诗.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "献给黑夜的女儿\n黑夜从大地上升起\n遮住了光明的天空\n丰收后荒凉的大地",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "献给黑夜的女儿\n黑夜从大地上升起\n遮住了光明的天空\n丰收后荒凉的大地"
+  },
+  {
+    "title": "黑翅膀",
+    "slug": "黑翅膀",
+    "path": "03-short-poems-1987-1989/黑翅膀.md",
+    "section": "第三编　短诗（1987—1989）",
+    "section_order": 3,
+    "preview": "今夜在日喀则，上半夜下起了小雨\n只有一串北方的星，七位姐妹\n紧咬雪白的牙齿，看见了我这一对黑翅膀\n北方的七星　照不亮世界",
+    "date": "",
+    "image": "assets/images/image-haizi.jpg",
+    "url": "",
+    "content_preview": "今夜在日喀则，上半夜下起了小雨\n只有一串北方的星，七位姐妹\n紧咬雪白的牙齿，看见了我这一对黑翅膀\n北方的七星　照不亮世界"
+  }
 ];
+
+// 导出数据
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = poemsData;
+} else if (typeof window !== 'undefined') {
+    window.poemsData = poemsData;
+}

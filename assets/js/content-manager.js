@@ -1,4 +1,4 @@
-// Content Management System for Haizi Poetry
+// 海子诗歌内容管理系统
 class ContentManager {
     constructor() {
         this.poems = [];
@@ -6,121 +6,39 @@ class ContentManager {
         this.poemsPerPage = 6;
     }
 
-    // Parse markdown front matter
-    parseMarkdown(content) {
-        const frontMatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
-        const match = content.match(frontMatterRegex);
-        
-        if (!match) {
-            throw new Error('Invalid markdown format');
-        }
-
-        const frontMatter = this.parseFrontMatter(match[1]);
-        const body = match[2].trim();
-        
-        return {
-            ...frontMatter,
-            content: body
-        };
-    }
-
-    // Parse YAML front matter
-    parseFrontMatter(yamlText) {
-        const result = {};
-        const lines = yamlText.split('\n');
-        
-        for (let line of lines) {
-            line = line.trim();
-            if (!line || line.startsWith('#')) continue;
-            
-            const colonIndex = line.indexOf(':');
-            if (colonIndex === -1) continue;
-            
-            const key = line.substring(0, colonIndex).trim();
-            let value = line.substring(colonIndex + 1).trim();
-            
-            // Remove quotes
-            if ((value.startsWith('"') && value.endsWith('"')) || 
-                (value.startsWith("'") && value.endsWith("'"))) {
-                value = value.slice(1, -1);
-            }
-            
-            // Handle multiline values (preview)
-            if (value === '|') {
-                const nextLines = [];
-                let i = lines.indexOf(line) + 1;
-                while (i < lines.length && lines[i].startsWith('  ')) {
-                    nextLines.push(lines[i].substring(2));
-                    i++;
-                }
-                value = nextLines.join('\n');
-            }
-            
-            // Convert numeric values
-            if (!isNaN(value) && value !== '') {
-                value = parseInt(value);
-            }
-            
-            result[key] = value;
-        }
-        
-        return result;
-    }
-
-    // Load poems from embedded data
+    // 加载诗歌数据
     async loadPoems() {
-        // 检查是否有外部诗歌数据
+        // 从 poems-data.js 加载诗歌数据
         if (typeof poemsData !== 'undefined') {
             this.poems = [...poemsData];
         } else {
-            // 回退方案：尝试从 content 目录加载
-            await this.loadPoemsFromFiles();
+            throw new Error('诗歌数据未加载，请确保 poems-data.js 已正确引入');
         }
         
-        // Sort by order
-        this.poems.sort((a, b) => (a.order || 0) - (b.order || 0));
+        // 按章节顺序和标题排序
+        this.poems.sort((a, b) => {
+            if (a.section_order !== b.section_order) {
+                return a.section_order - b.section_order;
+            }
+            return a.title.localeCompare(b.title, 'zh-CN');
+        });
         
         return this.poems;
     }
 
-    // 从文件加载的回退方案
-    async loadPoemsFromFiles() {
-        const poemFiles = [
-            'facing-sea', 'spring', 'answer', 'diary', 
-            'wheat', 'village', 'horse', 'autumn', 
-            'motherland', 'night-poem', 'september', 'asian-copper',
-            'rebuild-home', 'four-sisters', 'history'
-        ];
-        
-        this.poems = [];
-        
-        for (const file of poemFiles) {
-            try {
-                const response = await fetch(`content/poems/${file}.md`);
-                if (response.ok) {
-                    const content = await response.text();
-                    const poem = this.parseMarkdown(content);
-                    this.poems.push(poem);
-                }
-            } catch (error) {
-                console.error(`Error loading ${file}.md:`, error);
-            }
-        }
-    }
-
-    // Get poems for current page
+    // 获取当前页的诗歌
     getCurrentPagePoems() {
         const startIndex = (this.currentPage - 1) * this.poemsPerPage;
         const endIndex = startIndex + this.poemsPerPage;
         return this.poems.slice(startIndex, endIndex);
     }
 
-    // Get total pages
+    // 获取总页数
     getTotalPages() {
         return Math.ceil(this.poems.length / this.poemsPerPage);
     }
 
-    // Set current page
+    // 设置当前页
     setCurrentPage(page) {
         const totalPages = this.getTotalPages();
         if (page >= 1 && page <= totalPages) {
@@ -130,20 +48,76 @@ class ContentManager {
         return false;
     }
 
-    // Get poem by slug
+    // 根据slug获取诗歌
     getPoemBySlug(slug) {
         return this.poems.find(poem => poem.slug === slug);
     }
 
-    // Get next/previous poem for navigation
+    // 根据路径获取诗歌
+    getPoemByPath(path) {
+        return this.poems.find(poem => poem.path === path);
+    }
+
+    // 获取相邻诗歌（用于导航）
     getAdjacentPoems(slug) {
         const currentIndex = this.poems.findIndex(poem => poem.slug === slug);
+        if (currentIndex === -1) {
+            return { previous: null, next: null };
+        }
+        
         return {
             previous: currentIndex > 0 ? this.poems[currentIndex - 1] : null,
             next: currentIndex < this.poems.length - 1 ? this.poems[currentIndex + 1] : null
         };
     }
+
+    // 按章节分组获取诗歌
+    getPoemsBySection() {
+        const sections = {};
+        this.poems.forEach(poem => {
+            const sectionName = poem.section;
+            if (!sections[sectionName]) {
+                sections[sectionName] = [];
+            }
+            sections[sectionName].push(poem);
+        });
+        return sections;
+    }
+
+    // 搜索诗歌
+    searchPoems(query) {
+        if (!query.trim()) {
+            return this.poems;
+        }
+        
+        const lowerQuery = query.toLowerCase();
+        return this.poems.filter(poem => 
+            poem.title.toLowerCase().includes(lowerQuery) ||
+            poem.preview.toLowerCase().includes(lowerQuery) ||
+            poem.section.toLowerCase().includes(lowerQuery)
+        );
+    }
+
+    // 生成诗歌URL
+    getPoemUrl(poem) {
+        return `poem.html?poem=${encodeURIComponent(poem.path)}`;
+    }
+
+    // 获取统计信息
+    getStats() {
+        const sections = this.getPoemsBySection();
+        const stats = {
+            total: this.poems.length,
+            sections: {}
+        };
+        
+        Object.keys(sections).forEach(sectionName => {
+            stats.sections[sectionName] = sections[sectionName].length;
+        });
+        
+        return stats;
+    }
 }
 
-// Initialize content manager
+// 初始化内容管理器
 const contentManager = new ContentManager();

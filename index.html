@@ -278,7 +278,7 @@
                 const article = document.createElement('article');
                 const animationClass = this.isFirstLoad ? 'card-appear' : '';
                 article.className = `poem-card ${animationClass} glass-bg rounded-xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer group border border-white/20`;
-                article.onclick = () => window.location.href = `poems/${poem.slug}.html`;
+                article.onclick = () => window.location.href = contentManager.getPoemUrl(poem);
 
                 article.innerHTML = `
                     <div class="relative overflow-hidden">
