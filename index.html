@@ -70,6 +70,23 @@
             }
         }
 
+        .fade-bottom {
+            -webkit-mask-image: linear-gradient(to bottom, 
+                rgba(0,0,0,1) 0%, 
+                rgba(0,0,0,1) 60%, 
+                rgba(0,0,0,0.8) 75%, 
+                rgba(0,0,0,0.5) 85%, 
+                rgba(0,0,0,0.2) 95%, 
+                rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to bottom, 
+                rgba(0,0,0,1) 0%, 
+                rgba(0,0,0,1) 60%, 
+                rgba(0,0,0,0.8) 75%, 
+                rgba(0,0,0,0.5) 85%, 
+                rgba(0,0,0,0.2) 95%, 
+                rgba(0,0,0,0) 100%);
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -127,7 +144,7 @@
     <header class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
         <!-- 海子照片背景 -->
         <div class="absolute inset-0">
-            <img src="images/image-haizi.jpg" alt="海子" class="w-full h-full object-cover opacity-30 grayscale">
+            <img src="images/image-haizi.jpg" alt="海子" class="w-full h-full object-cover opacity-30 grayscale fade-bottom">
             <div class="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-gray-50/30 to-gray-50/50"></div>
         </div>
         
