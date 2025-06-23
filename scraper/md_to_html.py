@@ -5,11 +5,11 @@ def convert_md_to_html():
     """将markdown文件转换为HTML"""
     
     # 读取markdown文件
-    with open('haizi_poems.md', 'r', encoding='utf-8') as f:
+    with open('../assets/content/haizi_poems.md', 'r', encoding='utf-8') as f:
         md_content = f.read()
     
     # 读取HTML模板
-    with open('template.html', 'r', encoding='utf-8') as f:
+    with open('templates/template.html', 'r', encoding='utf-8') as f:
         template = f.read()
     
     # 预处理markdown内容，添加CSS类
@@ -26,10 +26,10 @@ def convert_md_to_html():
     final_html = template.replace('{{CONTENT}}', html_content)
     
     # 保存最终HTML文件
-    with open('haizi_poems.html', 'w', encoding='utf-8') as f:
+    with open('../assets/content/haizi_poems.html', 'w', encoding='utf-8') as f:
         f.write(final_html)
     
-    print("HTML文件已生成: haizi_poems.html")
+    print("HTML文件已生成: ../assets/content/haizi_poems.html")
 
 def preprocess_markdown(content):
     """预处理markdown内容"""

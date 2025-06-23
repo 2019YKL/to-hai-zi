@@ -8,9 +8,6 @@ scraper/
 ├── md_to_html.py            # Markdown转HTML转换器
 ├── templates/
 │   └── template.html        # HTML模板文件
-├── output/
-│   ├── haizi_poems.md       # 爬取的诗歌（Markdown格式）
-│   └── haizi_poems.html     # 生成的HTML页面
 └── README.md               # 本说明文件
 ```
 
@@ -35,6 +32,7 @@ python md_to_html.py
 - **数据来源**: https://haizi.huhaitai.com/
 - **爬取内容**: 海子诗集，按时间分类
 - **输出格式**: Markdown + HTML
+- **输出位置**: ../assets/content/ 目录
 - **样式设计**: 适配中文诗歌阅读的优雅样式
 - **响应式**: 支持移动端访问
 

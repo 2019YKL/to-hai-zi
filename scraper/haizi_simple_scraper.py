@@ -81,7 +81,7 @@ def main():
     print(f"找到 {len(poem_links)} 个链接")
     
     # 创建markdown文件
-    with open('haizi_poems.md', 'w', encoding='utf-8') as f:
+    with open('../assets/content/haizi_poems.md', 'w', encoding='utf-8') as f:
         f.write("# 海子诗集\n\n")
         f.write("数据来源: https://haizi.huhaitai.com/\n\n")
         
@@ -127,7 +127,7 @@ def main():
         
         f.write(f"\n\n*共收录 {poem_count} 首诗歌*\n")
     
-    print(f"完成！已保存 {poem_count} 首诗歌到 haizi_poems.md")
+    print(f"完成！已保存 {poem_count} 首诗歌到 ../assets/content/haizi_poems.md")
 
 if __name__ == "__main__":
     main()
