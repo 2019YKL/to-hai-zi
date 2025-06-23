@@ -48,6 +48,7 @@ def generate_poems_data():
                     'section': section_info['name'],
                     'section_order': section_info['order'],
                     'preview': poem_info['preview'],
+                    'full_content': poem_info['full_content'],
                     'date': poem_info.get('date', ''),
                     'image': 'assets/images/image-haizi.jpg',  # 统一使用海子照片
                     'url': poem_info.get('original_url', ''),
@@ -66,10 +67,11 @@ def generate_poems_data():
     return poems_data
 
 def parse_poem_content(content):
-    """解析诗歌内容，提取标题、预览等信息"""
+    """解析诗歌内容，提取标题、完整内容等信息"""
     lines = content.split('\n')
     
     title = '未知诗歌'
+    poem_lines = []
     preview_lines = []
     date = ''
     original_url = ''
@@ -97,27 +99,31 @@ def parse_poem_content(content):
                 original_url = line.split(':', 1)[1].strip()
             continue
         
-        # 收集正文内容作为预览
+        # 收集正文内容
         if content_started and not in_meta_section and line:
             # 检查是否是日期格式（YYYY.MM.DD）
             if re.match(r'^\d{4}\.\d{1,2}(\.\d{1,2})?$', line):
                 date = line
                 continue
                 
-            preview_lines.append(line)
+            poem_lines.append(line)
             
-            # 只取前4行作为预览
-            if len(preview_lines) >= 4:
-                break
+            # 前4行作为预览
+            if len(preview_lines) < 4:
+                preview_lines.append(line)
     
     # 生成预览文本
-    preview = '\n'.join(preview_lines[:4])
-    if len(preview_lines) > 4:
+    preview = '\n'.join(preview_lines)
+    if len(poem_lines) > 4:
         preview += '...'
+    
+    # 完整内容
+    full_content = '\n'.join(poem_lines)
     
     return {
         'title': title,
         'preview': preview,
+        'full_content': full_content,
         'date': date,
         'original_url': original_url
     }

@@ -173,8 +173,6 @@
     <script>
         class PoemRenderer {
             constructor() {
-                this.poems = [];
-                this.currentPoemIndex = -1;
                 this.init();
             }
 
@@ -188,9 +186,6 @@
                     return;
                 }
 
-                // 加载诗歌列表
-                await this.loadPoemsList();
-                
                 // 加载指定诗歌
                 await this.loadPoem(poemPath);
             }
@@ -211,17 +206,29 @@
 
             async loadPoem(poemPath) {
                 try {
+                    // 从诗歌数据中查找对应的诗歌
+                    const poem = poemsData.find(p => p.path === poemPath);
+                    if (!poem) {
+                        throw new Error('找不到指定的诗歌');
+                    }
+
                     // 构建完整的文件路径
                     const fullPath = poemPath.startsWith('assets/') ? poemPath : `assets/content/poems/${poemPath}`;
                     
-                    const response = await fetch(fullPath);
-                    if (!response.ok) {
-                        throw new Error(`HTTP ${response.status}`);
+                    try {
+                        const response = await fetch(fullPath);
+                        if (!response.ok) {
+                            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                        }
+                        
+                        const markdown = await response.text();
+                        this.renderPoem(markdown, poemPath, poem);
+                    } catch (fetchError) {
+                        // 如果无法加载MD文件，使用诗歌数据中的信息创建内容
+                        console.warn('无法加载MD文件，使用预览数据:', fetchError);
+                        this.renderPoemFromData(poem);
                     }
                     
-                    const markdown = await response.text();
-                    this.renderPoem(markdown, poemPath);
-                    this.currentPoemIndex = this.poems.indexOf(fullPath);
                     this.updateNavigation();
                     
                 } catch (error) {
@@ -230,12 +237,12 @@
                 }
             }
 
-            renderPoem(markdown, poemPath) {
+            renderPoem(markdown, poemPath, poemData) {
                 // 解析markdown
                 const lines = markdown.split('\n');
                 
                 // 提取标题（第一行的#标题）
-                let title = '未知诗歌';
+                let title = poemData ? poemData.title : '未知诗歌';
                 let content = '';
                 let meta = {};
                 
@@ -273,19 +280,52 @@
                     }
                 }
                 
+                this.displayPoem(title, content.trim(), meta, poemData);
+            }
+
+            renderPoemFromData(poemData) {
+                // 使用诗歌数据渲染（fallback方案）
+                const title = poemData.title;
+                const content = poemData.full_content || poemData.preview || '暂无内容';
+                const meta = {};
+                
+                if (poemData.date) {
+                    meta['创作时间'] = poemData.date;
+                }
+                
+                if (poemData.url) {
+                    meta['原文链接'] = poemData.url;
+                }
+                
+                this.displayPoem(title, content, meta, poemData);
+            }
+
+            displayPoem(title, content, meta, poemData) {
                 // 更新页面内容
                 document.getElementById('page-title').textContent = `${title} - 海子诗歌集`;
                 document.getElementById('poem-title').textContent = title;
-                document.getElementById('poem-content').textContent = content.trim();
+                document.getElementById('poem-content').textContent = content;
                 
                 // 更新元信息
                 const infoContainer = document.getElementById('poem-info');
                 infoContainer.innerHTML = '';
                 
+                if (poemData && poemData.section) {
+                    const sectionDiv = document.createElement('div');
+                    sectionDiv.innerHTML = `<strong>章节:</strong> ${poemData.section}`;
+                    infoContainer.appendChild(sectionDiv);
+                }
+                
                 Object.entries(meta).forEach(([key, value]) => {
-                    const div = document.createElement('div');
-                    div.innerHTML = `<strong>${key}:</strong> ${value}`;
-                    infoContainer.appendChild(div);
+                    if (key !== '章节') { // 避免重复显示章节
+                        const div = document.createElement('div');
+                        if (key === '原文链接' && value.startsWith('http')) {
+                            div.innerHTML = `<strong>${key}:</strong> <a href="${value}" target="_blank" class="text-blue-600 hover:text-blue-800">${value}</a>`;
+                        } else {
+                            div.innerHTML = `<strong>${key}:</strong> ${value}`;
+                        }
+                        infoContainer.appendChild(div);
+                    }
                 });
                 
                 // 显示内容，隐藏加载状态
@@ -297,18 +337,26 @@
                 const prevBtn = document.getElementById('prev-poem');
                 const nextBtn = document.getElementById('next-poem');
                 
-                prevBtn.disabled = this.currentPoemIndex <= 0;
-                nextBtn.disabled = this.currentPoemIndex >= this.poems.length - 1;
+                // 使用poemsData而不是this.poems来确定导航
+                const currentIndex = this.getCurrentPoemIndex();
                 
-                prevBtn.onclick = () => this.navigateToPoem(this.currentPoemIndex - 1);
-                nextBtn.onclick = () => this.navigateToPoem(this.currentPoemIndex + 1);
+                prevBtn.disabled = currentIndex <= 0;
+                nextBtn.disabled = currentIndex >= poemsData.length - 1;
+                
+                prevBtn.onclick = () => this.navigateToPoem(currentIndex - 1);
+                nextBtn.onclick = () => this.navigateToPoem(currentIndex + 1);
+            }
+
+            getCurrentPoemIndex() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const currentPath = urlParams.get('poem');
+                return poemsData.findIndex(poem => poem.path === currentPath);
             }
 
             navigateToPoem(index) {
-                if (index >= 0 && index < this.poems.length) {
-                    const poemPath = this.poems[index];
-                    const relativePath = poemPath.replace('assets/content/poems/', '');
-                    window.location.href = `poem.html?poem=${encodeURIComponent(relativePath)}`;
+                if (index >= 0 && index < poemsData.length) {
+                    const poem = poemsData[index];
+                    window.location.href = `poem.html?poem=${encodeURIComponent(poem.path)}`;
                 }
             }
 
