@@ -270,7 +270,7 @@
 
             createPoemCard(poem, index) {
                 const article = document.createElement('article');
-                article.className = `poem-card fade-in glass-bg rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer group border border-white/20`;
+                article.className = `poem-card fade-in glass-bg rounded-xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer group border border-white/20`;
                 article.onclick = () => window.location.href = `poems/${poem.slug}.html`;
 
                 article.innerHTML = `
@@ -301,7 +301,7 @@
                         <!-- 内容区域 -->
                         <div class="p-6">
                             <!-- 诗歌预览 -->
-                            <div class="poem-preview rounded-2xl p-6 mb-4">
+                            <div class="poem-preview rounded-lg p-6 mb-4">
                                 <div class="text-gray-700 leading-relaxed poem-font text-lg font-light whitespace-pre-line">
                                     ${poem.preview}
                                 </div>
