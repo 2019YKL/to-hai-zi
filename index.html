@@ -191,14 +191,14 @@
         </div>
 
         <!-- 诗歌容器 -->
-        <div id="poems-container" class="max-w-6xl mx-auto px-8 py-32 hidden">
+        <div id="poems-container" class="max-w-6xl mx-auto px-8 py-16 hidden">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5 auto-rows-fr">
                 <!-- 诗歌卡片将通过 JavaScript 动态生成 -->
             </div>
         </div>
 
         <!-- 分页控件 -->
-        <div id="pagination" class="flex justify-center items-center space-x-4 pb-32 hidden">
+        <div id="pagination" class="flex justify-center items-center space-x-4 pb-16 hidden">
             <button id="prev-btn" class="flex items-center px-6 py-3 bg-white/80 backdrop-blur text-gray-700 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed font-medium">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -219,7 +219,7 @@
         </div>
 
         <!-- 页面信息 -->
-        <div id="page-info" class="text-center pb-16 hidden">
+        <div id="page-info" class="text-center pb-8 hidden">
             <p id="current-info" class="text-gray-500 font-light mb-4"></p>
             <!-- 快速跳转 -->
             <div class="flex justify-center items-center space-x-3">
@@ -329,16 +329,16 @@
                         </div>
                         
                         <!-- 内容区域 - 使用flex-1使其填充剩余空间 -->
-                        <div class="p-6 flex-1 flex flex-col">
+                        <div class="p-5 flex-1 flex flex-col">
                             <!-- 诗歌预览 - 设置固定高度区域 -->
-                            <div class="poem-preview rounded-lg p-6 mb-4 flex-1 flex items-start">
+                            <div class="poem-preview rounded-lg p-4 mb-3 flex-1 flex items-start">
                                 <div class="text-gray-700 leading-relaxed poem-font text-lg font-light whitespace-pre-line overflow-hidden">
-                                    ${this.truncatePreview(poem.preview, 120)}
+                                    ${this.getFirstFourLines(poem.preview)}
                                 </div>
                             </div>
                             
                             <!-- 底部信息 - 固定在底部 -->
-                            <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-100">
+                            <div class="flex justify-between items-center mt-auto pt-2 border-t border-gray-100">
                                 <div class="text-sm text-gray-500">
                                     ${poem.date || '海子'}
                                 </div>
@@ -356,21 +356,12 @@
                 return article;
             }
 
-            truncatePreview(text, maxLength) {
+            getFirstFourLines(text) {
                 if (!text) return '';
-                if (text.length <= maxLength) return text;
                 
-                // 截断到最近的句号或换行符
-                const truncated = text.substring(0, maxLength);
-                const lastPeriod = truncated.lastIndexOf('。');
-                const lastNewline = truncated.lastIndexOf('\n');
-                
-                const cutPoint = Math.max(lastPeriod, lastNewline);
-                if (cutPoint > maxLength * 0.7) {
-                    return text.substring(0, cutPoint + 1);
-                }
-                
-                return truncated + '...';
+                // 按换行符分割，取前四行
+                const lines = text.split('\n').filter(line => line.trim());
+                return lines.slice(0, 4).join('\n');
             }
 
             updatePagination() {
