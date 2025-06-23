@@ -315,8 +315,8 @@
                             <!-- 标题区域 -->
                             <div class="absolute inset-0 flex items-center justify-center text-center text-white">
                                 <div>
-                                    <h3 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight poem-font drop-shadow-2xl">
-                                        ${poem.title}
+                                    <h3 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight poem-font drop-shadow-2xl" title="${poem.title}">
+                                        ${this.formatTitle(poem.title)}
                                     </h3>
                                     
                                     <div class="flex justify-center mb-4">
@@ -362,6 +362,15 @@
                 // 按换行符分割，取前四行
                 const lines = text.split('\n').filter(line => line.trim());
                 return lines.slice(0, 4).join('\n');
+            }
+
+            formatTitle(title) {
+                if (!title || title.length <= 6) return title;
+                
+                // 如果标题超过6个字，在第4个字后插入换行
+                const firstPart = title.substring(0, 4);
+                const secondPart = title.substring(4);
+                return `${firstPart}<br>${secondPart}`;
             }
 
             updatePagination() {
