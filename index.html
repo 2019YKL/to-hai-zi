@@ -198,45 +198,48 @@
         </div>
 
         <!-- 分页控件 -->
-        <div id="pagination" class="flex justify-center items-center space-x-4 pb-16 hidden">
-            <button id="prev-btn" class="flex items-center px-6 py-3 bg-white/80 backdrop-blur text-gray-700 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed font-medium">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-                上一页
-            </button>
-            
-            <div id="page-numbers" class="flex space-x-2">
-                <!-- 页码按钮将动态生成 -->
+        <div id="pagination" class="flex flex-col items-center space-y-4 pb-12 hidden">
+            <!-- 主要分页控件 -->
+            <div class="flex justify-center items-center space-x-4">
+                <button id="prev-btn" class="flex items-center px-6 py-3 bg-white/80 backdrop-blur text-gray-700 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed font-medium">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    上一页
+                </button>
+                
+                <div id="page-numbers" class="flex space-x-2">
+                    <!-- 页码按钮将动态生成 -->
+                </div>
+                
+                <button id="next-btn" class="flex items-center px-6 py-3 bg-white/80 backdrop-blur text-gray-700 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed font-medium">
+                    下一页
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
             </div>
             
-            <button id="next-btn" class="flex items-center px-6 py-3 bg-white/80 backdrop-blur text-gray-700 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed font-medium">
-                下一页
-                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- 页面信息 -->
-        <div id="page-info" class="text-center pb-8 hidden">
-            <p id="current-info" class="text-gray-500 font-light mb-4"></p>
-            <!-- 快速跳转 -->
-            <div class="flex justify-center items-center space-x-3">
-                <span class="text-sm text-gray-400">跳转至</span>
-                <input 
-                    type="number" 
-                    id="page-jump-input" 
-                    class="w-16 px-2 py-1 text-center text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent bg-white/80 backdrop-blur"
-                    min="1"
-                    placeholder="页码"
-                >
-                <button 
-                    id="page-jump-btn"
-                    class="px-4 py-1 text-sm bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400"
-                >
-                    跳转
-                </button>
+            <!-- 页面信息和快速跳转 -->
+            <div class="flex items-center justify-center space-x-6 text-sm">
+                <p id="current-info" class="text-gray-500 font-light"></p>
+                <div class="h-4 w-px bg-gray-300"></div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-gray-400">跳转至</span>
+                    <input 
+                        type="number" 
+                        id="page-jump-input" 
+                        class="w-14 px-2 py-1 text-center text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent bg-white/80 backdrop-blur"
+                        min="1"
+                        placeholder="页"
+                    >
+                    <button 
+                        id="page-jump-btn"
+                        class="px-3 py-1 text-xs bg-gray-800 text-white rounded hover:bg-gray-700 transition-colors focus:outline-none focus:ring-1 focus:ring-gray-400"
+                    >
+                        GO
+                    </button>
+                </div>
             </div>
         </div>
     </main>
@@ -468,7 +471,7 @@
                 const totalPoems = contentManager.poems.length;
                 
                 document.getElementById('current-info').textContent = 
-                    `第 ${currentPage} 页，共 ${totalPages} 页 · 收录 ${totalPoems} 首诗歌`;
+                    `第 ${currentPage} / ${totalPages} 页 · 共 ${totalPoems} 首诗歌`;
                 
                 // 更新快速跳转输入框的max属性
                 const jumpInput = document.getElementById('page-jump-input');
@@ -491,7 +494,6 @@
                 document.getElementById('loading').classList.add('hidden');
                 document.getElementById('poems-container').classList.remove('hidden');
                 document.getElementById('pagination').classList.remove('hidden');
-                document.getElementById('page-info').classList.remove('hidden');
             }
 
             showError() {
