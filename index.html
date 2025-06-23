@@ -192,7 +192,7 @@
 
         <!-- 诗歌容器 -->
         <div id="poems-container" class="max-w-6xl mx-auto px-8 py-32 hidden">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
                 <!-- 诗歌卡片将通过 JavaScript 动态生成 -->
             </div>
         </div>
@@ -300,13 +300,13 @@
             createPoemCard(poem, index) {
                 const article = document.createElement('article');
                 const animationClass = this.isFirstLoad ? 'card-appear' : '';
-                article.className = `poem-card ${animationClass} glass-bg rounded-xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer group border border-white/20`;
+                article.className = `poem-card ${animationClass} glass-bg rounded-xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer group border border-white/20 h-full`;
                 article.onclick = () => window.location.href = contentManager.getPoemUrl(poem);
 
                 article.innerHTML = `
-                    <div class="relative overflow-hidden">
+                    <div class="relative overflow-hidden flex flex-col h-full">
                         <!-- 精美的图片区域 -->
-                        <div class="h-64 relative group-hover:scale-105 transition-transform duration-700 overflow-hidden">
+                        <div class="h-48 relative group-hover:scale-105 transition-transform duration-700 overflow-hidden">
                             <img src="${poem.image}" 
                                  alt="${poem.title}" 
                                  class="w-full h-full object-cover">
@@ -315,31 +315,34 @@
                             <!-- 标题区域 -->
                             <div class="absolute inset-0 flex items-center justify-center text-center text-white">
                                 <div>
-                                    <h3 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight poem-font drop-shadow-2xl">
+                                    <h3 class="text-2xl md:text-3xl font-bold mb-3 tracking-tight poem-font drop-shadow-2xl">
                                         ${poem.title}
                                     </h3>
                                     
-                                    <div class="flex justify-center mb-4">
-                                        <div class="w-16 h-px bg-white/80"></div>
+                                    <div class="flex justify-center mb-3">
+                                        <div class="w-12 h-px bg-white/80"></div>
                                     </div>
                                     
-                                    <p class="text-lg font-medium opacity-90 drop-shadow">${poem.date}</p>
+                                    <p class="text-base font-medium opacity-90 drop-shadow">${poem.section}</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- 内容区域 -->
-                        <div class="p-6">
-                            <!-- 诗歌预览 -->
-                            <div class="poem-preview rounded-lg p-6 mb-4">
-                                <div class="text-gray-700 leading-relaxed poem-font text-lg font-light whitespace-pre-line">
-                                    ${poem.preview}
+                        <!-- 内容区域 - 使用flex-1使其填充剩余空间 -->
+                        <div class="p-5 flex-1 flex flex-col">
+                            <!-- 诗歌预览 - 设置固定高度区域 -->
+                            <div class="poem-preview rounded-lg p-4 mb-4 flex-1 flex items-start">
+                                <div class="text-gray-700 leading-relaxed poem-font text-base font-light whitespace-pre-line overflow-hidden">
+                                    ${this.truncatePreview(poem.preview, 120)}
                                 </div>
                             </div>
                             
-                            <!-- 底部信息 -->
-                            <div class="flex justify-end items-center">
-                                <div class="inline-flex items-center text-gray-700 group-hover:text-gray-900 transition-colors font-medium">
+                            <!-- 底部信息 - 固定在底部 -->
+                            <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-100">
+                                <div class="text-sm text-gray-500">
+                                    ${poem.date || '海子'}
+                                </div>
+                                <div class="inline-flex items-center text-gray-700 group-hover:text-gray-900 transition-colors font-medium text-sm">
                                     <span class="mr-2">阅读全文</span>
                                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -351,6 +354,23 @@
                 `;
 
                 return article;
+            }
+
+            truncatePreview(text, maxLength) {
+                if (!text) return '';
+                if (text.length <= maxLength) return text;
+                
+                // 截断到最近的句号或换行符
+                const truncated = text.substring(0, maxLength);
+                const lastPeriod = truncated.lastIndexOf('。');
+                const lastNewline = truncated.lastIndexOf('\n');
+                
+                const cutPoint = Math.max(lastPeriod, lastNewline);
+                if (cutPoint > maxLength * 0.7) {
+                    return text.substring(0, cutPoint + 1);
+                }
+                
+                return truncated + '...';
             }
 
             updatePagination() {
