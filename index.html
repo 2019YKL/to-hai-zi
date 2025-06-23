@@ -198,23 +198,46 @@
         </div>
 
         <!-- 分页控件 -->
-        <div id="pagination" class="flex justify-center items-center space-x-6 pb-32 hidden">
-            <button id="prev-btn" class="px-8 py-3 bg-white/80 backdrop-blur text-gray-700 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed font-medium">
+        <div id="pagination" class="flex justify-center items-center space-x-4 pb-32 hidden">
+            <button id="prev-btn" class="flex items-center px-6 py-3 bg-white/80 backdrop-blur text-gray-700 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
                 上一页
             </button>
             
-            <div id="page-numbers" class="flex space-x-3">
+            <div id="page-numbers" class="flex space-x-2">
                 <!-- 页码按钮将动态生成 -->
             </div>
             
-            <button id="next-btn" class="px-8 py-3 bg-white/80 backdrop-blur text-gray-700 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed font-medium">
+            <button id="next-btn" class="flex items-center px-6 py-3 bg-white/80 backdrop-blur text-gray-700 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed font-medium">
                 下一页
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
             </button>
         </div>
 
         <!-- 页面信息 -->
         <div id="page-info" class="text-center pb-16 hidden">
-            <p id="current-info" class="text-gray-500 font-light"></p>
+            <p id="current-info" class="text-gray-500 font-light mb-4"></p>
+            <!-- 快速跳转 -->
+            <div class="flex justify-center items-center space-x-3">
+                <span class="text-sm text-gray-400">跳转至</span>
+                <input 
+                    type="number" 
+                    id="page-jump-input" 
+                    class="w-16 px-2 py-1 text-center text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent bg-white/80 backdrop-blur"
+                    min="1"
+                    placeholder="页码"
+                >
+                <button 
+                    id="page-jump-btn"
+                    class="px-4 py-1 text-sm bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400"
+                >
+                    跳转
+                </button>
+            </div>
         </div>
     </main>
 
@@ -338,21 +361,85 @@
                 document.getElementById('prev-btn').disabled = currentPage === 1;
                 document.getElementById('next-btn').disabled = currentPage === totalPages;
                 
-                // 更新页码按钮
+                // 更新页码按钮 - 智能折叠显示
                 const pageNumbers = document.getElementById('page-numbers');
                 pageNumbers.innerHTML = '';
                 
-                for (let i = 1; i <= totalPages; i++) {
+                const createPageButton = (pageNum, isActive = false, isEllipsis = false) => {
                     const button = document.createElement('button');
-                    button.className = `w-12 h-12 rounded-full transition-all duration-300 font-medium ${
-                        i === currentPage 
-                            ? 'bg-gray-900 text-white shadow-lg' 
-                            : 'bg-white/80 backdrop-blur text-gray-700 hover:bg-white hover:shadow-md'
-                    }`;
-                    button.textContent = i;
-                    button.onclick = () => this.goToPage(i);
-                    pageNumbers.appendChild(button);
+                    
+                    if (isEllipsis) {
+                        button.className = 'w-12 h-12 rounded-full text-gray-400 cursor-default font-medium flex items-center justify-center bg-white/40 backdrop-blur';
+                        button.innerHTML = '<span class="text-lg leading-none">···</span>';
+                        button.disabled = true;
+                    } else {
+                        button.className = `w-12 h-12 rounded-full transition-all duration-300 font-medium ${
+                            isActive 
+                                ? 'bg-gray-900 text-white shadow-lg transform scale-110 ring-2 ring-gray-300' 
+                                : 'bg-white/80 backdrop-blur text-gray-700 hover:bg-white hover:shadow-md hover:scale-105 hover:ring-2 hover:ring-gray-200'
+                        }`;
+                        button.textContent = pageNum;
+                        button.onclick = () => this.goToPage(pageNum);
+                    }
+                    
+                    return button;
+                };
+                
+                // 分页逻辑：显示策略
+                const showPages = this.calculatePaginationRange(currentPage, totalPages);
+                
+                showPages.forEach(item => {
+                    if (item.type === 'page') {
+                        pageNumbers.appendChild(createPageButton(item.number, item.number === currentPage));
+                    } else if (item.type === 'ellipsis') {
+                        pageNumbers.appendChild(createPageButton(0, false, true));
+                    }
+                });
+            }
+
+            calculatePaginationRange(currentPage, totalPages) {
+                const result = [];
+                const maxVisible = 9; // 最多显示9个按钮（包括省略号）
+                
+                if (totalPages <= 7) {
+                    // 总页数不多，显示所有页码
+                    for (let i = 1; i <= totalPages; i++) {
+                        result.push({ type: 'page', number: i });
+                    }
+                    return result;
                 }
+                
+                // 总页数较多，需要智能折叠
+                // 策略：始终显示第1页和最后一页，中间显示当前页附近的页码
+                
+                const delta = 1; // 当前页前后各显示1页
+                const left = currentPage - delta;
+                const right = currentPage + delta;
+                
+                // 第一页
+                result.push({ type: 'page', number: 1 });
+                
+                // 判断是否需要在第一页后添加省略号
+                if (left > 2) {
+                    result.push({ type: 'ellipsis' });
+                }
+                
+                // 添加当前页附近的页码
+                for (let i = Math.max(left, 2); i <= Math.min(right, totalPages - 1); i++) {
+                    result.push({ type: 'page', number: i });
+                }
+                
+                // 判断是否需要在最后一页前添加省略号
+                if (right < totalPages - 1) {
+                    result.push({ type: 'ellipsis' });
+                }
+                
+                // 最后一页（如果总页数大于1）
+                if (totalPages > 1) {
+                    result.push({ type: 'page', number: totalPages });
+                }
+                
+                return result;
             }
 
             updatePageInfo() {
@@ -362,6 +449,11 @@
                 
                 document.getElementById('current-info').textContent = 
                     `第 ${currentPage} 页，共 ${totalPages} 页 · 收录 ${totalPoems} 首诗歌`;
+                
+                // 更新快速跳转输入框的max属性
+                const jumpInput = document.getElementById('page-jump-input');
+                jumpInput.setAttribute('max', totalPages);
+                jumpInput.value = '';
             }
 
             goToPage(page) {
@@ -396,8 +488,37 @@
                     this.goToPage(contentManager.currentPage + 1);
                 };
 
+                // 快速跳转功能
+                const jumpInput = document.getElementById('page-jump-input');
+                const jumpBtn = document.getElementById('page-jump-btn');
+                
+                const handlePageJump = () => {
+                    const pageNum = parseInt(jumpInput.value);
+                    const totalPages = contentManager.getTotalPages();
+                    
+                    if (pageNum && pageNum >= 1 && pageNum <= totalPages) {
+                        this.goToPage(pageNum);
+                        jumpInput.value = '';
+                    } else {
+                        jumpInput.classList.add('border-red-400', 'ring-red-400');
+                        setTimeout(() => {
+                            jumpInput.classList.remove('border-red-400', 'ring-red-400');
+                        }, 1000);
+                    }
+                };
+                
+                jumpBtn.onclick = handlePageJump;
+                jumpInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        handlePageJump();
+                    }
+                });
+
                 // 键盘导航
                 document.addEventListener('keydown', (e) => {
+                    // 如果焦点在输入框内，不响应箭头键导航
+                    if (document.activeElement === jumpInput) return;
+                    
                     if (e.key === 'ArrowLeft') {
                         this.goToPage(contentManager.currentPage - 1);
                     } else if (e.key === 'ArrowRight') {
