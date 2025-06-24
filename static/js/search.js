@@ -274,40 +274,39 @@ class PoemSearcher {
         
         this.searchResults.forEach((poem, index) => {
             const highlightedTitle = this.highlightSearchTerm(poem.title, query);
-            const preview = this.getMobileTablePreview(poem, query);
-            const highlightedPreview = this.highlightSearchTerm(preview, query);
             
             // 匹配类型标识
-            let matchType = '';
+            let matchBadges = '';
             if (poem.matchInfo) {
-                if (poem.matchInfo.titleMatch) matchType = '标题';
-                else if (poem.matchInfo.contentMatch) matchType = '内容';
-                else if (poem.matchInfo.sectionMatch) matchType = '章节';
+                if (poem.matchInfo.titleMatch) {
+                    matchBadges += '<span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs mr-1">标题</span>';
+                }
+                if (poem.matchInfo.contentMatch) {
+                    matchBadges += '<span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs mr-1">内容</span>';
+                }
+                if (poem.matchInfo.sectionMatch) {
+                    matchBadges += '<span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs mr-1">章节</span>';
+                }
             }
             
             tableHTML += `
-                <div class="bg-white rounded-lg mb-3 shadow-sm border border-gray-100 overflow-hidden">
+                <div class="rounded-lg mb-3 shadow-sm border border-gray-100 overflow-hidden" style="background-color: #F7FBFC;">
                     <div class="p-4 cursor-pointer hover:bg-gray-50 transition-colors" 
                          onclick="window.location.href='${this.getPoemUrl(poem)}'">
-                        <!-- 标题行 -->
-                        <div class="flex items-start justify-between mb-2">
-                            <div class="flex-1">
-                                <h3 class="font-bold text-gray-900 poem-font text-base leading-tight mb-1">
+                        <div class="flex items-center space-x-3">
+                            <img src="${poem.image}" alt="${poem.title}" class="w-12 h-12 object-cover rounded flex-shrink-0">
+                            <div class="flex-1 min-w-0">
+                                <h3 class="font-bold text-gray-900 poem-font text-base leading-tight mb-2">
                                     ${highlightedTitle}
                                 </h3>
-                                <div class="flex items-center text-xs text-gray-500 space-x-2">
+                                <div class="flex items-center text-sm text-gray-500 mb-2">
                                     <span>${poem.section}</span>
-                                    ${matchType ? `<span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">${matchType}匹配</span>` : ''}
                                 </div>
+                                ${matchBadges ? `<div class="flex flex-wrap gap-1">${matchBadges}</div>` : ''}
                             </div>
-                            <svg class="w-5 h-5 text-gray-400 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-6 h-6 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                             </svg>
-                        </div>
-                        
-                        <!-- 预览内容 -->
-                        <div class="text-sm text-gray-700 poem-font leading-relaxed">
-                            ${highlightedPreview}
                         </div>
                     </div>
                 </div>
@@ -331,35 +330,6 @@ class PoemSearcher {
                 </button>
             </div>
         `;
-    }
-    
-    getMobileTablePreview(poem, query) {
-        if (!query || !query.trim()) {
-            return this.getFirstLines(poem.preview, 2);
-        }
-        
-        // 搜索上下文预览
-        const content = poem.full_content || poem.preview || '';
-        const lines = content.split('\n').filter(line => line.trim());
-        const queryLower = query.toLowerCase();
-        
-        // 找到匹配的行
-        for (let i = 0; i < lines.length; i++) {
-            if (lines[i].toLowerCase().includes(queryLower)) {
-                // 显示匹配行及前后文
-                const start = Math.max(0, i - 1);
-                const end = Math.min(lines.length, i + 2);
-                let result = lines.slice(start, end);
-                
-                if (start > 0) result.unshift('...');
-                if (end < lines.length) result.push('...');
-                
-                return result.join(' ');
-            }
-        }
-        
-        // 没找到匹配就显示开头
-        return this.getFirstLines(poem.preview, 2);
     }
     
     getPoemUrl(poem) {
@@ -387,7 +357,7 @@ class PoemSearcher {
                 </div>
                 
                 <!-- 搜索结果网格 -->
-                <div id="search-results-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5" style="grid-auto-rows: 480px;">
+                <div id="search-results-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5" style="grid-auto-rows: 320px;">
                     <!-- 搜索结果卡片将在这里生成 -->
                 </div>
             </div>
@@ -400,7 +370,7 @@ class PoemSearcher {
             container.innerHTML = `
                 <div class="max-w-6xl mx-auto px-8 py-8">
                     <!-- 搜索结果网格 -->
-                    <div id="search-results-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5" style="grid-auto-rows: 480px;">
+                    <div id="search-results-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5" style="grid-auto-rows: 320px;">
                         <!-- 搜索结果卡片将在这里生成 -->
                     </div>
                 </div>
@@ -422,7 +392,7 @@ class PoemSearcher {
         if (!searchResults) return;
 
         searchResults.classList.remove('hidden');
-        const resultsContainer = searchResults.querySelector('.glass-bg-premium');
+        const resultsContainer = searchResults.querySelector('div');
         if (!resultsContainer) return;
 
         resultsContainer.innerHTML = '';
@@ -482,12 +452,6 @@ class PoemSearcher {
         container.appendChild(noResults);
     }
     
-    
-    getFirstLines(text, count = 2) {
-        if (!text) return '';
-        const lines = text.split('\n').filter(line => line.trim());
-        return lines.slice(0, count).join(' ');
-    }
 
     displayNoResultsInPanel(container) {
         const noResults = document.createElement('div');
@@ -519,7 +483,6 @@ class PoemSearcher {
 
         // 高亮搜索词
         const highlightedTitle = this.highlightSearchTerm(poem.title, query);
-        const highlightedPreview = this.highlightSearchTerm(poem.preview || '', query);
 
         // 添加匹配标识
         let matchBadges = '';
@@ -529,36 +492,35 @@ class PoemSearcher {
         if (poem.matchInfo.contentMatch) {
             matchBadges += '<span class="inline-block bg-green-100 text-green-800 text-xs px-1 py-0.5 rounded mr-1">内容</span>';
         }
+        if (poem.matchInfo.sectionMatch) {
+            matchBadges += '<span class="inline-block bg-purple-100 text-purple-800 text-xs px-1 py-0.5 rounded mr-1">章节</span>';
+        }
 
         item.innerHTML = `
-            <div class="flex items-start space-x-2">
-                <img src="${poem.image}" alt="${poem.title}" class="w-10 h-10 object-cover rounded flex-shrink-0">
+            <div class="flex items-center space-x-3">
+                <img src="${poem.image}" alt="${poem.title}" class="w-12 h-12 object-cover rounded flex-shrink-0">
                 <div class="flex-1 min-w-0">
-                    <h4 class="font-medium text-gray-900 poem-font mb-1 text-sm truncate">
+                    <h4 class="font-medium text-gray-900 poem-font mb-1 text-base">
                         ${highlightedTitle}
                     </h4>
-                    ${matchBadges ? `<div class="mb-1">${matchBadges}</div>` : ''}
-                    <p class="text-xs text-gray-600 poem-font leading-relaxed line-clamp-2">
-                        ${this.getFirstTwoLines(highlightedPreview)}
-                    </p>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-gray-500">${poem.section}</span>
+                        ${matchBadges ? matchBadges : ''}
+                    </div>
                 </div>
+                <svg class="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
             </div>
         `;
 
         return item;
     }
 
-    getFirstTwoLines(text) {
-        if (!text) return '';
-        
-        // 按换行符分割，取前两行
-        const lines = text.split('\n').filter(line => line.trim());
-        return lines.slice(0, 2).join(' ');
-    }
 
     createPoemCard(poem, index, query) {
         const article = document.createElement('article');
-        article.className = `poem-card glass-bg-premium rounded-xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer group h-full`;
+        article.className = `poem-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer group h-full`;
         article.onclick = () => {
             if (typeof contentManager !== 'undefined') {
                 window.location.href = contentManager.getPoemUrl(poem);
@@ -567,11 +529,11 @@ class PoemSearcher {
             }
         };
 
-        // 完全复制首页的卡片HTML结构
+        // 简化的卡片结构，移除预览内容
         article.innerHTML = `
             <div class="relative overflow-hidden flex flex-col h-full">
                 <!-- 精美的图片区域 -->
-                <div class="h-48 relative group-hover:scale-105 transition-transform duration-700 overflow-hidden">
+                <div class="h-64 relative group-hover:scale-102 transition-transform duration-700 overflow-hidden">
                     <img src="${poem.image}" 
                          alt="${poem.title}" 
                          class="w-full h-full object-cover">
@@ -598,23 +560,13 @@ class PoemSearcher {
                     </div>
                 </div>
                 
-                <!-- 内容区域 - 使用flex-1使其填充剩余空间 -->
-                <div class="px-5 pt-3 pb-5 flex-1 flex flex-col min-h-0">
-                    <!-- 诗歌预览 - 设置固定高度区域 -->
-                    <div class="poem-preview rounded-lg p-4 pt-2 mb-3 flex-1 flex items-start overflow-hidden" style="max-height: 180px;">
-                        <div class="text-gray-700 leading-relaxed poem-font text-lg font-light whitespace-pre-line overflow-hidden line-clamp-4">
-                            ${this.highlightSearchTerm(this.getContextualPreview(poem, query), query)}
-                        </div>
-                    </div>
-                    
-                    <!-- 底部信息 - 固定在底部 -->
-                    <div class="flex justify-end items-center mt-auto pt-2 border-t border-gray-100">
-                        <div class="inline-flex items-center text-gray-700 group-hover:text-gray-900 transition-colors font-medium">
-                            <span class="mr-2">阅读全文</span>
-                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </div>
+                <!-- 底部信息区域 -->
+                <div class="px-5 py-4 flex items-center justify-center">
+                    <div class="inline-flex items-center text-gray-700 group-hover:text-gray-900 transition-colors font-medium">
+                        <span class="mr-2">阅读全文</span>
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -652,92 +604,39 @@ class PoemSearcher {
     }
 
     formatTitle(title) {
-        if (!title || title.length <= 6) return title;
+        if (!title) return title;
         
-        // 如果标题超过6个字，在第4个字后插入换行
-        const firstPart = title.substring(0, 4);
-        const secondPart = title.substring(4);
-        return `${firstPart}<br>${secondPart}`;
+        // 如果标题超长（超过12个字符），进行智能缩短
+        if (title.length > 12) {
+            // 寻找合适的分割点（如破折号、空格等）
+            const breakPoints = ['——', '—', '·', ' ', '：', ':'];
+            for (const bp of breakPoints) {
+                const index = title.indexOf(bp);
+                if (index > 2 && index < 8) {
+                    const firstPart = title.substring(0, index);
+                    const secondPart = title.substring(index + bp.length);
+                    // 如果第二部分仍然太长，截断并加省略号
+                    if (secondPart.length > 8) {
+                        return `${firstPart}<br>${secondPart.substring(0, 6)}…`;
+                    }
+                    return `${firstPart}<br>${secondPart}`;
+                }
+            }
+            // 没找到合适分割点，直接截断
+            return title.substring(0, 10) + '…';
+        }
+        
+        // 标题适中长度（7-12字符），简单换行
+        if (title.length > 6) {
+            const firstPart = title.substring(0, 4);
+            const secondPart = title.substring(4);
+            return `${firstPart}<br>${secondPart}`;
+        }
+        
+        // 短标题直接显示
+        return title;
     }
 
-    getContextualPreview(poem, query) {
-        if (!query || !query.trim()) {
-            // 没有搜索词时，显示预览内容
-            return this.getFirstFourLines(poem.preview, query);
-        }
-        
-        // 有搜索词时，优先在完整内容中查找上下文
-        if (poem.full_content && poem.full_content.toLowerCase().includes(query.toLowerCase())) {
-            return this.getFirstFourLines(poem.full_content, query);
-        }
-        
-        // 完整内容中没找到，使用预览内容
-        return this.getFirstFourLines(poem.preview, query);
-    }
-
-    getFirstFourLines(text, query = '') {
-        if (!text) return '';
-        
-        // 按换行符分割，过滤空行
-        const lines = text.split('\n').filter(line => line.trim());
-        
-        let selectedLines = [];
-        
-        // 如果有搜索关键词，尝试找到包含关键词的行及其上下文
-        if (query && query.trim()) {
-            const queryLower = query.toLowerCase();
-            let matchLineIndex = -1;
-            
-            // 找到第一个包含关键词的行
-            for (let i = 0; i < lines.length; i++) {
-                if (lines[i].toLowerCase().includes(queryLower)) {
-                    matchLineIndex = i;
-                    break;
-                }
-            }
-            
-            // 如果找到匹配行，显示该行的上下文（上1行，匹配行，下2行）
-            if (matchLineIndex >= 0) {
-                const startIndex = Math.max(0, matchLineIndex - 1);
-                const endIndex = Math.min(lines.length, matchLineIndex + 3);
-                selectedLines = lines.slice(startIndex, endIndex);
-                
-                // 如果匹配行不是靠近开头，在开头添加省略号提示
-                if (matchLineIndex > 1) {
-                    selectedLines.unshift('...');
-                }
-                
-                // 如果后面还有内容，在末尾添加省略号提示
-                if (matchLineIndex + 3 < lines.length) {
-                    selectedLines.push('...');
-                }
-            } else {
-                // 没找到匹配，使用前4行
-                selectedLines = lines.slice(0, 4);
-            }
-        } else {
-            // 没有搜索关键词，使用前4行
-            selectedLines = lines.slice(0, 4);
-        }
-        
-        // 对于很长的行（可能是散文），进一步截断
-        const processedLines = selectedLines.map(line => {
-            if (line.length > 50) {
-                return line.substring(0, 50) + '...';
-            }
-            return line;
-        });
-        
-        // 组合结果
-        let result = processedLines.join('\n');
-        
-        // 最终长度限制
-        if (result.length > 180) {
-            result = result.substring(0, 180) + '...';
-        }
-        
-        return result;
-    }
 
     addHomeButton() {
         // 检查是否已经存在返回按钮
@@ -748,7 +647,7 @@ class PoemSearcher {
         homeButton.id = 'search-home-btn';
         homeButton.className = 'fixed top-6 left-6 z-20';
         homeButton.innerHTML = `
-            <button onclick="window.poemSearcher.clearSearch()" class="glass-bg px-4 py-3 rounded-full text-gray-700 hover:text-gray-900 transition-all duration-300 hover:shadow-lg flex items-center">
+            <button onclick="window.poemSearcher.clearSearch()" class="bg-white/80 px-4 py-3 rounded-full text-gray-700 hover:text-gray-900 transition-all duration-300 hover:shadow-lg flex items-center">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                 </svg>
@@ -820,7 +719,7 @@ class PoemSearcher {
             const container = document.getElementById('poems-container');
             if (container) {
                 container.innerHTML = `
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4 lg:gap-5 auto-rows-fr">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4 lg:gap-5" style="grid-auto-rows: 480px;">
                         <!-- 诗歌卡片将通过 JavaScript 动态生成 -->
                     </div>
                 `;

@@ -121,7 +121,7 @@
 
         <!-- 诗歌容器 -->
         <div id="poems-container" class="max-w-6xl mx-auto px-4 md:px-8 py-2 md:py-4 hidden">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4 lg:gap-5 auto-rows-fr">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4 lg:gap-5" style="grid-auto-rows: 480px;">
                 <!-- 诗歌卡片将通过 JavaScript 动态生成 -->
             </div>
         </div>
@@ -207,11 +207,20 @@
 
     <!-- 页脚 -->
     <footer class="bg-gray-50">
-        <div class="max-w-6xl mx-auto px-8 py-16 text-center">
+        <div class="max-w-6xl mx-auto px-8 py-4 text-center">
+            <!-- GitHub 链接 -->
+            <div class="mb-4">
+                <a href="https://github.com/2019YKL/to-hai-zi" target="_blank" class="inline-flex items-center bg-white/80 px-4 py-3 rounded-full text-gray-700 hover:text-gray-900 transition-all duration-300 hover:shadow-lg">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+            
             <p class="text-lg text-gray-600 poem-font font-light italic mb-4">
                 "活在这珍贵的人间，太阳强烈，水波温柔"
             </p>
-            <p class="text-sm text-gray-400 font-light">
+            <p class="text-sm text-gray-400 font-light mb-8">
                 —— 海子
             </p>
         </div>
@@ -265,13 +274,13 @@
             createPoemCard(poem, index) {
                 const article = document.createElement('article');
                 const animationClass = this.isFirstLoad ? 'card-appear' : '';
-                article.className = `poem-card ${animationClass} glass-bg-premium rounded-xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer group h-full`;
+                article.className = `poem-card ${animationClass} rounded-xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer group h-full`;
                 article.onclick = () => window.location.href = contentManager.getPoemUrl(poem);
 
                 article.innerHTML = `
                     <div class="relative overflow-hidden flex flex-col h-full">
                         <!-- 精美的图片区域 -->
-                        <div class="h-48 relative group-hover:scale-105 transition-transform duration-700 overflow-hidden">
+                        <div class="h-48 relative group-hover:scale-102 transition-transform duration-700 overflow-hidden">
                             <img src="${poem.image}" 
                                  alt="${poem.title}" 
                                  class="w-full h-full object-cover">
@@ -296,8 +305,8 @@
                         <!-- 内容区域 - 使用flex-1使其填充剩余空间 -->
                         <div class="px-5 pt-3 pb-5 flex-1 flex flex-col">
                             <!-- 诗歌预览 - 设置固定高度区域 -->
-                            <div class="poem-preview rounded-lg p-3 md:p-4 pt-2 mb-3 flex-1 flex items-start">
-                                <div class="text-gray-700 leading-relaxed poem-font text-base md:text-lg font-light whitespace-pre-line overflow-hidden">
+                            <div class="poem-preview rounded-lg p-3 md:p-4 pt-2 mb-3 flex items-center justify-center" style="height: 180px;">
+                                <div class="text-gray-700 leading-relaxed poem-font text-base md:text-lg font-light whitespace-pre-line overflow-hidden text-center">
                                     ${this.getFirstFourLines(poem.preview)}
                                 </div>
                             </div>
@@ -332,12 +341,37 @@
             }
 
             formatTitle(title) {
-                if (!title || title.length <= 6) return title;
+                if (!title) return title;
                 
-                // 如果标题超过6个字，在第4个字后插入换行
-                const firstPart = title.substring(0, 4);
-                const secondPart = title.substring(4);
-                return `${firstPart}<br>${secondPart}`;
+                // 如果标题超长（超过12个字符），进行智能缩短
+                if (title.length > 12) {
+                    // 寻找合适的分割点（如破折号、空格等）
+                    const breakPoints = ['——', '—', '·', ' ', '：', ':'];
+                    for (const bp of breakPoints) {
+                        const index = title.indexOf(bp);
+                        if (index > 2 && index < 8) {
+                            const firstPart = title.substring(0, index);
+                            const secondPart = title.substring(index + bp.length);
+                            // 如果第二部分仍然太长，截断并加省略号
+                            if (secondPart.length > 8) {
+                                return `${firstPart}<br>${secondPart.substring(0, 6)}…`;
+                            }
+                            return `${firstPart}<br>${secondPart}`;
+                        }
+                    }
+                    // 没找到合适分割点，直接截断
+                    return title.substring(0, 10) + '…';
+                }
+                
+                // 标题适中长度（7-12字符），简单换行
+                if (title.length > 6) {
+                    const firstPart = title.substring(0, 4);
+                    const secondPart = title.substring(4);
+                    return `${firstPart}<br>${secondPart}`;
+                }
+                
+                // 短标题直接显示
+                return title;
             }
 
             updatePagination() {
