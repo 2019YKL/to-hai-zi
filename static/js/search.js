@@ -293,16 +293,12 @@ class PoemSearcher {
                 <div class="rounded-lg mb-3 shadow-sm border border-gray-100 overflow-hidden" style="background-color: #F7FBFC;">
                     <div class="p-4 cursor-pointer hover:bg-gray-50 transition-colors" 
                          onclick="window.location.href='${this.getPoemUrl(poem)}'">
-                        <div class="flex items-center space-x-3">
+                        <div class="flex items-center space-x-4">
                             <img src="${poem.image}" alt="${poem.title}" class="w-12 h-12 object-cover rounded flex-shrink-0">
                             <div class="flex-1 min-w-0">
-                                <h3 class="font-bold text-gray-900 poem-font text-base leading-tight mb-2">
+                                <h3 class="font-bold text-gray-900 poem-font text-base leading-tight">
                                     ${highlightedTitle}
                                 </h3>
-                                <div class="flex items-center text-sm text-gray-500 mb-2">
-                                    <span>${poem.section}</span>
-                                </div>
-                                ${matchBadges ? `<div class="flex flex-wrap gap-1">${matchBadges}</div>` : ''}
                             </div>
                             <svg class="w-6 h-6 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
