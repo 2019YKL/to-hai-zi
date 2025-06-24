@@ -1,49 +1,14 @@
-# Dependencies
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# 开发工具和爬虫脚本
+scraper/
+*.py
+!generate_poems_data.py
 
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
+# 临时文件
+*.tmp
+*.temp
+*.cache
 
-# Coverage directory used by tools like istanbul
-coverage/
-
-# nyc test coverage
-.nyc_output
-
-# Dependency directories
-node_modules/
-jspm_packages/
-
-# Optional npm cache directory
-.npm
-
-# Optional REPL history
-.node_repl_history
-
-# Output of 'npm pack'
-*.tgz
-
-# Yarn Integrity file
-.yarn-integrity
-
-# dotenv environment variables file
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Logs
-logs
-*.log
-
-# OS generated files
+# 系统文件
 .DS_Store
 .DS_Store?
 ._*
@@ -52,12 +17,45 @@ logs
 ehthumbs.db
 Thumbs.db
 
-# Editor directories and files
+# 编辑器和IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# Vercel
-.vercel
+# 依赖和构建
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境配置
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 日志文件
+logs/
+*.log
+
+# 备份文件
+*.bak
+*.backup
+*.old
+
+# 压缩文件
+*.zip
+*.tar.gz
+*.rar
+
+# 数据库
+*.db
+*.sqlite
+*.sqlite3
+
+# API密钥和配置
+config.json
+secrets.json
