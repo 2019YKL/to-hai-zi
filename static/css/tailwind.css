@@ -1753,7 +1753,7 @@ body {
   /* 主内容区域顶部间距，避免与固定按钮重叠 */
 
   main {
-    padding-top: 4.5rem;
+    padding-top: 2rem;
   }
 
   /* 诗歌容器移动端优化 */
