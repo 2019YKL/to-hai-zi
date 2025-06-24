@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'poem': ['LXGWWenKai', 'Noto Serif SC', 'Georgia', 'serif'],
-        'ui': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+        'poem': ['LXGW WenKai', 'LXGWWenKai', 'LXGWWenKai-Fallback', 'Noto Serif SC', 'Source Han Serif SC', 'STSong', '宋体', 'Georgia', 'serif'],
+        'ui': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'PingFang SC', 'Microsoft YaHei', 'sans-serif']
       },
       colors: {
         'poem-gray': {
