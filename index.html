@@ -125,6 +125,16 @@
             -webkit-backdrop-filter: blur(20px);
         }
 
+        .glass-bg-premium {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 
+                        0 4px 16px rgba(0, 0, 0, 0.04),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+
         .hero-gradient {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
@@ -135,6 +145,13 @@
 
         .poem-preview {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.8) 100%);
+        }
+
+        .line-clamp-4 {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
     </style>
@@ -180,6 +197,38 @@
         </div>
     </header>
 
+    <!-- 搜索按钮 -->
+    <div class="fixed top-6 right-6 z-20">
+        <div id="search-container" class="transition-all duration-300">
+            <!-- 搜索按钮状态 -->
+            <button id="search-toggle" class="glass-bg px-4 py-3 rounded-full text-gray-700 hover:text-gray-900 transition-all duration-300 hover:shadow-lg flex items-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </button>
+            
+            <!-- 搜索输入状态 -->
+            <div id="search-input-container" class="hidden flex items-center space-x-2">
+                <div class="relative">
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="寻觅一切,包括世界" 
+                        class="w-64 px-4 py-3 pl-12 pr-10 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent glass-bg text-gray-800 poem-font text-sm"
+                    >
+                    <svg class="w-4 h-4 text-gray-400 absolute left-4 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <button id="clear-search" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 诗歌列表 -->
     <main class="relative">
         <!-- 加载动画 -->
@@ -191,7 +240,7 @@
         </div>
 
         <!-- 诗歌容器 -->
-        <div id="poems-container" class="max-w-6xl mx-auto px-8 py-16 hidden">
+        <div id="poems-container" class="max-w-6xl mx-auto px-8 py-4 hidden">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5 auto-rows-fr">
                 <!-- 诗歌卡片将通过 JavaScript 动态生成 -->
             </div>
@@ -245,7 +294,7 @@
     </main>
 
     <!-- 页脚 -->
-    <footer class="bg-white border-t border-gray-100">
+    <footer class="bg-gray-50">
         <div class="max-w-6xl mx-auto px-8 py-16 text-center">
             <p class="text-lg text-gray-600 poem-font font-light italic mb-4">
                 "活在这珍贵的人间，太阳强烈，水波温柔"
@@ -259,6 +308,7 @@
     <!-- 引入诗歌数据和内容管理系统 -->
     <script src="assets/js/poems-data.js"></script>
     <script src="assets/js/content-manager.js"></script>
+    <script src="search.js"></script>
     <script>
         // 页面逻辑
         class PoemPage {
@@ -303,7 +353,7 @@
             createPoemCard(poem, index) {
                 const article = document.createElement('article');
                 const animationClass = this.isFirstLoad ? 'card-appear' : '';
-                article.className = `poem-card ${animationClass} glass-bg rounded-xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer group border border-white/20 h-full`;
+                article.className = `poem-card ${animationClass} glass-bg-premium rounded-xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer group h-full`;
                 article.onclick = () => window.location.href = contentManager.getPoemUrl(poem);
 
                 article.innerHTML = `
@@ -313,7 +363,7 @@
                             <img src="${poem.image}" 
                                  alt="${poem.title}" 
                                  class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/50"></div>
+                            <div class="absolute inset-0 bg-black/40"></div>
                             
                             <!-- 标题区域 -->
                             <div class="absolute inset-0 flex items-center justify-center text-center text-white">
@@ -341,10 +391,7 @@
                             </div>
                             
                             <!-- 底部信息 - 固定在底部 -->
-                            <div class="flex justify-between items-center mt-auto pt-2 border-t border-gray-100">
-                                <div class="text-sm text-gray-500">
-                                    ${poem.date || '海子'}
-                                </div>
+                            <div class="flex justify-end items-center mt-auto pt-2 border-t border-gray-100">
                                 <div class="inline-flex items-center text-gray-700 group-hover:text-gray-900 transition-colors font-medium">
                                     <span class="mr-2">阅读全文</span>
                                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -422,7 +469,6 @@
 
             calculatePaginationRange(currentPage, totalPages) {
                 const result = [];
-                const maxVisible = 9; // 最多显示9个按钮（包括省略号）
                 
                 if (totalPages <= 7) {
                     // 总页数不多，显示所有页码
@@ -432,32 +478,41 @@
                     return result;
                 }
                 
-                // 总页数较多，需要智能折叠
-                // 策略：始终显示第1页和最后一页，中间显示当前页附近的页码
+                // 总页数较多时的智能分页策略
+                const delta = 2; // 当前页前后各显示2页
                 
-                const delta = 1; // 当前页前后各显示1页
-                const left = currentPage - delta;
-                const right = currentPage + delta;
-                
-                // 第一页
+                // 始终显示第1页
                 result.push({ type: 'page', number: 1 });
                 
-                // 判断是否需要在第一页后添加省略号
-                if (left > 2) {
+                // 计算当前页周围的范围
+                let startPage = Math.max(2, currentPage - delta);
+                let endPage = Math.min(totalPages - 1, currentPage + delta);
+                
+                // 调整范围以确保显示足够的页码
+                if (currentPage <= 4) {
+                    // 当前页在前面时，多显示后面的页码
+                    endPage = Math.min(totalPages - 1, 6);
+                } else if (currentPage >= totalPages - 3) {
+                    // 当前页在后面时，多显示前面的页码
+                    startPage = Math.max(2, totalPages - 5);
+                }
+                
+                // 在第1页后添加省略号（如果需要）
+                if (startPage > 2) {
                     result.push({ type: 'ellipsis' });
                 }
                 
-                // 添加当前页附近的页码
-                for (let i = Math.max(left, 2); i <= Math.min(right, totalPages - 1); i++) {
+                // 添加中间的页码
+                for (let i = startPage; i <= endPage; i++) {
                     result.push({ type: 'page', number: i });
                 }
                 
-                // 判断是否需要在最后一页前添加省略号
-                if (right < totalPages - 1) {
+                // 在最后一页前添加省略号（如果需要）
+                if (endPage < totalPages - 1) {
                     result.push({ type: 'ellipsis' });
                 }
                 
-                // 最后一页（如果总页数大于1）
+                // 始终显示最后一页（如果总页数大于1）
                 if (totalPages > 1) {
                     result.push({ type: 'page', number: totalPages });
                 }
@@ -482,11 +537,6 @@
             goToPage(page) {
                 if (contentManager.setCurrentPage(page)) {
                     this.renderCurrentPage();
-                    // 平滑滚动到诗歌区域
-                    document.getElementById('poems-container').scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
                 }
             }
 
@@ -560,7 +610,60 @@
 
         // 初始化页面
         document.addEventListener('DOMContentLoaded', () => {
-            new PoemPage();
+            window.poemPage = new PoemPage();
+            
+            // 搜索功能初始化
+            const searchToggle = document.getElementById('search-toggle');
+            const searchInputContainer = document.getElementById('search-input-container');
+            const searchInput = document.getElementById('search-input');
+            const clearSearch = document.getElementById('clear-search');
+            
+            // 点击搜索按钮切换状态
+            searchToggle.addEventListener('click', () => {
+                searchToggle.classList.add('hidden');
+                searchInputContainer.classList.remove('hidden');
+                searchInput.focus();
+            });
+            
+            // 搜索输入事件
+            searchInput.addEventListener('input', (e) => {
+                if (e.target.value.trim()) {
+                    clearSearch.classList.remove('hidden');
+                } else {
+                    clearSearch.classList.add('hidden');
+                    if (window.poemSearcher) {
+                        window.poemSearcher.clearSearch();
+                    }
+                }
+            });
+            
+            // 回车搜索
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && window.poemSearcher) {
+                    window.poemSearcher.performSearch();
+                }
+            });
+            
+            // 清空搜索
+            clearSearch.addEventListener('click', () => {
+                if (window.poemSearcher) {
+                    window.poemSearcher.clearSearch();
+                }
+                searchToggle.classList.remove('hidden');
+                searchInputContainer.classList.add('hidden');
+                clearSearch.classList.add('hidden');
+            });
+            
+            // 点击外部关闭搜索框
+            document.addEventListener('click', (e) => {
+                if (!searchInputContainer.contains(e.target) && !searchToggle.contains(e.target)) {
+                    if (!searchInput.value.trim()) {
+                        searchToggle.classList.remove('hidden');
+                        searchInputContainer.classList.add('hidden');
+                        clearSearch.classList.add('hidden');
+                    }
+                }
+            });
         });
     </script>
 </body>
