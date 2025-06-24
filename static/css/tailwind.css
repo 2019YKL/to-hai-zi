@@ -1586,7 +1586,7 @@ body {
 
 /* 加载动画 */
 
-.loading {
+.loading:not(.hidden) {
   display: flex;
   justify-content: center;
   align-items: center;
