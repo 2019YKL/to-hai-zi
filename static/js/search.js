@@ -616,6 +616,7 @@ class PoemSearcher {
             
             if (typeof window.poemPage !== 'undefined') {
                 window.poemPage.renderCurrentPage();
+                window.poemPage.hideLoading();
             }
 
             // 显示分页

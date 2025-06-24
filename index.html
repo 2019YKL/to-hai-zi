@@ -170,12 +170,9 @@
 
             async loadContent() {
                 try {
-                    console.log('开始加载诗歌数据...');
                     await contentManager.loadPoems();
-                    console.log('诗歌数据加载完成，共', contentManager.poems.length, '首');
                     this.renderCurrentPage();
                     this.hideLoading();
-                    console.log('页面渲染完成');
                 } catch (error) {
                     console.error('加载内容失败:', error);
                     this.showError();
