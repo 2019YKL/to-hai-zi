@@ -277,6 +277,8 @@
                     meta['原文链接'] = poemData.url;
                 }
                 
+                // 不添加路径信息到meta中
+                
                 this.displayPoem(title, content, meta, poemData);
             }
 
@@ -304,7 +306,9 @@
                 }
                 
                 Object.entries(meta).forEach(([key, value]) => {
-                    if (key !== '章节') { // 避免重复显示章节
+                    // 排除章节、路径相关信息
+                    const excludeKeys = ['章节', '路径', 'path', 'Path', 'PATH'];
+                    if (!excludeKeys.includes(key)) {
                         const div = document.createElement('div');
                         if (key === '原文链接' && value.startsWith('http')) {
                             div.innerHTML = `<strong>${key}:</strong> <a href="${value}" target="_blank" class="text-blue-600 hover:text-blue-800">${value}</a>`;
