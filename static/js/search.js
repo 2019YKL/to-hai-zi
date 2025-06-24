@@ -179,7 +179,55 @@ class PoemSearcher {
 
         if (!container) return;
 
-        // 重写整个容器内容
+        // 检测是否为移动端
+        const isMobile = window.innerWidth < 768;
+        
+        if (isMobile) {
+            this.displayMobileSearchResults(container, query);
+        } else {
+            this.displayDesktopSearchResults(container, query);
+        }
+
+        // 确保容器可见并滚动到顶部
+        container.style.display = 'block';
+        container.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    displayMobileSearchResults(container, query) {
+        // 移动端搜索结果布局
+        container.innerHTML = `
+            <div class="px-4 py-6">
+                <!-- 移动端搜索结果标题 -->
+                <div class="text-center mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-2 poem-font">搜索结果</h2>
+                    <p class="text-sm text-gray-600 poem-font">
+                        "${query}" · ${this.searchResults.length} 首诗歌
+                    </p>
+                </div>
+                
+                <!-- 移动端搜索结果列表 -->
+                <div id="mobile-search-results" class="space-y-4">
+                    <!-- 搜索结果将在这里生成 -->
+                </div>
+            </div>
+        `;
+
+        const searchList = container.querySelector('#mobile-search-results');
+        
+        if (this.searchResults.length === 0) {
+            this.displayMobileNoResults(searchList);
+        } else {
+            // 显示移动端搜索结果
+            this.searchResults.forEach((poem, index) => {
+                const poemItem = this.createMobilePoemCard(poem, index, query);
+                searchList.appendChild(poemItem);
+            });
+        }
+    }
+    
+    displayDesktopSearchResults(container, query) {
+        // 桌面端搜索结果布局（保持原有逻辑）
         container.innerHTML = `
             <div class="max-w-6xl mx-auto px-8 py-8">
                 <!-- 搜索结果标题 -->
@@ -224,11 +272,6 @@ class PoemSearcher {
                 searchGrid.appendChild(poemCard);
             });
         }
-
-        // 确保容器可见并滚动到顶部
-        container.style.display = 'block';
-        container.classList.remove('hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     displaySearchResultsInPanel(query) {
@@ -294,6 +337,143 @@ class PoemSearcher {
             </div>
         `;
         container.appendChild(noResults);
+    }
+    
+    displayMobileNoResults(container) {
+        const noResults = document.createElement('div');
+        noResults.className = 'text-center py-12';
+        noResults.innerHTML = `
+            <div class="poem-font text-2xl text-gray-600 leading-relaxed opacity-80 font-light mb-6">
+                "远方除了遥远<br>一无所有"
+            </div>
+            <div class="w-16 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mx-auto mb-4"></div>
+            <p class="text-gray-500 poem-font font-light mb-2">
+                没有找到相关的诗歌内容
+            </p>
+            <p class="text-sm text-gray-400 font-light">
+                尝试使用其他关键词，或<a href="#" onclick="window.poemSearcher.clearSearch()" class="text-blue-500 hover:text-blue-700 underline">浏览所有诗歌</a>
+            </p>
+        `;
+        container.appendChild(noResults);
+    }
+    
+    createMobilePoemCard(poem, index, query) {
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg';
+        card.onclick = () => {
+            if (typeof contentManager !== 'undefined') {
+                window.location.href = contentManager.getPoemUrl(poem);
+            } else {
+                window.location.href = `poem.html?poem=${encodeURIComponent(poem.path)}`;
+            }
+        };
+
+        // 高亮搜索词
+        const highlightedTitle = this.highlightSearchTerm(poem.title, query);
+        const highlightedPreview = this.highlightSearchTerm(this.getMobilePreview(poem, query), query);
+
+        // 添加匹配标识
+        let matchBadges = '';
+        if (poem.matchInfo && poem.matchInfo.titleMatch) {
+            matchBadges += '<span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mr-1">标题匹配</span>';
+        }
+        if (poem.matchInfo && poem.matchInfo.contentMatch) {
+            matchBadges += '<span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mr-1">内容匹配</span>';
+        }
+
+        card.innerHTML = `
+            <div class="flex p-4">
+                <!-- 左侧图片 -->
+                <div class="w-20 h-20 flex-shrink-0 mr-4">
+                    <img src="${poem.image}" alt="${poem.title}" class="w-full h-full object-cover rounded-lg">
+                </div>
+                
+                <!-- 右侧内容 -->
+                <div class="flex-1 min-w-0">
+                    <!-- 标题和标签 -->
+                    <div class="mb-2">
+                        <h3 class="font-bold text-gray-900 poem-font mb-1 text-lg leading-tight">
+                            ${highlightedTitle}
+                        </h3>
+                        ${matchBadges ? `<div class="mb-2">${matchBadges}</div>` : ''}
+                        <p class="text-xs text-gray-500">${poem.section}</p>
+                    </div>
+                    
+                    <!-- 诗歌预览 -->
+                    <div class="text-sm text-gray-700 poem-font leading-relaxed">
+                        ${highlightedPreview}
+                    </div>
+                </div>
+                
+                <!-- 右侧箭头 -->
+                <div class="flex items-center ml-2">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+            </div>
+        `;
+
+        return card;
+    }
+    
+    getMobilePreview(poem, query) {
+        if (!query || !query.trim()) {
+            // 没有搜索词时，显示前两行
+            return this.getFirstLines(poem.preview, 2);
+        }
+        
+        // 有搜索词时，优先在完整内容中查找上下文
+        if (poem.full_content && poem.full_content.toLowerCase().includes(query.toLowerCase())) {
+            return this.getContextualMobilePreview(poem.full_content, query);
+        }
+        
+        // 完整内容中没找到，使用预览内容
+        return this.getContextualMobilePreview(poem.preview, query);
+    }
+    
+    getContextualMobilePreview(text, query) {
+        if (!text) return '';
+        
+        const lines = text.split('\n').filter(line => line.trim());
+        const queryLower = query.toLowerCase();
+        
+        // 找到包含关键词的行
+        let matchLineIndex = -1;
+        for (let i = 0; i < lines.length; i++) {
+            if (lines[i].toLowerCase().includes(queryLower)) {
+                matchLineIndex = i;
+                break;
+            }
+        }
+        
+        let selectedLines = [];
+        if (matchLineIndex >= 0) {
+            // 显示匹配行及其前后一行
+            const startIndex = Math.max(0, matchLineIndex - 1);
+            const endIndex = Math.min(lines.length, matchLineIndex + 2);
+            selectedLines = lines.slice(startIndex, endIndex);
+            
+            // 如果不是从开头开始，添加省略号
+            if (matchLineIndex > 1) {
+                selectedLines.unshift('...');
+            }
+            // 如果后面还有内容，添加省略号
+            if (matchLineIndex + 2 < lines.length) {
+                selectedLines.push('...');
+            }
+        } else {
+            // 没找到匹配，使用前3行
+            selectedLines = lines.slice(0, 3);
+        }
+        
+        return selectedLines.join(' ');
+    }
+    
+    getFirstLines(text, count = 2) {
+        if (!text) return '';
+        const lines = text.split('\n').filter(line => line.trim());
+        return lines.slice(0, count).join(' ');
     }
 
     displayNoResultsInPanel(container) {
@@ -627,11 +807,13 @@ class PoemSearcher {
             const container = document.getElementById('poems-container');
             if (container) {
                 container.innerHTML = `
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5 auto-rows-fr">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-4 lg:gap-5 auto-rows-fr">
                         <!-- 诗歌卡片将通过 JavaScript 动态生成 -->
                     </div>
                 `;
                 container.classList.remove('hidden');
+                // 恢复原始容器样式
+                container.className = 'max-w-6xl mx-auto px-4 md:px-8 py-2 md:py-4 hidden';
             }
             
             if (typeof window.poemPage !== 'undefined') {
