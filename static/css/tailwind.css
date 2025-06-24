@@ -1796,7 +1796,7 @@ body {
   .poem-preview {
     padding: 1rem !important;
     margin-bottom: 1rem !important;
-    max-height: 140px !important;
+    max-height: 180px !important;
     border-radius: 0.75rem !important;
   }
 
