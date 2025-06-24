@@ -643,7 +643,7 @@
             
             // 检查URL参数是否有搜索关键词
             const urlParams = new URLSearchParams(window.location.search);
-            const searchQuery = urlParams.get('search');
+            const searchQuery = urlParams.get('search') ? decodeURIComponent(urlParams.get('search')) : null;
             
             // 桌面端搜索功能初始化
             const searchToggle = document.getElementById('search-toggle');

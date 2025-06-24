@@ -200,7 +200,7 @@ class PoemSearcher {
     redirectToSearchPage(query) {
         // 检查当前URL是否已经有搜索参数，避免无限跳转
         const currentUrl = new URL(window.location.href);
-        const currentSearch = currentUrl.searchParams.get('search');
+        const currentSearch = currentUrl.searchParams.get('search') ? decodeURIComponent(currentUrl.searchParams.get('search')) : null;
         
         if (currentSearch === query) {
             // 如果当前页面已经是这个搜索结果页面，直接显示移动端搜索结果
