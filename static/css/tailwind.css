@@ -1779,7 +1779,7 @@ body {
   /* 诗歌卡片图片区域移动端优化 */
 
   .poem-card .h-48 {
-    height: 180px !important;
+    height: 220px !important;
     border-radius: 1rem 1rem 0 0 !important;
   }
 
