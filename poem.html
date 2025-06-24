@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">海子诗歌</title>
-    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="stylesheet" href="static/css/tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body class="bg-gray-50 min-h-screen">
     <!-- 背景图片 -->
     <div class="fixed inset-0 z-0">
-        <img src="assets/images/image-haizi.jpg" alt="海子" class="w-full h-full object-cover opacity-20 grayscale">
+        <img src="static/images/image-haizi.jpg" alt="海子" class="w-full h-full object-cover opacity-20 grayscale">
         <div class="absolute inset-0 bg-gradient-to-b from-gray-50/30 via-gray-50/50 to-gray-50/30"></div>
     </div>
 
@@ -147,8 +147,8 @@
         </div>
     </div>
 
-    <script src="assets/js/poems-data.js"></script>
-    <script src="search.js"></script>
+    <script src="static/js/poems-data.js"></script>
+    <script src="static/js/search.js"></script>
     <script>
         class PoemRenderer {
             constructor() {
@@ -173,7 +173,7 @@
                 try {
                     // 从全局诗歌数据加载列表
                     if (typeof poemsData !== 'undefined') {
-                        this.poems = poemsData.map(poem => `assets/content/poems/${poem.path}`);
+                        this.poems = poemsData.map(poem => `public/content/poems/${poem.path}`);
                     } else {
                         throw new Error('诗歌数据未加载');
                     }
@@ -192,7 +192,7 @@
                     }
 
                     // 构建完整的文件路径
-                    const fullPath = poemPath.startsWith('assets/') ? poemPath : `assets/content/poems/${poemPath}`;
+                    const fullPath = poemPath.startsWith('public/') ? poemPath : `public/content/poems/${poemPath}`;
                     
                     try {
                         const response = await fetch(fullPath);

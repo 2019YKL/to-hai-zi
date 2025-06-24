@@ -1,7 +1,5 @@
-# 开发工具和爬虫脚本
-scraper/
-*.py
-!generate_poems_data.py
+# 开发工具和脚本
+dev/
 
 # 临时文件
 *.tmp

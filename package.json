@@ -4,8 +4,8 @@
   "description": "海子诗歌集 - 一个美观的诗歌展示网站，支持分页和内容管理",
   "main": "index.html",
   "scripts": {
-    "build-css": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css",
-    "watch-css": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --watch",
+    "build-css": "tailwindcss -i ./src/input.css -o ./static/css/tailwind.css",
+    "watch-css": "tailwindcss -i ./src/input.css -o ./static/css/tailwind.css --watch",
     "dev": "npm run build-css && npx serve .",
     "build": "npm run build-css",
     "start": "npx serve .",

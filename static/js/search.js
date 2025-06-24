@@ -629,10 +629,8 @@ class PoemSearcher {
     }
 }
 
-// 全局搜索实例
-window.poemSearcher = null;
-
 // 初始化搜索功能
-document.addEventListener('DOMContentLoaded', () => {
+if (typeof window !== 'undefined') {
+    // 立即创建全局搜索实例
     window.poemSearcher = new PoemSearcher();
-});
+}
