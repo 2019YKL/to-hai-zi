@@ -160,6 +160,16 @@ class PoemSearcher {
         const heroSection = document.querySelector('header');
         const footer = document.querySelector('footer');
 
+        // 检测是否为移动端
+        const isMobile = window.innerWidth < 768;
+        
+        if (isMobile) {
+            // 移动端直接跳转到搜索结果页面
+            this.redirectToSearchPage(query);
+            return;
+        }
+
+        // 桌面端显示搜索结果（保持原有逻辑）
         // 隐藏hero区域、分页、加载状态和页脚
         if (heroSection) heroSection.style.display = 'none';
         if (pagination) {
@@ -179,14 +189,7 @@ class PoemSearcher {
 
         if (!container) return;
 
-        // 检测是否为移动端
-        const isMobile = window.innerWidth < 768;
-        
-        if (isMobile) {
-            this.displayMobileSearchResults(container, query);
-        } else {
-            this.displayDesktopSearchResults(container, query);
-        }
+        this.displayDesktopSearchResults(container, query);
 
         // 确保容器可见并滚动到顶部
         container.style.display = 'block';
@@ -194,7 +197,48 @@ class PoemSearcher {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     
+    redirectToSearchPage(query) {
+        // 检查当前URL是否已经有搜索参数，避免无限跳转
+        const currentUrl = new URL(window.location.href);
+        const currentSearch = currentUrl.searchParams.get('search');
+        
+        if (currentSearch === query) {
+            // 如果当前页面已经是这个搜索结果页面，直接显示移动端搜索结果
+            this.displayMobileSearchResults(document.getElementById('poems-container'), query);
+            return;
+        }
+        
+        // 创建搜索结果页面的URL参数
+        const searchUrl = new URL(window.location.href);
+        searchUrl.searchParams.set('search', encodeURIComponent(query));
+        
+        // 跳转到搜索结果页面
+        window.location.href = searchUrl.toString();
+    }
+    
     displayMobileSearchResults(container, query) {
+        // 隐藏hero区域、分页、加载状态和页脚
+        const heroSection = document.querySelector('header');
+        const pagination = document.getElementById('pagination');
+        const loading = document.getElementById('loading');
+        const footer = document.querySelector('footer');
+        
+        if (heroSection) heroSection.style.display = 'none';
+        if (pagination) {
+            pagination.style.display = 'none';
+            pagination.classList.add('hidden');
+        }
+        if (loading) {
+            loading.style.display = 'none';
+            loading.classList.add('hidden');
+        }
+        if (footer) {
+            footer.style.display = 'none';
+        }
+
+        // 添加返回首页按钮
+        this.addHomeButton();
+        
         // 移动端搜索结果布局
         container.innerHTML = `
             <div class="px-4 py-6">
@@ -224,6 +268,11 @@ class PoemSearcher {
                 searchList.appendChild(poemItem);
             });
         }
+        
+        // 确保容器可见并滚动到顶部
+        container.style.display = 'block';
+        container.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     
     displayDesktopSearchResults(container, query) {
@@ -359,7 +408,7 @@ class PoemSearcher {
     
     createMobilePoemCard(poem, index, query) {
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg';
+        card.className = 'bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg active:scale-98 mb-4';
         card.onclick = () => {
             if (typeof contentManager !== 'undefined') {
                 window.location.href = contentManager.getPoemUrl(poem);
@@ -375,28 +424,28 @@ class PoemSearcher {
         // 添加匹配标识
         let matchBadges = '';
         if (poem.matchInfo && poem.matchInfo.titleMatch) {
-            matchBadges += '<span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mr-1">标题匹配</span>';
+            matchBadges += '<span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mr-1 mb-1">标题匹配</span>';
         }
         if (poem.matchInfo && poem.matchInfo.contentMatch) {
-            matchBadges += '<span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mr-1">内容匹配</span>';
+            matchBadges += '<span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mr-1 mb-1">内容匹配</span>';
         }
 
         card.innerHTML = `
-            <div class="flex p-4">
+            <div class="flex p-5">
                 <!-- 左侧图片 -->
-                <div class="w-20 h-20 flex-shrink-0 mr-4">
-                    <img src="${poem.image}" alt="${poem.title}" class="w-full h-full object-cover rounded-lg">
+                <div class="w-24 h-24 flex-shrink-0 mr-4">
+                    <img src="${poem.image}" alt="${poem.title}" class="w-full h-full object-cover rounded-xl">
                 </div>
                 
                 <!-- 右侧内容 -->
                 <div class="flex-1 min-w-0">
                     <!-- 标题和标签 -->
-                    <div class="mb-2">
-                        <h3 class="font-bold text-gray-900 poem-font mb-1 text-lg leading-tight">
+                    <div class="mb-3">
+                        <h3 class="font-bold text-gray-900 poem-font mb-2 text-lg leading-tight">
                             ${highlightedTitle}
                         </h3>
                         ${matchBadges ? `<div class="mb-2">${matchBadges}</div>` : ''}
-                        <p class="text-xs text-gray-500">${poem.section}</p>
+                        <p class="text-xs text-gray-500 mb-2">${poem.section}</p>
                     </div>
                     
                     <!-- 诗歌预览 -->
@@ -406,7 +455,7 @@ class PoemSearcher {
                 </div>
                 
                 <!-- 右侧箭头 -->
-                <div class="flex items-center ml-2">
+                <div class="flex items-center ml-3">
                     <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>

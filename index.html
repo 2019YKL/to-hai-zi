@@ -763,10 +763,23 @@
             if (searchQuery && window.poemSearcher) {
                 // 等待搜索器初始化
                 setTimeout(() => {
-                    searchInput.value = searchQuery;
-                    searchToggle.classList.add('hidden');
-                    searchInputContainer.classList.remove('hidden');
-                    clearSearch.classList.remove('hidden');
+                    // 检测是否为移动端
+                    const isMobile = window.innerWidth < 768;
+                    
+                    if (isMobile && mobileSearchInput) {
+                        // 移动端设置搜索值
+                        mobileSearchInput.value = searchQuery;
+                        if (mobileClearSearch) {
+                            mobileClearSearch.classList.remove('hidden');
+                        }
+                    } else if (searchInput) {
+                        // 桌面端设置搜索值
+                        searchInput.value = searchQuery;
+                        searchToggle.classList.add('hidden');
+                        searchInputContainer.classList.remove('hidden');
+                        clearSearch.classList.remove('hidden');
+                    }
+                    
                     window.poemSearcher.performSearch();
                     
                     // 清理URL参数

@@ -871,6 +871,10 @@ video {
   max-width: 72rem;
 }
 
+.max-w-sm{
+  max-width: 24rem;
+}
+
 .flex-1{
   flex: 1 1 0%;
 }
@@ -1749,49 +1753,59 @@ body {
   /* 主内容区域顶部间距，避免与固定按钮重叠 */
 
   main {
-    padding-top: 1rem;
+    padding-top: 4.5rem;
   }
 
   /* 诗歌容器移动端优化 */
 
   #poems-container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    padding-top: 0.5rem !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    padding-top: 0.75rem !important;
+  }
+
+  /* 诗歌卡片网格间距优化 */
+
+  #poems-container .grid {
+    gap: 1.25rem !important;
   }
 
   /* 诗歌卡片移动端优化 */
 
   .poem-card {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     height: auto !important;
-    min-height: 420px;
+    min-height: 400px;
+    border-radius: 1rem !important;
   }
 
   /* 诗歌卡片图片区域移动端优化 */
 
   .poem-card .h-48 {
-    height: 160px !important;
+    height: 180px !important;
+    border-radius: 1rem 1rem 0 0 !important;
   }
 
   /* 诗歌卡片标题移动端优化 */
 
   .poem-card h3 {
-    font-size: 1.5rem !important;
-    line-height: 1.3 !important;
-    margin-bottom: 0.75rem !important;
+    font-size: 1.375rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1rem !important;
   }
 
   /* 诗歌预览内容移动端优化 */
 
   .poem-preview {
-    padding: 0.75rem !important;
-    max-height: 120px !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+    max-height: 140px !important;
+    border-radius: 0.75rem !important;
   }
 
   .poem-preview .text-lg {
-    font-size: 0.9rem !important;
-    line-height: 1.4 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
   }
 
   /* 搜索容器移动端优化 */
@@ -1803,11 +1817,47 @@ body {
     padding-left: 2.25rem !important;
   }
 
-  /* 分页控件移动端优化 */
+  /* 移动端分页控件优化 */
 
   #pagination {
-    padding-top: 1rem !important;
-    padding-bottom: 2rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 2.5rem !important;
+    margin-top: 1rem !important;
+  }
+
+  /* 移动端分页按钮间距 */
+
+  #mobile-prev-btn, #mobile-next-btn {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+    margin: 0 0.75rem !important;
+  }
+
+  /* 移动端页面信息间距 */
+
+  #mobile-page-info {
+    margin-bottom: 0.5rem !important;
+    font-size: 1.125rem !important;
+  }
+
+  #mobile-total-info {
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* 移动端页面指示器点间距 */
+
+  #mobile-page-dots {
+    gap: 0.75rem !important;
+  }
+
+  #mobile-page-dots button {
+    width: 0.5rem !important;
+    height: 0.5rem !important;
+    transition: all 0.3s ease !important;
+  }
+
+  #mobile-page-dots button.w-6 {
+    width: 1.5rem !important;
   }
 
   /* 搜索模式下的特殊间距 */
@@ -1820,11 +1870,25 @@ body {
 
   header h1 {
     font-size: 2.5rem !important;
+    margin-bottom: 2rem !important;
   }
 
   header p {
     font-size: 1.125rem !important;
     line-height: 1.5 !important;
+    margin-bottom: 3rem !important;
+  }
+
+  /* 移动端搜索结果间距优化 */
+
+  #mobile-search-results {
+    gap: 1rem !important;
+  }
+
+  #mobile-search-results > div {
+    margin-bottom: 1rem !important;
+    border-radius: 0.75rem !important;
+    padding: 1rem !important;
   }
 }
 
