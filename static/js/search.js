@@ -57,8 +57,20 @@ class PoemSearcher {
     }
 
     performSearch() {
+        // 尝试从桌面端或移动端搜索框获取查询内容
         const searchInput = document.getElementById('search-input');
-        const query = searchInput.value.trim();
+        const mobileSearchInput = document.getElementById('mobile-search-input');
+        
+        let query = '';
+        if (searchInput && searchInput.value.trim()) {
+            query = searchInput.value.trim();
+        } else if (mobileSearchInput && mobileSearchInput.value.trim()) {
+            query = mobileSearchInput.value.trim();
+            // 同步到桌面端搜索框
+            if (searchInput) {
+                searchInput.value = query;
+            }
+        }
 
         if (!query) {
             this.clearSearch();
@@ -561,7 +573,9 @@ class PoemSearcher {
 
     clearSearch() {
         const searchInput = document.getElementById('search-input');
+        const mobileSearchInput = document.getElementById('mobile-search-input');
         const clearBtn = document.getElementById('clear-search');
+        const mobileClearBtn = document.getElementById('mobile-clear-search');
         const pagination = document.getElementById('pagination');
         const searchResults = document.getElementById('search-results');
         const heroSection = document.querySelector('header');
@@ -570,10 +584,16 @@ class PoemSearcher {
         if (searchInput) {
             searchInput.value = '';
         }
+        if (mobileSearchInput) {
+            mobileSearchInput.value = '';
+        }
 
         // 隐藏清空按钮
         if (clearBtn) {
             clearBtn.style.display = 'none';
+        }
+        if (mobileClearBtn) {
+            mobileClearBtn.classList.add('hidden');
         }
 
         // 重置状态
