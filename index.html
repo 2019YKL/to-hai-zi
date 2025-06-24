@@ -170,9 +170,12 @@
 
             async loadContent() {
                 try {
+                    console.log('开始加载诗歌数据...');
                     await contentManager.loadPoems();
+                    console.log('诗歌数据加载完成，共', contentManager.poems.length, '首');
                     this.renderCurrentPage();
                     this.hideLoading();
+                    console.log('页面渲染完成');
                 } catch (error) {
                     console.error('加载内容失败:', error);
                     this.showError();
@@ -458,9 +461,44 @@
             }
         }
 
+        // 确保所有依赖加载完成后初始化页面
+        function initializePage() {
+            console.log('正在初始化页面...');
+            
+            // 检查依赖是否加载完成
+            if (typeof contentManager === 'undefined') {
+                console.log('等待 content-manager.js 加载...');
+                setTimeout(initializePage, 100);
+                return;
+            }
+            
+            if (typeof window.poemSearcher === 'undefined') {
+                console.log('等待 search.js 加载...');
+                setTimeout(initializePage, 100);
+                return;
+            }
+            
+            console.log('依赖加载完成，开始初始化...');
+            window.poemPage = new PoemPage();
+        }
+
         // 初始化页面
         document.addEventListener('DOMContentLoaded', () => {
-            window.poemPage = new PoemPage();
+            initializePage();
+            
+            // 10秒后强制隐藏加载状态（备用方案）
+            setTimeout(() => {
+                const loading = document.getElementById('loading');
+                const container = document.getElementById('poems-container');
+                const pagination = document.getElementById('pagination');
+                
+                if (loading && !loading.classList.contains('hidden')) {
+                    console.warn('加载超时，强制显示内容');
+                    loading.classList.add('hidden');
+                    if (container) container.classList.remove('hidden');
+                    if (pagination) pagination.classList.remove('hidden');
+                }
+            }, 10000);
             
             // 检查URL参数是否有搜索关键词
             const urlParams = new URLSearchParams(window.location.search);

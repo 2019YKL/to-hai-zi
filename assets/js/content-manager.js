@@ -8,11 +8,19 @@ class ContentManager {
 
     // 加载诗歌数据
     async loadPoems() {
-        // 从 poems-data.js 加载诗歌数据
+        // 等待 poems-data.js 加载完成
+        let attempts = 0;
+        const maxAttempts = 50; // 最多等待5秒
+        
+        while (typeof poemsData === 'undefined' && attempts < maxAttempts) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+            attempts++;
+        }
+        
         if (typeof poemsData !== 'undefined') {
             this.poems = [...poemsData];
         } else {
-            throw new Error('诗歌数据未加载，请确保 poems-data.js 已正确引入');
+            throw new Error('诗歌数据加载超时，请刷新页面重试');
         }
         
         // 按章节顺序和标题排序
