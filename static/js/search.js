@@ -529,11 +529,11 @@ class PoemSearcher {
             }
         };
 
-        // 简化的卡片结构，移除预览内容
+        // 简化的卡片结构，图片占满整个卡片
         article.innerHTML = `
-            <div class="relative overflow-hidden flex flex-col h-full">
-                <!-- 精美的图片区域 -->
-                <div class="h-64 relative group-hover:scale-102 transition-transform duration-700 overflow-hidden">
+            <div class="relative overflow-hidden h-full">
+                <!-- 图片占满整个卡片 -->
+                <div class="h-full relative group-hover:scale-102 transition-transform duration-700 overflow-hidden">
                     <img src="${poem.image}" 
                          alt="${poem.title}" 
                          class="w-full h-full object-cover">
@@ -557,16 +557,6 @@ class PoemSearcher {
                             
                             <p class="text-lg font-medium opacity-90 drop-shadow">${poem.section}</p>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- 底部信息区域 -->
-                <div class="px-5 py-4 flex items-center justify-center">
-                    <div class="inline-flex items-center text-gray-700 group-hover:text-gray-900 transition-colors font-medium">
-                        <span class="mr-2">阅读全文</span>
-                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
                     </div>
                 </div>
             </div>
