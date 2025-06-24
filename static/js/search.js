@@ -239,40 +239,134 @@ class PoemSearcher {
         // 添加返回首页按钮
         this.addHomeButton();
         
-        // 移动端搜索结果布局
+        // 移动端搜索结果页面
         container.innerHTML = `
-            <div class="px-4 py-6">
-                <!-- 移动端搜索结果标题 -->
-                <div class="text-center mb-6">
-                    <h2 class="text-xl font-bold text-gray-800 mb-2 poem-font">搜索结果</h2>
-                    <p class="text-sm text-gray-600 poem-font">
-                        "${query}" · ${this.searchResults.length} 首诗歌
-                    </p>
+            <div class="min-h-screen bg-gray-50">
+                <!-- 移动端搜索头部 -->
+                <div class="bg-white border-b border-gray-200 px-4 py-4 sticky top-0 z-10">
+                    <div class="flex items-center justify-between mb-3">
+                        <h1 class="text-lg font-bold text-gray-900 poem-font">搜索结果</h1>
+                        <button onclick="window.poemSearcher.clearSearch()" class="text-blue-600 text-sm font-medium">
+                            返回首页
+                        </button>
+                    </div>
+                    <div class="text-sm text-gray-600">
+                        关键词: <span class="font-medium">"${query}"</span> · 
+                        找到 <span class="font-medium text-blue-600">${this.searchResults.length}</span> 首诗歌
+                    </div>
                 </div>
                 
-                <!-- 移动端搜索结果列表 -->
-                <div id="mobile-search-results" class="space-y-4">
-                    <!-- 搜索结果将在这里生成 -->
+                <!-- 搜索结果表格区域 -->
+                <div class="px-4 py-2">
+                    ${this.searchResults.length === 0 ? this.createMobileNoResults() : this.createMobileSearchTable(query)}
                 </div>
             </div>
         `;
-
-        const searchList = container.querySelector('#mobile-search-results');
-        
-        if (this.searchResults.length === 0) {
-            this.displayMobileNoResults(searchList);
-        } else {
-            // 显示移动端搜索结果
-            this.searchResults.forEach((poem, index) => {
-                const poemItem = this.createMobilePoemCard(poem, index, query);
-                searchList.appendChild(poemItem);
-            });
-        }
         
         // 确保容器可见并滚动到顶部
         container.style.display = 'block';
         container.classList.remove('hidden');
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    createMobileSearchTable(query) {
+        let tableHTML = '';
+        
+        this.searchResults.forEach((poem, index) => {
+            const highlightedTitle = this.highlightSearchTerm(poem.title, query);
+            const preview = this.getMobileTablePreview(poem, query);
+            const highlightedPreview = this.highlightSearchTerm(preview, query);
+            
+            // 匹配类型标识
+            let matchType = '';
+            if (poem.matchInfo) {
+                if (poem.matchInfo.titleMatch) matchType = '标题';
+                else if (poem.matchInfo.contentMatch) matchType = '内容';
+                else if (poem.matchInfo.sectionMatch) matchType = '章节';
+            }
+            
+            tableHTML += `
+                <div class="bg-white rounded-lg mb-3 shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-4 cursor-pointer hover:bg-gray-50 transition-colors" 
+                         onclick="window.location.href='${this.getPoemUrl(poem)}'">
+                        <!-- 标题行 -->
+                        <div class="flex items-start justify-between mb-2">
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 poem-font text-base leading-tight mb-1">
+                                    ${highlightedTitle}
+                                </h3>
+                                <div class="flex items-center text-xs text-gray-500 space-x-2">
+                                    <span>${poem.section}</span>
+                                    ${matchType ? `<span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">${matchType}匹配</span>` : ''}
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                        
+                        <!-- 预览内容 -->
+                        <div class="text-sm text-gray-700 poem-font leading-relaxed">
+                            ${highlightedPreview}
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        return tableHTML;
+    }
+    
+    createMobileNoResults() {
+        return `
+            <div class="text-center py-20">
+                <div class="poem-font text-xl text-gray-500 mb-4 leading-relaxed">
+                    "远方除了遥远<br>一无所有"
+                </div>
+                <div class="w-16 h-px bg-gray-300 mx-auto mb-4"></div>
+                <p class="text-gray-500 text-sm mb-2">没有找到相关的诗歌内容</p>
+                <button onclick="window.poemSearcher.clearSearch()" 
+                        class="text-blue-600 text-sm font-medium underline">
+                    浏览所有诗歌
+                </button>
+            </div>
+        `;
+    }
+    
+    getMobileTablePreview(poem, query) {
+        if (!query || !query.trim()) {
+            return this.getFirstLines(poem.preview, 2);
+        }
+        
+        // 搜索上下文预览
+        const content = poem.full_content || poem.preview || '';
+        const lines = content.split('\n').filter(line => line.trim());
+        const queryLower = query.toLowerCase();
+        
+        // 找到匹配的行
+        for (let i = 0; i < lines.length; i++) {
+            if (lines[i].toLowerCase().includes(queryLower)) {
+                // 显示匹配行及前后文
+                const start = Math.max(0, i - 1);
+                const end = Math.min(lines.length, i + 2);
+                let result = lines.slice(start, end);
+                
+                if (start > 0) result.unshift('...');
+                if (end < lines.length) result.push('...');
+                
+                return result.join(' ');
+            }
+        }
+        
+        // 没找到匹配就显示开头
+        return this.getFirstLines(poem.preview, 2);
+    }
+    
+    getPoemUrl(poem) {
+        if (typeof contentManager !== 'undefined') {
+            return contentManager.getPoemUrl(poem);
+        }
+        return `poem.html?poem=${encodeURIComponent(poem.path)}`;
     }
     
     displayDesktopSearchResults(container, query) {
@@ -388,136 +482,6 @@ class PoemSearcher {
         container.appendChild(noResults);
     }
     
-    displayMobileNoResults(container) {
-        const noResults = document.createElement('div');
-        noResults.className = 'text-center py-12';
-        noResults.innerHTML = `
-            <div class="poem-font text-2xl text-gray-600 leading-relaxed opacity-80 font-light mb-6">
-                "远方除了遥远<br>一无所有"
-            </div>
-            <div class="w-16 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mx-auto mb-4"></div>
-            <p class="text-gray-500 poem-font font-light mb-2">
-                没有找到相关的诗歌内容
-            </p>
-            <p class="text-sm text-gray-400 font-light">
-                尝试使用其他关键词，或<a href="#" onclick="window.poemSearcher.clearSearch()" class="text-blue-500 hover:text-blue-700 underline">浏览所有诗歌</a>
-            </p>
-        `;
-        container.appendChild(noResults);
-    }
-    
-    createMobilePoemCard(poem, index, query) {
-        const card = document.createElement('div');
-        card.className = 'bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg active:scale-98 mb-4';
-        card.onclick = () => {
-            if (typeof contentManager !== 'undefined') {
-                window.location.href = contentManager.getPoemUrl(poem);
-            } else {
-                window.location.href = `poem.html?poem=${encodeURIComponent(poem.path)}`;
-            }
-        };
-
-        // 高亮搜索词
-        const highlightedTitle = this.highlightSearchTerm(poem.title, query);
-        const highlightedPreview = this.highlightSearchTerm(this.getMobilePreview(poem, query), query);
-
-        // 添加匹配标识
-        let matchBadges = '';
-        if (poem.matchInfo && poem.matchInfo.titleMatch) {
-            matchBadges += '<span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mr-1 mb-1">标题匹配</span>';
-        }
-        if (poem.matchInfo && poem.matchInfo.contentMatch) {
-            matchBadges += '<span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mr-1 mb-1">内容匹配</span>';
-        }
-
-        card.innerHTML = `
-            <div class="flex p-5">
-                <!-- 左侧图片 -->
-                <div class="w-24 h-24 flex-shrink-0 mr-4">
-                    <img src="${poem.image}" alt="${poem.title}" class="w-full h-full object-cover rounded-xl">
-                </div>
-                
-                <!-- 右侧内容 -->
-                <div class="flex-1 min-w-0">
-                    <!-- 标题和标签 -->
-                    <div class="mb-3">
-                        <h3 class="font-bold text-gray-900 poem-font mb-2 text-lg leading-tight">
-                            ${highlightedTitle}
-                        </h3>
-                        ${matchBadges ? `<div class="mb-2">${matchBadges}</div>` : ''}
-                        <p class="text-xs text-gray-500 mb-2">${poem.section}</p>
-                    </div>
-                    
-                    <!-- 诗歌预览 -->
-                    <div class="text-sm text-gray-700 poem-font leading-relaxed">
-                        ${highlightedPreview}
-                    </div>
-                </div>
-                
-                <!-- 右侧箭头 -->
-                <div class="flex items-center ml-3">
-                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </div>
-            </div>
-        `;
-
-        return card;
-    }
-    
-    getMobilePreview(poem, query) {
-        if (!query || !query.trim()) {
-            // 没有搜索词时，显示前两行
-            return this.getFirstLines(poem.preview, 2);
-        }
-        
-        // 有搜索词时，优先在完整内容中查找上下文
-        if (poem.full_content && poem.full_content.toLowerCase().includes(query.toLowerCase())) {
-            return this.getContextualMobilePreview(poem.full_content, query);
-        }
-        
-        // 完整内容中没找到，使用预览内容
-        return this.getContextualMobilePreview(poem.preview, query);
-    }
-    
-    getContextualMobilePreview(text, query) {
-        if (!text) return '';
-        
-        const lines = text.split('\n').filter(line => line.trim());
-        const queryLower = query.toLowerCase();
-        
-        // 找到包含关键词的行
-        let matchLineIndex = -1;
-        for (let i = 0; i < lines.length; i++) {
-            if (lines[i].toLowerCase().includes(queryLower)) {
-                matchLineIndex = i;
-                break;
-            }
-        }
-        
-        let selectedLines = [];
-        if (matchLineIndex >= 0) {
-            // 显示匹配行及其前后一行
-            const startIndex = Math.max(0, matchLineIndex - 1);
-            const endIndex = Math.min(lines.length, matchLineIndex + 2);
-            selectedLines = lines.slice(startIndex, endIndex);
-            
-            // 如果不是从开头开始，添加省略号
-            if (matchLineIndex > 1) {
-                selectedLines.unshift('...');
-            }
-            // 如果后面还有内容，添加省略号
-            if (matchLineIndex + 2 < lines.length) {
-                selectedLines.push('...');
-            }
-        } else {
-            // 没找到匹配，使用前3行
-            selectedLines = lines.slice(0, 3);
-        }
-        
-        return selectedLines.join(' ');
-    }
     
     getFirstLines(text, count = 2) {
         if (!text) return '';
