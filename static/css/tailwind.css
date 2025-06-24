@@ -1801,12 +1801,12 @@ body {
   }
 
   .poem-preview .text-lg {
-    font-size: 1rem !important;
+    font-size: 1.125rem !important;
     line-height: 1.5 !important;
   }
   
   .poem-preview .text-xl {
-    font-size: 1.125rem !important;
+    font-size: 1.25rem !important;
     line-height: 1.5 !important;
   }
 
