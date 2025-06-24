@@ -146,8 +146,9 @@ class PoemSearcher {
         const pagination = document.getElementById('pagination');
         const loading = document.getElementById('loading');
         const heroSection = document.querySelector('header');
+        const footer = document.querySelector('footer');
 
-        // 隐藏hero区域、分页和加载状态
+        // 隐藏hero区域、分页、加载状态和页脚
         if (heroSection) heroSection.style.display = 'none';
         if (pagination) {
             pagination.style.display = 'none';
@@ -157,6 +158,12 @@ class PoemSearcher {
             loading.style.display = 'none';
             loading.classList.add('hidden');
         }
+        if (footer) {
+            footer.style.display = 'none';
+        }
+
+        // 添加返回首页按钮
+        this.addHomeButton();
 
         if (!container) return;
 
@@ -186,7 +193,17 @@ class PoemSearcher {
         const searchGrid = container.querySelector('#search-results-grid');
         
         if (this.searchResults.length === 0) {
-            // 没有结果时显示海子的诗句
+            // 没有结果时，重写整个容器，不显示搜索结果标题
+            container.innerHTML = `
+                <div class="max-w-6xl mx-auto px-8 py-8">
+                    <!-- 搜索结果网格 -->
+                    <div id="search-results-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5" style="grid-auto-rows: 480px;">
+                        <!-- 搜索结果卡片将在这里生成 -->
+                    </div>
+                </div>
+            `;
+            
+            const searchGrid = container.querySelector('#search-results-grid');
             this.displayNoResults(searchGrid);
         } else {
             // 显示搜索结果
@@ -239,17 +256,27 @@ class PoemSearcher {
 
     displayNoResults(container) {
         const noResults = document.createElement('div');
-        noResults.className = 'col-span-full flex flex-col items-center justify-center py-16';
+        noResults.className = 'col-span-full';
+        noResults.style.position = 'fixed';
+        noResults.style.top = '0';
+        noResults.style.left = '0';
+        noResults.style.width = '100vw';
+        noResults.style.height = '100vh';
+        noResults.style.display = 'flex';
+        noResults.style.alignItems = 'center';
+        noResults.style.justifyContent = 'center';
+        noResults.style.transform = 'translateY(-5vh)';
+        noResults.style.zIndex = '10';
         noResults.innerHTML = `
-            <div class="text-center max-w-4xl mx-auto">
-                <div class="poem-font text-3xl md:text-4xl lg:text-5xl text-gray-600 mb-6 leading-relaxed tracking-wide opacity-80">
-                    "远方除了遥远一无所有"
+            <div class="text-center max-w-4xl px-8">
+                <div class="poem-font text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-600 leading-relaxed tracking-wide opacity-80 font-light">
+                    "远方除了遥远<br>一无所有"
                 </div>
-                <div class="w-32 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mx-auto mb-6"></div>
-                <p class="text-lg text-gray-500 poem-font font-light mb-4">
+                <div class="w-32 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mx-auto mt-8"></div>
+                <p class="text-lg text-gray-500 poem-font font-light mt-6">
                     没有找到相关的诗歌内容
                 </p>
-                <p class="text-sm text-gray-400 font-light">
+                <p class="text-sm text-gray-400 font-light mt-2">
                     尝试使用其他关键词，或浏览<a href="#" onclick="window.poemSearcher.clearSearch()" class="text-blue-500 hover:text-blue-700 underline">所有诗歌</a>
                 </p>
             </div>
@@ -371,7 +398,7 @@ class PoemSearcher {
                     <!-- 诗歌预览 - 设置固定高度区域 -->
                     <div class="poem-preview rounded-lg p-4 pt-2 mb-3 flex-1 flex items-start overflow-hidden" style="max-height: 180px;">
                         <div class="text-gray-700 leading-relaxed poem-font text-lg font-light whitespace-pre-line overflow-hidden line-clamp-4">
-                            ${this.highlightSearchTerm(this.getFirstFourLines(poem.preview), query)}
+                            ${this.highlightSearchTerm(this.getContextualPreview(poem, query), query)}
                         </div>
                     </div>
                     
@@ -397,13 +424,13 @@ class PoemSearcher {
         
         let badges = '<div class="flex flex-wrap gap-1">';
         if (matchInfo.titleMatch) {
-            badges += '<span class="inline-block bg-blue-500/80 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm border border-white/20 shadow-sm">标题</span>';
+            badges += '<span class="inline-block bg-white/80 text-gray-700 text-xs px-2 py-1 rounded-full backdrop-blur-md border border-white/40 shadow-sm font-medium">标题匹配</span>';
         }
         if (matchInfo.contentMatch) {
-            badges += '<span class="inline-block bg-green-500/80 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm border border-white/20 shadow-sm">内容</span>';
+            badges += '<span class="inline-block bg-white/80 text-gray-700 text-xs px-2 py-1 rounded-full backdrop-blur-md border border-white/40 shadow-sm font-medium">内容匹配</span>';
         }
         if (matchInfo.sectionMatch) {
-            badges += '<span class="inline-block bg-purple-500/80 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm border border-white/20 shadow-sm">章节</span>';
+            badges += '<span class="inline-block bg-white/80 text-gray-700 text-xs px-2 py-1 rounded-full backdrop-blur-md border border-white/40 shadow-sm font-medium">章节匹配</span>';
         }
         badges += '</div>';
         
@@ -428,22 +455,76 @@ class PoemSearcher {
         return `${firstPart}<br>${secondPart}`;
     }
 
-    getFirstFourLines(text) {
+    getContextualPreview(poem, query) {
+        if (!query || !query.trim()) {
+            // 没有搜索词时，显示预览内容
+            return this.getFirstFourLines(poem.preview, query);
+        }
+        
+        // 有搜索词时，优先在完整内容中查找上下文
+        if (poem.full_content && poem.full_content.toLowerCase().includes(query.toLowerCase())) {
+            return this.getFirstFourLines(poem.full_content, query);
+        }
+        
+        // 完整内容中没找到，使用预览内容
+        return this.getFirstFourLines(poem.preview, query);
+    }
+
+    getFirstFourLines(text, query = '') {
         if (!text) return '';
         
         // 按换行符分割，过滤空行
         const lines = text.split('\n').filter(line => line.trim());
         
-        // 对于很长的第一行（可能是散文），进一步截断
-        const processedLines = lines.map(line => {
+        let selectedLines = [];
+        
+        // 如果有搜索关键词，尝试找到包含关键词的行及其上下文
+        if (query && query.trim()) {
+            const queryLower = query.toLowerCase();
+            let matchLineIndex = -1;
+            
+            // 找到第一个包含关键词的行
+            for (let i = 0; i < lines.length; i++) {
+                if (lines[i].toLowerCase().includes(queryLower)) {
+                    matchLineIndex = i;
+                    break;
+                }
+            }
+            
+            // 如果找到匹配行，显示该行的上下文（上1行，匹配行，下2行）
+            if (matchLineIndex >= 0) {
+                const startIndex = Math.max(0, matchLineIndex - 1);
+                const endIndex = Math.min(lines.length, matchLineIndex + 3);
+                selectedLines = lines.slice(startIndex, endIndex);
+                
+                // 如果匹配行不是靠近开头，在开头添加省略号提示
+                if (matchLineIndex > 1) {
+                    selectedLines.unshift('...');
+                }
+                
+                // 如果后面还有内容，在末尾添加省略号提示
+                if (matchLineIndex + 3 < lines.length) {
+                    selectedLines.push('...');
+                }
+            } else {
+                // 没找到匹配，使用前4行
+                selectedLines = lines.slice(0, 4);
+            }
+        } else {
+            // 没有搜索关键词，使用前4行
+            selectedLines = lines.slice(0, 4);
+        }
+        
+        // 对于很长的行（可能是散文），进一步截断
+        const processedLines = selectedLines.map(line => {
             if (line.length > 50) {
                 return line.substring(0, 50) + '...';
             }
             return line;
         });
         
-        // 取前四行
-        let result = processedLines.slice(0, 4).join('\n');
+        // 组合结果
+        let result = processedLines.join('\n');
         
         // 最终长度限制
         if (result.length > 180) {
@@ -451,6 +532,31 @@ class PoemSearcher {
         }
         
         return result;
+    }
+
+    addHomeButton() {
+        // 检查是否已经存在返回按钮
+        if (document.getElementById('search-home-btn')) return;
+        
+        // 创建返回首页按钮
+        const homeButton = document.createElement('div');
+        homeButton.id = 'search-home-btn';
+        homeButton.className = 'fixed top-6 left-6 z-20';
+        homeButton.innerHTML = `
+            <button onclick="window.poemSearcher.clearSearch()" class="glass-bg px-4 py-3 rounded-full text-gray-700 hover:text-gray-900 transition-all duration-300 hover:shadow-lg flex items-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+            </button>
+        `;
+        document.body.appendChild(homeButton);
+    }
+
+    removeHomeButton() {
+        const homeButton = document.getElementById('search-home-btn');
+        if (homeButton) {
+            homeButton.remove();
+        }
     }
 
     clearSearch() {
@@ -474,6 +580,9 @@ class PoemSearcher {
         this.searchResults = [];
         this.isSearchMode = false;
 
+        // 移除返回首页按钮
+        this.removeHomeButton();
+
         // 检查是否在诗歌详情页
         const isInPoemPage = window.location.pathname.includes('poem.html');
         
@@ -486,6 +595,12 @@ class PoemSearcher {
             // 在首页，恢复正常显示
             if (heroSection) {
                 heroSection.style.display = '';
+            }
+            
+            // 恢复页脚显示
+            const footer = document.querySelector('footer');
+            if (footer) {
+                footer.style.display = '';
             }
             
             // 恢复原始的诗歌容器结构

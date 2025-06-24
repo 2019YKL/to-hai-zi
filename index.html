@@ -247,7 +247,7 @@
         </div>
 
         <!-- 分页控件 -->
-        <div id="pagination" class="flex flex-col items-center space-y-4 pb-12 hidden">
+        <div id="pagination" class="flex flex-col items-center space-y-4 pt-7 pb-12 hidden">
             <!-- 主要分页控件 -->
             <div class="flex justify-center items-center space-x-4">
                 <button id="prev-btn" class="flex items-center px-6 py-3 bg-white/80 backdrop-blur text-gray-700 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed font-medium">
@@ -612,6 +612,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             window.poemPage = new PoemPage();
             
+            // 检查URL参数是否有搜索关键词
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('search');
+            
             // 搜索功能初始化
             const searchToggle = document.getElementById('search-toggle');
             const searchInputContainer = document.getElementById('search-input-container');
@@ -664,6 +668,21 @@
                     }
                 }
             });
+            
+            // 如果URL中有搜索参数，自动执行搜索
+            if (searchQuery && window.poemSearcher) {
+                // 等待搜索器初始化
+                setTimeout(() => {
+                    searchInput.value = searchQuery;
+                    searchToggle.classList.add('hidden');
+                    searchInputContainer.classList.remove('hidden');
+                    clearSearch.classList.remove('hidden');
+                    window.poemSearcher.performSearch();
+                    
+                    // 清理URL参数
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }, 500);
+            }
         });
     </script>
 </body>

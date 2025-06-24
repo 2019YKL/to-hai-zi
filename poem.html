@@ -32,7 +32,8 @@
 
         .poem-content {
             white-space: pre-line;
-            line-height: 2;
+            line-height: 2.125;
+            letter-spacing: 0.5px;
         }
 
         .loading-spinner {
@@ -58,6 +59,16 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
+
+        .glass-bg-premium {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 
+                        0 4px 16px rgba(0, 0, 0, 0.06),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -67,21 +78,6 @@
         <div class="absolute inset-0 bg-gradient-to-b from-gray-50/30 via-gray-50/50 to-gray-50/30"></div>
     </div>
 
-    <!-- 导航栏 -->
-    <nav class="relative z-10 glass-bg border-b border-white/20">
-        <div class="max-w-4xl mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m0 0v14"></path>
-                    </svg>
-                    返回诗集
-                </a>
-                <h1 class="text-lg font-medium text-gray-800 poem-font">海子诗歌集</h1>
-                <div class="w-20"></div> <!-- 占位保持居中 -->
-            </div>
-        </div>
-    </nav>
 
     <!-- 加载状态 -->
     <div id="loading" class="relative z-10 flex items-center justify-center min-h-screen">
@@ -91,15 +87,63 @@
         </div>
     </div>
 
+    <!-- 返回首页按钮 -->
+    <div class="fixed top-6 left-6 z-20">
+        <a href="index.html" class="glass-bg px-4 py-3 rounded-full text-gray-700 hover:text-gray-900 transition-all duration-300 hover:shadow-lg flex items-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- 搜索按钮 -->
+    <div class="fixed top-6 right-6 z-20">
+        <div id="search-container" class="transition-all duration-300">
+            <!-- 搜索按钮状态 -->
+            <button id="search-toggle" class="glass-bg px-4 py-3 rounded-full text-gray-700 hover:text-gray-900 transition-all duration-300 hover:shadow-lg flex items-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </button>
+            
+            <!-- 搜索输入状态 -->
+            <div id="search-input-container" class="hidden flex items-center space-x-2">
+                <div class="relative">
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="寻觅一切,包括世界" 
+                        class="w-64 px-4 py-3 pl-12 pr-10 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent glass-bg text-gray-800 poem-font text-sm"
+                    >
+                    <svg class="w-4 h-4 text-gray-400 absolute left-4 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <button id="clear-search" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 搜索结果面板 -->
+        <div id="search-results" class="absolute top-16 right-0 w-80 hidden">
+            <div class="glass-bg-premium rounded-2xl p-4 max-h-96 overflow-y-auto shadow-lg">
+                <!-- 搜索结果将在这里显示 -->
+            </div>
+        </div>
+    </div>
+
     <!-- 诗歌内容 -->
     <main id="poem-container" class="relative z-10 hidden">
         <div class="max-w-4xl mx-auto px-6 py-12">
             <!-- 诗歌卡片 -->
-            <article class="glass-bg rounded-2xl shadow-xl overflow-hidden fade-in">
+            <article class="glass-bg-premium rounded-2xl shadow-xl overflow-hidden fade-in">
                 <!-- 诗歌标题区域 -->
                 <div class="relative h-64 flex items-center justify-center text-white">
                     <img id="poem-image" src="assets/images/image-haizi.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/60"></div>
+                    <div class="absolute inset-0 bg-black/50"></div>
                     <div class="relative text-center">
                         <h1 id="poem-title" class="text-4xl md:text-5xl font-bold mb-4 poem-font drop-shadow-2xl">
                             诗歌标题
@@ -135,9 +179,7 @@
                     </span>
                 </button>
 
-                <a href="index.html" class="glass-bg px-6 py-3 rounded-full text-gray-700 hover:text-gray-900 transition-all duration-300 hover:shadow-lg">
-                    诗集目录
-                </a>
+                <div class="flex-1"></div>
 
                 <button id="next-poem" class="glass-bg px-6 py-3 rounded-full text-gray-700 hover:text-gray-900 transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
                     <span class="flex items-center">
@@ -154,7 +196,7 @@
     <!-- 错误状态 -->
     <div id="error" class="relative z-10 hidden">
         <div class="max-w-4xl mx-auto px-6 py-12 text-center">
-            <div class="glass-bg rounded-2xl p-12">
+            <div class="glass-bg-premium rounded-2xl p-12">
                 <div class="text-red-500 mb-4">
                     <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
@@ -170,6 +212,7 @@
     </div>
 
     <script src="assets/js/poems-data.js"></script>
+    <script src="search.js"></script>
     <script>
         class PoemRenderer {
             constructor() {
@@ -306,6 +349,13 @@
                 document.getElementById('poem-title').textContent = title;
                 document.getElementById('poem-content').textContent = content;
                 
+                // 更新诗歌图片 - 使用与首页相同的图片
+                if (poemData && poemData.image) {
+                    const poemImage = document.getElementById('poem-image');
+                    poemImage.src = poemData.image;
+                    poemImage.alt = title;
+                }
+                
                 // 更新元信息
                 const infoContainer = document.getElementById('poem-info');
                 infoContainer.innerHTML = '';
@@ -370,6 +420,72 @@
         // 初始化页面
         document.addEventListener('DOMContentLoaded', () => {
             new PoemRenderer();
+            
+            // 搜索功能初始化
+            const searchToggle = document.getElementById('search-toggle');
+            const searchInputContainer = document.getElementById('search-input-container');
+            const searchInput = document.getElementById('search-input');
+            const clearSearch = document.getElementById('clear-search');
+            const searchResults = document.getElementById('search-results');
+            
+            // 点击搜索按钮切换状态
+            searchToggle.addEventListener('click', () => {
+                searchToggle.classList.add('hidden');
+                searchInputContainer.classList.remove('hidden');
+                searchInput.focus();
+            });
+            
+            // 搜索输入事件
+            searchInput.addEventListener('input', (e) => {
+                if (e.target.value.trim()) {
+                    clearSearch.classList.remove('hidden');
+                    // 实时搜索
+                    if (window.poemSearcher) {
+                        window.poemSearcher.performSearch();
+                    }
+                } else {
+                    clearSearch.classList.add('hidden');
+                    searchResults.classList.add('hidden');
+                    if (window.poemSearcher) {
+                        window.poemSearcher.clearSearch();
+                    }
+                }
+            });
+            
+            // 回车搜索 - 跳转到首页搜索结果
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    const query = searchInput.value.trim();
+                    if (query) {
+                        // 跳转到首页并传递搜索参数
+                        window.location.href = `index.html?search=${encodeURIComponent(query)}`;
+                    }
+                }
+            });
+            
+            // 清空搜索
+            clearSearch.addEventListener('click', () => {
+                if (window.poemSearcher) {
+                    window.poemSearcher.clearSearch();
+                }
+                searchToggle.classList.remove('hidden');
+                searchInputContainer.classList.add('hidden');
+                clearSearch.classList.add('hidden');
+                searchResults.classList.add('hidden');
+            });
+            
+            // 点击外部关闭搜索框
+            document.addEventListener('click', (e) => {
+                const searchContainer = document.getElementById('search-container');
+                if (!searchContainer.contains(e.target)) {
+                    if (!searchInput.value.trim()) {
+                        searchToggle.classList.remove('hidden');
+                        searchInputContainer.classList.add('hidden');
+                        clearSearch.classList.add('hidden');
+                        searchResults.classList.add('hidden');
+                    }
+                }
+            });
         });
     </script>
 </body>
