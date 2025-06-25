@@ -242,13 +242,13 @@ class PoemSearcher {
         // 移动端搜索结果页面
         container.innerHTML = `
             <div class="min-h-screen bg-gray-50">
+                <!-- 顶部间距，为固定按钮留出空间 -->
+                <div class="h-20"></div>
+                
                 <!-- 移动端搜索头部 -->
-                <div class="bg-white border-b border-gray-200 px-4 py-4 sticky top-0 z-10">
-                    <div class="flex items-center justify-between mb-3">
+                <div class="bg-white border-b border-gray-200 px-4 py-4 sticky top-20 z-10">
+                    <div class="mb-3">
                         <h1 class="text-lg font-bold text-gray-900 poem-font">搜索结果</h1>
-                        <button onclick="window.poemSearcher.clearSearch()" class="text-blue-600 text-sm font-medium">
-                            返回首页
-                        </button>
                     </div>
                     <div class="text-sm text-gray-600">
                         关键词: <span class="font-medium">"${query}"</span> · 
@@ -319,11 +319,7 @@ class PoemSearcher {
                     "远方除了遥远<br>一无所有"
                 </div>
                 <div class="w-16 h-px bg-gray-300 mx-auto mb-4"></div>
-                <p class="text-gray-500 text-sm mb-2">没有找到相关的诗歌内容</p>
-                <button onclick="window.poemSearcher.clearSearch()" 
-                        class="text-blue-600 text-sm font-medium underline">
-                    浏览所有诗歌
-                </button>
+                <p class="text-gray-500 text-sm">没有找到相关的诗歌内容</p>
             </div>
         `;
     }
