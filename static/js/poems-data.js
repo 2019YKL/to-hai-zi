@@ -1,5 +1,5 @@
 // 海子诗歌数据 - 自动生成
-// 生成时间: 2025-06-25 08:54:34
+// 生成时间: 2025-06-25 09:04:28
 
 const poemsData = [
   {
@@ -17,7 +17,7 @@ const poemsData = [
   },
   {
     "title": "七月的大海",
-    "slug": "poem-6053f821",
+    "slug": "sea-of-july",
     "path": "01-short-poems-1983-1986/七月的大海.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -30,7 +30,7 @@ const poemsData = [
   },
   {
     "title": "不幸",
-    "slug": "poem-6c82b0fd",
+    "slug": "misfortune",
     "path": "01-short-poems-1983-1986/不幸.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -43,7 +43,7 @@ const poemsData = [
   },
   {
     "title": "不要问我那绿色是什么",
-    "slug": "poem-4d8985f3",
+    "slug": "dont-ask-me-what-that-green-is",
     "path": "01-short-poems-1983-1986/不要问我那绿色是什么.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -56,7 +56,7 @@ const poemsData = [
   },
   {
     "title": "东方山脉",
-    "slug": "poem-8d725c42",
+    "slug": "eastern-mountains",
     "path": "01-short-poems-1983-1986/东方山脉.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -82,7 +82,7 @@ const poemsData = [
   },
   {
     "title": "中国器乐",
-    "slug": "poem-fd9793d5",
+    "slug": "chinese-instrumental-music",
     "path": "01-short-poems-1983-1986/中国器乐.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -95,7 +95,7 @@ const poemsData = [
   },
   {
     "title": "为了美丽",
-    "slug": "beauty",
+    "slug": "for-beauty",
     "path": "01-short-poems-1983-1986/为了美丽.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -108,7 +108,7 @@ const poemsData = [
   },
   {
     "title": "主人",
-    "slug": "poem-b3d92d4f",
+    "slug": "master",
     "path": "01-short-poems-1983-1986/主人.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -134,7 +134,7 @@ const poemsData = [
   },
   {
     "title": "从六月到十月",
-    "slug": "poem-cb3d03fe",
+    "slug": "from-june-to-october",
     "path": "01-short-poems-1983-1986/从六月到十月.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -147,7 +147,7 @@ const poemsData = [
   },
   {
     "title": "你的手",
-    "slug": "poem-df12417a",
+    "slug": "your-hands",
     "path": "01-short-poems-1983-1986/你的手.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -160,7 +160,7 @@ const poemsData = [
   },
   {
     "title": "八月尾",
-    "slug": "poem-4647c921",
+    "slug": "end-of-august",
     "path": "01-short-poems-1983-1986/八月尾.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -173,7 +173,7 @@ const poemsData = [
   },
   {
     "title": "写给脖子上的菩萨",
-    "slug": "poem-8cc1d26a",
+    "slug": "to-the-buddha-on-the-neck",
     "path": "01-short-poems-1983-1986/写给脖子上的菩萨.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -186,7 +186,7 @@ const poemsData = [
   },
   {
     "title": "农耕民族",
-    "slug": "poem-e108598a",
+    "slug": "farming-people",
     "path": "01-short-poems-1983-1986/农耕民族.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -199,7 +199,7 @@ const poemsData = [
   },
   {
     "title": "北方门前",
-    "slug": "door",
+    "slug": "before-the-northern-gate",
     "path": "01-short-poems-1983-1986/北方门前.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -212,7 +212,7 @@ const poemsData = [
   },
   {
     "title": "半截的诗",
-    "slug": "poem-12511319",
+    "slug": "half-poem",
     "path": "01-short-poems-1983-1986/半截的诗.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -225,7 +225,7 @@ const poemsData = [
   },
   {
     "title": "单翅鸟",
-    "slug": "poem-bfd6a863",
+    "slug": "one-winged-bird",
     "path": "01-short-poems-1983-1986/单翅鸟.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -238,7 +238,7 @@ const poemsData = [
   },
   {
     "title": "印度之夜",
-    "slug": "poem-68a96048",
+    "slug": "indian-night",
     "path": "01-short-poems-1983-1986/印度之夜.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -251,7 +251,7 @@ const poemsData = [
   },
   {
     "title": "哑脊背",
-    "slug": "poem-925644b9",
+    "slug": "mute-spine",
     "path": "01-short-poems-1983-1986/哑脊背.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -264,7 +264,7 @@ const poemsData = [
   },
   {
     "title": "哭泣",
-    "slug": "poem-8e8a64b0",
+    "slug": "weeping",
     "path": "01-short-poems-1983-1986/哭泣.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -277,7 +277,7 @@ const poemsData = [
   },
   {
     "title": "喜马拉雅",
-    "slug": "horse",
+    "slug": "himalaya",
     "path": "01-short-poems-1983-1986/喜马拉雅.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -290,7 +290,7 @@ const poemsData = [
   },
   {
     "title": "在昌平的孤独",
-    "slug": "loneliness",
+    "slug": "loneliness-in-changping",
     "path": "01-short-poems-1983-1986/在昌平的孤独.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -303,7 +303,7 @@ const poemsData = [
   },
   {
     "title": "坐在纸箱上想起疯了的朋友们",
-    "slug": "poem-131ef354",
+    "slug": "sitting-on-cardboard-thinking-of-mad-friends",
     "path": "01-short-poems-1983-1986/坐在纸箱上想起疯了的朋友们.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -316,7 +316,7 @@ const poemsData = [
   },
   {
     "title": "坛子",
-    "slug": "poem-b9c0b36d",
+    "slug": "jar",
     "path": "01-short-poems-1983-1986/坛子.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -329,7 +329,7 @@ const poemsData = [
   },
   {
     "title": "城里",
-    "slug": "poem-7e63b00d",
+    "slug": "in-the-city",
     "path": "01-short-poems-1983-1986/城里.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -342,7 +342,7 @@ const poemsData = [
   },
   {
     "title": "夏天的太阳",
-    "slug": "sun-summer",
+    "slug": "summer-sun",
     "path": "01-short-poems-1983-1986/夏天的太阳.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -355,7 +355,7 @@ const poemsData = [
   },
   {
     "title": "大自然",
-    "slug": "poem-30c1728c",
+    "slug": "nature",
     "path": "01-short-poems-1983-1986/大自然.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -368,7 +368,7 @@ const poemsData = [
   },
   {
     "title": "天鹅",
-    "slug": "poem-1944815f",
+    "slug": "swan",
     "path": "01-short-poems-1983-1986/天鹅.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -381,7 +381,7 @@ const poemsData = [
   },
   {
     "title": "太阳·土地篇",
-    "slug": "sun-land",
+    "slug": "sun-earth-chapter",
     "path": "01-short-poems-1983-1986/太阳·土地篇.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -394,7 +394,7 @@ const poemsData = [
   },
   {
     "title": "太阳·弑",
-    "slug": "sun",
+    "slug": "sun-patricide",
     "path": "01-short-poems-1983-1986/太阳·弑.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -407,7 +407,7 @@ const poemsData = [
   },
   {
     "title": "太阳·弥赛亚",
-    "slug": "sun",
+    "slug": "sun-messiah",
     "path": "01-short-poems-1983-1986/太阳·弥赛亚.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -420,7 +420,7 @@ const poemsData = [
   },
   {
     "title": "太阳·断头篇",
-    "slug": "sun",
+    "slug": "sun-beheading-chapter",
     "path": "01-short-poems-1983-1986/太阳·断头篇.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -433,7 +433,7 @@ const poemsData = [
   },
   {
     "title": "太阳·诗剧",
-    "slug": "sun",
+    "slug": "sun-poetic-drama",
     "path": "01-short-poems-1983-1986/太阳·诗剧.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -446,7 +446,7 @@ const poemsData = [
   },
   {
     "title": "女孩子",
-    "slug": "poem-ce3f600f",
+    "slug": "girl",
     "path": "01-short-poems-1983-1986/女孩子.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -459,7 +459,7 @@ const poemsData = [
   },
   {
     "title": "妻子和鱼",
-    "slug": "fish",
+    "slug": "wife-and-fish",
     "path": "01-short-poems-1983-1986/妻子和鱼.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -472,7 +472,7 @@ const poemsData = [
   },
   {
     "title": "孤独的东方人",
-    "slug": "loneliness",
+    "slug": "lonely-oriental",
     "path": "01-short-poems-1983-1986/孤独的东方人.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -498,7 +498,7 @@ const poemsData = [
   },
   {
     "title": "得不到你",
-    "slug": "poem-a1ed45e2",
+    "slug": "cannot-have-you",
     "path": "01-short-poems-1983-1986/得不到你.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -511,7 +511,7 @@ const poemsData = [
   },
   {
     "title": "思念前生",
-    "slug": "missing",
+    "slug": "missing-past-life",
     "path": "01-short-poems-1983-1986/思念前生.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -524,7 +524,7 @@ const poemsData = [
   },
   {
     "title": "我们坐在一棵木头中",
-    "slug": "poem-eb83a46a",
+    "slug": "we-sit-in-a-tree",
     "path": "01-short-poems-1983-1986/我们坐在一棵木头中.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -537,7 +537,7 @@ const poemsData = [
   },
   {
     "title": "我感到魅惑",
-    "slug": "poem-1cbb16d7",
+    "slug": "i-feel-enchanted",
     "path": "01-short-poems-1983-1986/我感到魅惑.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -550,7 +550,7 @@ const poemsData = [
   },
   {
     "title": "我热爱的诗人——荷尔德林",
-    "slug": "poet",
+    "slug": "my-beloved-poet-holderlin",
     "path": "01-short-poems-1983-1986/我热爱的诗人——荷尔德林.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -563,7 +563,7 @@ const poemsData = [
   },
   {
     "title": "我的窗户里埋着一只为你祝福的杯子",
-    "slug": "window-blessing",
+    "slug": "a-cup-blessing-you-buried-in-my-window",
     "path": "01-short-poems-1983-1986/我的窗户里埋着一只为你祝福的杯子.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -576,7 +576,7 @@ const poemsData = [
   },
   {
     "title": "我请求：雨",
-    "slug": "rain",
+    "slug": "i-ask-for-rain",
     "path": "01-short-poems-1983-1986/我请求雨.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -589,7 +589,7 @@ const poemsData = [
   },
   {
     "title": "我，以及其他的证人",
-    "slug": "poem-26041601",
+    "slug": "me-and-other-witnesses",
     "path": "01-short-poems-1983-1986/我以及其他的证人.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -602,7 +602,7 @@ const poemsData = [
   },
   {
     "title": "房屋",
-    "slug": "poem-6eea8de5",
+    "slug": "house",
     "path": "01-short-poems-1983-1986/房屋.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -615,7 +615,7 @@ const poemsData = [
   },
   {
     "title": "打钟",
-    "slug": "poem-c9e6a73c",
+    "slug": "ringing-bell",
     "path": "01-short-poems-1983-1986/打钟.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -628,7 +628,7 @@ const poemsData = [
   },
   {
     "title": "抱着白虎走过海洋",
-    "slug": "poem-254f09c4",
+    "slug": "carrying-white-tiger-across-ocean",
     "path": "01-short-poems-1983-1986/抱着白虎走过海洋.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -654,7 +654,7 @@ const poemsData = [
   },
   {
     "title": "日光",
-    "slug": "poem-adaa184c",
+    "slug": "sunlight",
     "path": "01-short-poems-1983-1986/日光.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -667,7 +667,7 @@ const poemsData = [
   },
   {
     "title": "早祷与枭",
-    "slug": "poem-248d23d9",
+    "slug": "morning-prayer-and-owl",
     "path": "01-short-poems-1983-1986/早祷与枭.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -680,7 +680,7 @@ const poemsData = [
   },
   {
     "title": "明天醒来我会在哪一只鞋子里",
-    "slug": "tomorrow",
+    "slug": "which-shoe-will-i-wake-up-in-tomorrow",
     "path": "01-short-poems-1983-1986/明天醒来我会在哪一只鞋子里.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -706,7 +706,7 @@ const poemsData = [
   },
   {
     "title": "春天的夜晚和早晨",
-    "slug": "spring-night",
+    "slug": "spring-nights-and-mornings",
     "path": "01-short-poems-1983-1986/春天的夜晚和早晨.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -719,7 +719,7 @@ const poemsData = [
   },
   {
     "title": "月",
-    "slug": "poem-e42b99d5",
+    "slug": "moon",
     "path": "01-short-poems-1983-1986/月.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -732,7 +732,7 @@ const poemsData = [
   },
   {
     "title": "木鱼儿",
-    "slug": "fish",
+    "slug": "wooden-fish",
     "path": "01-short-poems-1983-1986/木鱼儿.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -771,7 +771,7 @@ const poemsData = [
   },
   {
     "title": "果园",
-    "slug": "poem-4a4a260f",
+    "slug": "orchard",
     "path": "01-short-poems-1983-1986/果园.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -784,7 +784,7 @@ const poemsData = [
   },
   {
     "title": "梭罗这人有脑子",
-    "slug": "poem-289d73ee",
+    "slug": "thoreau-has-brains",
     "path": "01-short-poems-1983-1986/梭罗这人有脑子.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -797,7 +797,7 @@ const poemsData = [
   },
   {
     "title": "歌或哭",
-    "slug": "poem-f92cd3e2",
+    "slug": "sing-or-cry",
     "path": "01-short-poems-1983-1986/歌或哭.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -810,7 +810,7 @@ const poemsData = [
   },
   {
     "title": "民间艺人",
-    "slug": "poem-fb88ddb2",
+    "slug": "folk-artist",
     "path": "01-short-poems-1983-1986/民间艺人.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -836,7 +836,7 @@ const poemsData = [
   },
   {
     "title": "海上",
-    "slug": "poem-44c1efe6",
+    "slug": "at-sea",
     "path": "01-short-poems-1983-1986/海上.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -849,7 +849,7 @@ const poemsData = [
   },
   {
     "title": "海上婚礼",
-    "slug": "poem-c2b89833",
+    "slug": "wedding-at-sea",
     "path": "01-short-poems-1983-1986/海上婚礼.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -862,7 +862,7 @@ const poemsData = [
   },
   {
     "title": "海子小夜曲",
-    "slug": "poem-eac618c5",
+    "slug": "haizi-serenade",
     "path": "01-short-poems-1983-1986/海子小夜曲.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -875,7 +875,7 @@ const poemsData = [
   },
   {
     "title": "海水没顶",
-    "slug": "poem-74c3bda1",
+    "slug": "drowned-by-seawater",
     "path": "01-short-poems-1983-1986/海水没顶.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -888,7 +888,7 @@ const poemsData = [
   },
   {
     "title": "海滩上为女士算命",
-    "slug": "poem-af8450c2",
+    "slug": "fortune-telling-for-ladies-on-beach",
     "path": "01-short-poems-1983-1986/海滩上为女士算命.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -901,7 +901,7 @@ const poemsData = [
   },
   {
     "title": "煤堆",
-    "slug": "poem-b345d4bd",
+    "slug": "coal-pile",
     "path": "01-short-poems-1983-1986/煤堆.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -914,7 +914,7 @@ const poemsData = [
   },
   {
     "title": "熟了麦子",
-    "slug": "poem-d93ae0fc",
+    "slug": "ripe-wheat",
     "path": "01-short-poems-1983-1986/熟了麦子.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -927,7 +927,7 @@ const poemsData = [
   },
   {
     "title": "爱情故事",
-    "slug": "love",
+    "slug": "love-story",
     "path": "01-short-poems-1983-1986/爱情故事.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -940,7 +940,7 @@ const poemsData = [
   },
   {
     "title": "爱情诗集",
-    "slug": "love",
+    "slug": "love-poetry-collection",
     "path": "01-short-poems-1983-1986/爱情诗集.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -966,7 +966,7 @@ const poemsData = [
   },
   {
     "title": "粮食",
-    "slug": "poem-2117c983",
+    "slug": "grain",
     "path": "01-short-poems-1983-1986/粮食.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -979,7 +979,7 @@ const poemsData = [
   },
   {
     "title": "给1986",
-    "slug": "给1986",
+    "slug": "to-1986",
     "path": "01-short-poems-1983-1986/给1986.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -992,7 +992,7 @@ const poemsData = [
   },
   {
     "title": "给卡夫卡",
-    "slug": "poem-adffdca6",
+    "slug": "to-kafka",
     "path": "01-short-poems-1983-1986/给卡夫卡.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1005,7 +1005,7 @@ const poemsData = [
   },
   {
     "title": "给安徒生",
-    "slug": "poem-18240379",
+    "slug": "to-andersen",
     "path": "01-short-poems-1983-1986/给安徒生.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1018,7 +1018,7 @@ const poemsData = [
   },
   {
     "title": "给托尔斯泰",
-    "slug": "poem-21f6738c",
+    "slug": "to-tolstoy",
     "path": "01-short-poems-1983-1986/给托尔斯泰.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1031,7 +1031,7 @@ const poemsData = [
   },
   {
     "title": "给萨福",
-    "slug": "poem-4edfeab0",
+    "slug": "to-sappho",
     "path": "01-short-poems-1983-1986/给萨福.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1044,7 +1044,7 @@ const poemsData = [
   },
   {
     "title": "自杀者之歌",
-    "slug": "poem-efe7eb8d",
+    "slug": "song-of-suicide",
     "path": "01-short-poems-1983-1986/自杀者之歌.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1057,7 +1057,7 @@ const poemsData = [
   },
   {
     "title": "自画像",
-    "slug": "poem-4e9e35cf",
+    "slug": "self-portrait",
     "path": "01-short-poems-1983-1986/自画像.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1070,7 +1070,7 @@ const poemsData = [
   },
   {
     "title": "船尾之梦",
-    "slug": "poem-725bc8a5",
+    "slug": "dream-at-stern",
     "path": "01-short-poems-1983-1986/船尾之梦.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1083,7 +1083,7 @@ const poemsData = [
   },
   {
     "title": "莫扎特在《安魂曲》中说",
-    "slug": "poem-6390902d",
+    "slug": "mozart-speaks-in-requiem",
     "path": "01-short-poems-1983-1986/莫扎特在安魂曲中说.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1096,7 +1096,7 @@ const poemsData = [
   },
   {
     "title": "莲界慈航",
-    "slug": "poem-3628791c",
+    "slug": "lotus-realm-compassionate-boat",
     "path": "01-short-poems-1983-1986/莲界慈航.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1109,7 +1109,7 @@ const poemsData = [
   },
   {
     "title": "葡萄园之西的话语",
-    "slug": "poem-5af35353",
+    "slug": "words-west-of-vineyard",
     "path": "01-short-poems-1983-1986/葡萄园之西的话语.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1122,7 +1122,7 @@ const poemsData = [
   },
   {
     "title": "蓝姬的巢",
-    "slug": "poem-be8bd22b",
+    "slug": "blue-princess-nest",
     "path": "01-short-poems-1983-1986/蓝姬的巢.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1135,7 +1135,7 @@ const poemsData = [
   },
   {
     "title": "让我把脚丫搁在黄昏中一位木匠的工具箱上",
-    "slug": "dusk",
+    "slug": "let-me-put-feet-on-carpenters-toolbox-at-dusk",
     "path": "01-short-poems-1983-1986/让我把脚丫搁在黄昏中一位木匠的工具箱上.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1148,7 +1148,7 @@ const poemsData = [
   },
   {
     "title": "诗学：一份提纲",
-    "slug": "poem-e58ab4ee",
+    "slug": "outline-of-poetics",
     "path": "01-short-poems-1983-1986/诗学一份提纲.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1161,7 +1161,7 @@ const poemsData = [
   },
   {
     "title": "诗集",
-    "slug": "poem-348a5074",
+    "slug": "poetry-collection",
     "path": "01-short-poems-1983-1986/诗集.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1174,7 +1174,7 @@ const poemsData = [
   },
   {
     "title": "跳跃者",
-    "slug": "poem-995c94e1",
+    "slug": "jumper",
     "path": "01-short-poems-1983-1986/跳跃者.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1187,7 +1187,7 @@ const poemsData = [
   },
   {
     "title": "门关户闭",
-    "slug": "door",
+    "slug": "doors-and-windows-closed",
     "path": "01-short-poems-1983-1986/门关户闭.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1226,7 +1226,7 @@ const poemsData = [
   },
   {
     "title": "黄金草原",
-    "slug": "grassland",
+    "slug": "golden-grassland",
     "path": "01-short-poems-1983-1986/黄金草原.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1252,7 +1252,7 @@ const poemsData = [
   },
   {
     "title": "黑风",
-    "slug": "wind",
+    "slug": "black-wind",
     "path": "01-short-poems-1983-1986/黑风.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1265,7 +1265,7 @@ const poemsData = [
   },
   {
     "title": "龙",
-    "slug": "poem-682570a2",
+    "slug": "dragon",
     "path": "01-short-poems-1983-1986/龙.md",
     "section": "第一编　短诗（1983—1986）",
     "section_order": 1,
@@ -1278,7 +1278,7 @@ const poemsData = [
   },
   {
     "title": "但是水、水",
-    "slug": "poem-840a5aff",
+    "slug": "but-water-water",
     "path": "02-long-poems-1984-1985/但是水水.md",
     "section": "第二编　长诗（1984—1985）",
     "section_order": 2,
@@ -1291,7 +1291,7 @@ const poemsData = [
   },
   {
     "title": "公鸡",
-    "slug": "poem-2daa2de3",
+    "slug": "rooster",
     "path": "02-long-poems-1984-1985/公鸡.md",
     "section": "第二编　长诗（1984—1985）",
     "section_order": 2,
@@ -1304,7 +1304,7 @@ const poemsData = [
   },
   {
     "title": "南方",
-    "slug": "poem-8409dbb8",
+    "slug": "south",
     "path": "02-long-poems-1984-1985/南方.md",
     "section": "第二编　长诗（1984—1985）",
     "section_order": 2,
@@ -1317,7 +1317,7 @@ const poemsData = [
   },
   {
     "title": "木船",
-    "slug": "poem-afbbf403",
+    "slug": "wooden-boat",
     "path": "02-long-poems-1984-1985/木船.md",
     "section": "第二编　长诗（1984—1985）",
     "section_order": 2,
@@ -1330,7 +1330,7 @@ const poemsData = [
   },
   {
     "title": "龟王",
-    "slug": "poem-b106b101",
+    "slug": "turtle-king",
     "path": "02-long-poems-1984-1985/龟王.md",
     "section": "第二编　长诗（1984—1985）",
     "section_order": 2,
@@ -1343,7 +1343,7 @@ const poemsData = [
   },
   {
     "title": "一滴水中的黑夜",
-    "slug": "poem-0aec0959",
+    "slug": "night-in-a-drop-of-water",
     "path": "03-short-poems-1987-1989/一滴水中的黑夜.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1356,7 +1356,7 @@ const poemsData = [
   },
   {
     "title": "七百年前",
-    "slug": "poem-73894196",
+    "slug": "seven-hundred-years-ago",
     "path": "03-short-poems-1987-1989/七百年前.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1369,7 +1369,7 @@ const poemsData = [
   },
   {
     "title": "不幸",
-    "slug": "poem-6c82b0fd",
+    "slug": "misfortune",
     "path": "03-short-poems-1987-1989/不幸.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1382,7 +1382,7 @@ const poemsData = [
   },
   {
     "title": "两座村庄",
-    "slug": "village",
+    "slug": "two-villages",
     "path": "03-short-poems-1987-1989/两座村庄.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1395,7 +1395,7 @@ const poemsData = [
   },
   {
     "title": "两行诗",
-    "slug": "poem-577ed13f",
+    "slug": "two-lines-of-poetry",
     "path": "03-short-poems-1987-1989/两行诗.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1408,7 +1408,7 @@ const poemsData = [
   },
   {
     "title": "为什么你不生活在沙漠上",
-    "slug": "desert",
+    "slug": "why-dont-you-live-in-desert",
     "path": "03-short-poems-1987-1989/为什么你不生活在沙漠上.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1421,7 +1421,7 @@ const poemsData = [
   },
   {
     "title": "九寨之星",
-    "slug": "poem-dd0d4a4f",
+    "slug": "star-of-jiuzhai",
     "path": "03-short-poems-1987-1989/九寨之星.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1434,7 +1434,7 @@ const poemsData = [
   },
   {
     "title": "九月的云",
-    "slug": "poem-f0ead014",
+    "slug": "september-clouds",
     "path": "03-short-poems-1987-1989/九月的云.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1447,7 +1447,7 @@ const poemsData = [
   },
   {
     "title": "九首诗的村庄",
-    "slug": "village",
+    "slug": "village-of-nine-poems",
     "path": "03-short-poems-1987-1989/九首诗的村庄.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1460,7 +1460,7 @@ const poemsData = [
   },
   {
     "title": "五月的麦地",
-    "slug": "wheat-field",
+    "slug": "wheat-field-in-may",
     "path": "03-short-poems-1987-1989/五月的麦地.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1473,7 +1473,7 @@ const poemsData = [
   },
   {
     "title": "但丁来到此时此地",
-    "slug": "poem-6f0a0fa1",
+    "slug": "dante-comes-here-and-now",
     "path": "03-short-poems-1987-1989/但丁来到此时此地.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1486,7 +1486,7 @@ const poemsData = [
   },
   {
     "title": "你和桃花",
-    "slug": "poem-88d20b26",
+    "slug": "you-and-peach-blossoms",
     "path": "03-short-poems-1987-1989/你和桃花.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1499,7 +1499,7 @@ const poemsData = [
   },
   {
     "title": "光棍",
-    "slug": "poem-deecd8e8",
+    "slug": "bachelor",
     "path": "03-short-poems-1987-1989/光棍.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1512,7 +1512,7 @@ const poemsData = [
   },
   {
     "title": "八月　黑色的火把",
-    "slug": "poem-a2356166",
+    "slug": "moon",
     "path": "03-short-poems-1987-1989/八月-黑色的火把.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1525,7 +1525,7 @@ const poemsData = [
   },
   {
     "title": "八月之杯",
-    "slug": "poem-5ff31cd5",
+    "slug": "cup-of-august",
     "path": "03-short-poems-1987-1989/八月之杯.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1538,7 +1538,7 @@ const poemsData = [
   },
   {
     "title": "公爵的私生女",
-    "slug": "poem-d66c461e",
+    "slug": "dukes-illegitimate-daughter",
     "path": "03-short-poems-1987-1989/公爵的私生女.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1551,7 +1551,7 @@ const poemsData = [
   },
   {
     "title": "冬天的雨",
-    "slug": "rain-winter",
+    "slug": "winter-rain",
     "path": "03-short-poems-1987-1989/冬天的雨.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1564,7 +1564,7 @@ const poemsData = [
   },
   {
     "title": "北方的树林",
-    "slug": "poem-ac0d8718",
+    "slug": "northern-forest",
     "path": "03-short-poems-1987-1989/北方的树林.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1577,7 +1577,7 @@ const poemsData = [
   },
   {
     "title": "十四行：夜晚的月亮",
-    "slug": "moon-night",
+    "slug": "sonnet-night-moon",
     "path": "03-short-poems-1987-1989/十四行夜晚的月亮.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1590,7 +1590,7 @@ const poemsData = [
   },
   {
     "title": "十四行：王冠",
-    "slug": "poem-b0cbf42b",
+    "slug": "sonnet-crown",
     "path": "03-short-poems-1987-1989/十四行王冠.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1603,7 +1603,7 @@ const poemsData = [
   },
   {
     "title": "十四行：玫瑰花",
-    "slug": "poem-ebfed93e",
+    "slug": "sonnet-rose",
     "path": "03-short-poems-1987-1989/十四行玫瑰花.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1616,7 +1616,7 @@ const poemsData = [
   },
   {
     "title": "十四行：玫瑰花园",
-    "slug": "garden",
+    "slug": "sonnet-rose-garden",
     "path": "03-short-poems-1987-1989/十四行玫瑰花园.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1629,7 +1629,7 @@ const poemsData = [
   },
   {
     "title": "叙事诗",
-    "slug": "poem-92e147d9",
+    "slug": "narrative-poem",
     "path": "03-short-poems-1987-1989/叙事诗.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1642,7 +1642,7 @@ const poemsData = [
   },
   {
     "title": "吊半坡并给擅入都市的农民",
-    "slug": "poem-55d2d67b",
+    "slug": "mourning-banpo-to-farmers-entering-city",
     "path": "03-short-poems-1987-1989/吊半坡并给擅入都市的农民.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1655,7 +1655,7 @@ const poemsData = [
   },
   {
     "title": "四姐妹",
-    "slug": "poem-3b6b34b0",
+    "slug": "four-sisters",
     "path": "03-short-poems-1987-1989/四姐妹.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1668,7 +1668,7 @@ const poemsData = [
   },
   {
     "title": "四行诗",
-    "slug": "poem-3f1c01a7",
+    "slug": "quatrain",
     "path": "03-short-poems-1987-1989/四行诗.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1681,7 +1681,7 @@ const poemsData = [
   },
   {
     "title": "土地·忧郁·死亡",
-    "slug": "land-death",
+    "slug": "land-melancholy-death",
     "path": "03-short-poems-1987-1989/土地·忧郁·死亡.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1694,7 +1694,7 @@ const poemsData = [
   },
   {
     "title": "在一个阿拉伯沙漠的村镇上",
-    "slug": "desert",
+    "slug": "in-an-arab-desert-town",
     "path": "03-short-poems-1987-1989/在一个阿拉伯沙漠的村镇上.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1707,7 +1707,7 @@ const poemsData = [
   },
   {
     "title": "在大草原上预感到海的降临",
-    "slug": "grassland",
+    "slug": "sensing-sea-arrival-on-grassland",
     "path": "03-short-poems-1987-1989/在大草原上预感到海的降临.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1720,7 +1720,7 @@ const poemsData = [
   },
   {
     "title": "在家乡",
-    "slug": "home",
+    "slug": "in-hometown",
     "path": "03-short-poems-1987-1989/在家乡.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1733,7 +1733,7 @@ const poemsData = [
   },
   {
     "title": "夜晚　亲爱的朋友",
-    "slug": "night",
+    "slug": "night-dear-friends",
     "path": "03-short-poems-1987-1989/夜晚-亲爱的朋友.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1759,7 +1759,7 @@ const poemsData = [
   },
   {
     "title": "大草原　大雪封山",
-    "slug": "grassland-snow",
+    "slug": "snow",
     "path": "03-short-poems-1987-1989/大草原-大雪封山.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1772,7 +1772,7 @@ const poemsData = [
   },
   {
     "title": "大风",
-    "slug": "wind",
+    "slug": "strong-wind",
     "path": "03-short-poems-1987-1989/大风.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1785,7 +1785,7 @@ const poemsData = [
   },
   {
     "title": "太平洋上的贾宝玉",
-    "slug": "poem-3fbde102",
+    "slug": "jia-baoyu-on-pacific",
     "path": "03-short-poems-1987-1989/太平洋上的贾宝玉.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1798,7 +1798,7 @@ const poemsData = [
   },
   {
     "title": "太平洋的献诗",
-    "slug": "poem-e25823a8",
+    "slug": "poem-to-pacific",
     "path": "03-short-poems-1987-1989/太平洋的献诗.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1811,7 +1811,7 @@ const poemsData = [
   },
   {
     "title": "太阳和野花",
-    "slug": "sun",
+    "slug": "sun-and-wildflowers",
     "path": "03-short-poems-1987-1989/太阳和野花.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1824,7 +1824,7 @@ const poemsData = [
   },
   {
     "title": "尼采，你使我想起悲伤的热带",
-    "slug": "poem-f7c24d43",
+    "slug": "nietzsche-you-remind-me-of-sad-tropics",
     "path": "03-short-poems-1987-1989/尼采你使我想起悲伤的热带.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1837,7 +1837,7 @@ const poemsData = [
   },
   {
     "title": "山楂树",
-    "slug": "poem-b58743bc",
+    "slug": "hawthorn-tree",
     "path": "03-short-poems-1987-1989/山楂树.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1850,7 +1850,7 @@ const poemsData = [
   },
   {
     "title": "幸福的一日",
-    "slug": "happiness",
+    "slug": "happy-day",
     "path": "03-short-poems-1987-1989/幸福的一日.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1863,7 +1863,7 @@ const poemsData = [
   },
   {
     "title": "我飞遍草原的天空",
-    "slug": "grassland-sky",
+    "slug": "i-fly-across-grassland-sky",
     "path": "03-short-poems-1987-1989/我飞遍草原的天空.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1876,7 +1876,7 @@ const poemsData = [
   },
   {
     "title": "折梅",
-    "slug": "poem-fabd27d5",
+    "slug": "breaking-plum-branch",
     "path": "03-short-poems-1987-1989/折梅.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1889,7 +1889,7 @@ const poemsData = [
   },
   {
     "title": "拂晓",
-    "slug": "poem-4362bf7e",
+    "slug": "daybreak",
     "path": "03-short-poems-1987-1989/拂晓.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1902,7 +1902,7 @@ const poemsData = [
   },
   {
     "title": "无名的野花",
-    "slug": "poem-3b17a50c",
+    "slug": "nameless-wildflower",
     "path": "03-short-poems-1987-1989/无名的野花.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1928,7 +1928,7 @@ const poemsData = [
   },
   {
     "title": "日落时分的部落",
-    "slug": "sunset",
+    "slug": "tribe-at-sunset",
     "path": "03-short-poems-1987-1989/日落时分的部落.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1941,7 +1941,7 @@ const poemsData = [
   },
   {
     "title": "昌平柿子树",
-    "slug": "poem-6d36178c",
+    "slug": "changping-persimmon-tree",
     "path": "03-short-poems-1987-1989/昌平柿子树.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1954,7 +1954,7 @@ const poemsData = [
   },
   {
     "title": "星",
-    "slug": "poem-d1cde6ad",
+    "slug": "star",
     "path": "03-short-poems-1987-1989/星.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1980,7 +1980,7 @@ const poemsData = [
   },
   {
     "title": "春天，十个海子",
-    "slug": "spring",
+    "slug": "spring-ten-haizi",
     "path": "03-short-poems-1987-1989/春天十个海子.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -1993,7 +1993,7 @@ const poemsData = [
   },
   {
     "title": "晨雨时光",
-    "slug": "rain-time",
+    "slug": "morning-rain-time",
     "path": "03-short-poems-1987-1989/晨雨时光.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2006,7 +2006,7 @@ const poemsData = [
   },
   {
     "title": "最后一夜和第一日的献诗",
-    "slug": "poem-6d597cea",
+    "slug": "poem-for-last-night-and-first-day",
     "path": "03-short-poems-1987-1989/最后一夜和第一日的献诗.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2019,7 +2019,7 @@ const poemsData = [
   },
   {
     "title": "月光",
-    "slug": "poem-3a6b379e",
+    "slug": "moonlight",
     "path": "03-short-poems-1987-1989/月光.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2032,7 +2032,7 @@ const poemsData = [
   },
   {
     "title": "月全食",
-    "slug": "poem-18433d5a",
+    "slug": "total-lunar-eclipse",
     "path": "03-short-poems-1987-1989/月全食.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2045,7 +2045,7 @@ const poemsData = [
   },
   {
     "title": "枫",
-    "slug": "poem-44db92c9",
+    "slug": "maple",
     "path": "03-short-poems-1987-1989/枫.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2058,7 +2058,7 @@ const poemsData = [
   },
   {
     "title": "桃树林",
-    "slug": "poem-2f26ca6f",
+    "slug": "peach-forest",
     "path": "03-short-poems-1987-1989/桃树林.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2071,7 +2071,7 @@ const poemsData = [
   },
   {
     "title": "桃花",
-    "slug": "poem-e49b9708",
+    "slug": "peach-blossoms",
     "path": "03-short-poems-1987-1989/桃花.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2084,7 +2084,7 @@ const poemsData = [
   },
   {
     "title": "桃花开放",
-    "slug": "flowers-bloom",
+    "slug": "peach-blossoms-blooming",
     "path": "03-short-poems-1987-1989/桃花开放.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2097,7 +2097,7 @@ const poemsData = [
   },
   {
     "title": "桃花时节",
-    "slug": "poem-51b0cf79",
+    "slug": "peach-blossom-season",
     "path": "03-short-poems-1987-1989/桃花时节.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2110,7 +2110,7 @@ const poemsData = [
   },
   {
     "title": "水抱屈原",
-    "slug": "poem-ab9d3905",
+    "slug": "water-embraces-qu-yuan",
     "path": "03-short-poems-1987-1989/水抱屈原.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2123,7 +2123,7 @@ const poemsData = [
   },
   {
     "title": "海底卧室",
-    "slug": "poem-b536cb52",
+    "slug": "underwater-bedroom",
     "path": "03-short-poems-1987-1989/海底卧室.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2136,7 +2136,7 @@ const poemsData = [
   },
   {
     "title": "灯",
-    "slug": "poem-7ccb1378",
+    "slug": "lamp",
     "path": "03-short-poems-1987-1989/灯.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2149,7 +2149,7 @@ const poemsData = [
   },
   {
     "title": "献给太平洋",
-    "slug": "poem-ca5ca391",
+    "slug": "dedicated-to-pacific",
     "path": "03-short-poems-1987-1989/献给太平洋.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2162,7 +2162,7 @@ const poemsData = [
   },
   {
     "title": "献给韩波：诗歌的烈士",
-    "slug": "poetry",
+    "slug": "dedicated-to-rimbaud-poetry-martyr",
     "path": "03-short-poems-1987-1989/献给韩波诗歌的烈士.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2175,7 +2175,7 @@ const poemsData = [
   },
   {
     "title": "生日",
-    "slug": "poem-8483ed13",
+    "slug": "birthday",
     "path": "03-short-poems-1987-1989/生日.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2188,7 +2188,7 @@ const poemsData = [
   },
   {
     "title": "病少女",
-    "slug": "poem-f794a8c9",
+    "slug": "sick-girl",
     "path": "03-short-poems-1987-1989/病少女.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2201,7 +2201,7 @@ const poemsData = [
   },
   {
     "title": "眺望北方",
-    "slug": "poem-ba4c774e",
+    "slug": "looking-north",
     "path": "03-short-poems-1987-1989/眺望北方.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2214,7 +2214,7 @@ const poemsData = [
   },
   {
     "title": "神秘的二月的时光",
-    "slug": "time",
+    "slug": "mysterious-february-time",
     "path": "03-short-poems-1987-1989/神秘的二月的时光.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2227,7 +2227,7 @@ const poemsData = [
   },
   {
     "title": "秋",
-    "slug": "poem-fdf31ff3",
+    "slug": "autumn-simple",
     "path": "03-short-poems-1987-1989/秋-1.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2240,7 +2240,7 @@ const poemsData = [
   },
   {
     "title": "秋",
-    "slug": "poem-fdf31ff3",
+    "slug": "autumn-simple",
     "path": "03-short-poems-1987-1989/秋.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2266,7 +2266,7 @@ const poemsData = [
   },
   {
     "title": "秋天的祖国",
-    "slug": "autumn",
+    "slug": "autumn-motherland",
     "path": "03-short-poems-1987-1989/秋天的祖国.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2279,7 +2279,7 @@ const poemsData = [
   },
   {
     "title": "秋日山谷",
-    "slug": "poem-44b6b893",
+    "slug": "autumn-valley",
     "path": "03-short-poems-1987-1989/秋日山谷.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2305,7 +2305,7 @@ const poemsData = [
   },
   {
     "title": "粮食两节",
-    "slug": "poem-38108e25",
+    "slug": "grain-two-sections",
     "path": "03-short-poems-1987-1989/粮食两节.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2318,7 +2318,7 @@ const poemsData = [
   },
   {
     "title": "给伦敦",
-    "slug": "poem-cf87bfac",
+    "slug": "to-london",
     "path": "03-short-poems-1987-1989/给伦敦.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2331,7 +2331,7 @@ const poemsData = [
   },
   {
     "title": "给安庆",
-    "slug": "poem-a13dcff3",
+    "slug": "to-anqing",
     "path": "03-short-poems-1987-1989/给安庆.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2344,7 +2344,7 @@ const poemsData = [
   },
   {
     "title": "绿松石",
-    "slug": "poem-3433d3db",
+    "slug": "turquoise",
     "path": "03-short-poems-1987-1989/绿松石.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2357,7 +2357,7 @@ const poemsData = [
   },
   {
     "title": "美丽白杨树",
-    "slug": "beauty",
+    "slug": "beautiful-poplar-tree",
     "path": "03-short-poems-1987-1989/美丽白杨树.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2370,7 +2370,7 @@ const poemsData = [
   },
   {
     "title": "花儿为什么这样红",
-    "slug": "poem-4a073c7b",
+    "slug": "why-are-flowers-so-red",
     "path": "03-short-poems-1987-1989/花儿为什么这样红.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2396,7 +2396,7 @@ const poemsData = [
   },
   {
     "title": "跳伞塔",
-    "slug": "poem-06285554",
+    "slug": "parachute-tower",
     "path": "03-short-poems-1987-1989/跳伞塔.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2422,7 +2422,7 @@ const poemsData = [
   },
   {
     "title": "遥远的路程",
-    "slug": "road",
+    "slug": "distant-journey",
     "path": "03-short-poems-1987-1989/遥远的路程-1.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2435,7 +2435,7 @@ const poemsData = [
   },
   {
     "title": "遥远的路程",
-    "slug": "road",
+    "slug": "distant-journey",
     "path": "03-short-poems-1987-1989/遥远的路程.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2448,7 +2448,7 @@ const poemsData = [
   },
   {
     "title": "酒杯",
-    "slug": "poem-5059691d",
+    "slug": "wine-cup",
     "path": "03-short-poems-1987-1989/酒杯.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2461,7 +2461,7 @@ const poemsData = [
   },
   {
     "title": "酒杯：情诗一束",
-    "slug": "poem-2e590499",
+    "slug": "bundle-of-wine-cup-love-poems",
     "path": "03-short-poems-1987-1989/酒杯情诗一束.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2487,7 +2487,7 @@ const poemsData = [
   },
   {
     "title": "野花",
-    "slug": "poem-28cf33c8",
+    "slug": "wildflower",
     "path": "03-short-poems-1987-1989/野花.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2500,7 +2500,7 @@ const poemsData = [
   },
   {
     "title": "野鸽子",
-    "slug": "poem-3df545e6",
+    "slug": "wild-pigeon",
     "path": "03-short-poems-1987-1989/野鸽子.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2513,7 +2513,7 @@ const poemsData = [
   },
   {
     "title": "长发飞舞的姑娘",
-    "slug": "poem-280745df",
+    "slug": "girl-with-flowing-hair",
     "path": "03-short-poems-1987-1989/长发飞舞的姑娘.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2539,7 +2539,7 @@ const poemsData = [
   },
   {
     "title": "雨鞋",
-    "slug": "rain",
+    "slug": "rain-boots",
     "path": "03-short-poems-1987-1989/雨鞋.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2591,7 +2591,7 @@ const poemsData = [
   },
   {
     "title": "马、火、灰——鼎",
-    "slug": "horse",
+    "slug": "horse-fire-ash-tripod",
     "path": "03-short-poems-1987-1989/马火灰——鼎.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2604,7 +2604,7 @@ const poemsData = [
   },
   {
     "title": "马雅可夫斯基自传",
-    "slug": "horse",
+    "slug": "mayakovsky-autobiography",
     "path": "03-short-poems-1987-1989/马雅可夫斯基自传.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2630,7 +2630,7 @@ const poemsData = [
   },
   {
     "title": "麦地与诗人",
-    "slug": "wheat-field-poet",
+    "slug": "wheat-field-and-poet",
     "path": "03-short-poems-1987-1989/麦地与诗人.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2643,7 +2643,7 @@ const poemsData = [
   },
   {
     "title": "黎明和黄昏",
-    "slug": "dusk-dawn",
+    "slug": "dawn-and-dusk",
     "path": "03-short-poems-1987-1989/黎明和黄昏.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2656,7 +2656,7 @@ const poemsData = [
   },
   {
     "title": "黎明：一首小诗",
-    "slug": "dawn",
+    "slug": "dawn-a-small-poem",
     "path": "03-short-poems-1987-1989/黎明一首小诗.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
@@ -2682,7 +2682,7 @@ const poemsData = [
   },
   {
     "title": "黑翅膀",
-    "slug": "poem-b383e707",
+    "slug": "black-wings",
     "path": "03-short-poems-1987-1989/黑翅膀.md",
     "section": "第三编　短诗（1987—1989）",
     "section_order": 3,
