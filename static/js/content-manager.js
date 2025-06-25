@@ -106,8 +106,19 @@ class ContentManager {
         );
     }
 
-    // 生成诗歌URL
+    // 生成诗歌URL (SEO友好的英文slug)
     getPoemUrl(poem) {
+        // 检测是否在本地开发环境
+        if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            // 本地开发使用传统URL格式
+            return `poem.html?poem=${encodeURIComponent(poem.path)}`;
+        }
+        // 生产环境使用SEO友好的URL
+        return `poem/${poem.slug}.html`;
+    }
+    
+    // 生成传统URL（向后兼容）
+    getLegacyPoemUrl(poem) {
         return `poem.html?poem=${encodeURIComponent(poem.path)}`;
     }
 

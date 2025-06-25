@@ -1,4 +1,18 @@
 {
+  "rewrites": [
+    {
+      "source": "/poem/([^/]+)\\.html",
+      "destination": "/poem.html?slug=$1"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/poem.html",
+      "has": [{"type": "query", "key": "poem"}],
+      "destination": "/poem.html?legacy=true",
+      "permanent": false
+    }
+  ],
   "functions": {
     "poems/*.html": {
       "headers": {

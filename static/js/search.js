@@ -332,7 +332,11 @@ class PoemSearcher {
         if (typeof contentManager !== 'undefined') {
             return contentManager.getPoemUrl(poem);
         }
-        return `poem.html?poem=${encodeURIComponent(poem.path)}`;
+        // 检测是否在本地开发环境
+        if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            return `poem.html?poem=${encodeURIComponent(poem.path)}`;
+        }
+        return `poem/${poem.slug}.html`;
     }
     
     displayDesktopSearchResults(container, query) {
@@ -521,7 +525,12 @@ class PoemSearcher {
             if (typeof contentManager !== 'undefined') {
                 window.location.href = contentManager.getPoemUrl(poem);
             } else {
-                window.location.href = `poem.html?poem=${encodeURIComponent(poem.path)}`;
+                // 检测是否在本地开发环境
+                if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                    window.location.href = `poem.html?poem=${encodeURIComponent(poem.path)}`;
+                } else {
+                    window.location.href = `poem/${poem.slug}.html`;
+                }
             }
         };
 

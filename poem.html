@@ -173,17 +173,22 @@
             }
 
             async init() {
-                // 从URL参数获取诗歌文件路径
+                // 从URL参数获取诗歌标识（slug或legacy path）
                 const urlParams = new URLSearchParams(window.location.search);
-                const poemPath = urlParams.get('poem');
+                const slug = urlParams.get('slug');
+                const legacyPath = urlParams.get('poem');
+                const isLegacy = urlParams.get('legacy');
                 
-                if (!poemPath) {
-                    this.showError('没有指定诗歌文件');
+                if (slug) {
+                    // 新的SEO友好URL格式
+                    await this.loadPoemBySlug(slug);
+                } else if (legacyPath) {
+                    // 传统URL格式（向后兼容）
+                    await this.loadPoem(legacyPath);
+                } else {
+                    this.showError('没有指定诗歌');
                     return;
                 }
-
-                // 加载指定诗歌
-                await this.loadPoem(poemPath);
             }
 
             async loadPoemsList() {
@@ -197,6 +202,23 @@
                 } catch (error) {
                     console.error('加载诗歌列表失败:', error);
                     this.poems = [];
+                }
+            }
+
+            async loadPoemBySlug(slug) {
+                try {
+                    // 从诗歌数据中根据slug查找诗歌
+                    const poem = poemsData.find(p => p.slug === slug);
+                    if (!poem) {
+                        throw new Error(`找不到slug为"${slug}"的诗歌`);
+                    }
+
+                    // 使用路径加载诗歌
+                    await this.loadPoem(poem.path);
+                    
+                } catch (error) {
+                    console.error('根据slug加载诗歌失败:', error);
+                    this.showError(`无法加载诗歌: ${error.message}`);
                 }
             }
 
@@ -356,14 +378,26 @@
 
             getCurrentPoemIndex() {
                 const urlParams = new URLSearchParams(window.location.search);
+                const slug = urlParams.get('slug');
                 const currentPath = urlParams.get('poem');
-                return poemsData.findIndex(poem => poem.path === currentPath);
+                
+                if (slug) {
+                    return poemsData.findIndex(poem => poem.slug === slug);
+                } else if (currentPath) {
+                    return poemsData.findIndex(poem => poem.path === currentPath);
+                }
+                return -1;
             }
 
             navigateToPoem(index) {
                 if (index >= 0 && index < poemsData.length) {
                     const poem = poemsData[index];
-                    window.location.href = `poem.html?poem=${encodeURIComponent(poem.path)}`;
+                    // 检测是否在本地开发环境
+                    if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                        window.location.href = `poem.html?poem=${encodeURIComponent(poem.path)}`;
+                    } else {
+                        window.location.href = `poem/${poem.slug}.html`;
+                    }
                 }
             }
 
