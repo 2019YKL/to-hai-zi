@@ -108,7 +108,7 @@ class ContentManager {
 
     // 生成诗歌URL (SEO友好的英文slug)
     getPoemUrl(poem) {
-        return `poem/${poem.slug}.html`;
+        return `poem.html?slug=${poem.slug}`;
     }
     
     // 生成传统URL（向后兼容）

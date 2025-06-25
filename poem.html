@@ -207,8 +207,20 @@
 
             async loadPoemBySlug(slug) {
                 try {
+                    // 调试信息
+                    console.log('poemsData是否存在:', typeof poemsData !== 'undefined');
+                    console.log('poemsData长度:', typeof poemsData !== 'undefined' ? poemsData.length : 'undefined');
+                    console.log('查找的slug:', slug);
+                    
+                    // 等待诗歌数据加载
+                    if (typeof poemsData === 'undefined') {
+                        throw new Error('诗歌数据未加载');
+                    }
+                    
                     // 从诗歌数据中根据slug查找诗歌
                     const poem = poemsData.find(p => p.slug === slug);
+                    console.log('找到的诗歌:', poem ? poem.title : '未找到');
+                    
                     if (!poem) {
                         throw new Error(`找不到slug为"${slug}"的诗歌`);
                     }
@@ -392,7 +404,7 @@
             navigateToPoem(index) {
                 if (index >= 0 && index < poemsData.length) {
                     const poem = poemsData[index];
-                    window.location.href = `poem/${poem.slug}.html`;
+                    window.location.href = `poem.html?slug=${poem.slug}`;
                 }
             }
 
