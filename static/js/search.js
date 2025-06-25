@@ -243,10 +243,10 @@ class PoemSearcher {
         container.innerHTML = `
             <div class="min-h-screen bg-gray-50">
                 <!-- 顶部间距，为固定按钮留出空间 -->
-                <div class="h-20"></div>
+                <div class="h-24"></div>
                 
                 <!-- 移动端搜索头部 -->
-                <div class="bg-white border-b border-gray-200 px-4 py-4 sticky top-20 z-10">
+                <div class="bg-white border-b border-gray-200 px-4 py-4 sticky top-0 z-10">
                     <div class="mb-3">
                         <h1 class="text-lg font-bold text-gray-900 poem-font">搜索结果</h1>
                     </div>
