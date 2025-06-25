@@ -392,12 +392,7 @@
             navigateToPoem(index) {
                 if (index >= 0 && index < poemsData.length) {
                     const poem = poemsData[index];
-                    // 检测是否在本地开发环境
-                    if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                        window.location.href = `poem.html?poem=${encodeURIComponent(poem.path)}`;
-                    } else {
-                        window.location.href = `poem/${poem.slug}.html`;
-                    }
+                    window.location.href = `poem/${poem.slug}.html`;
                 }
             }
 

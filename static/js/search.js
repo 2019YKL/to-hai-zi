@@ -332,10 +332,6 @@ class PoemSearcher {
         if (typeof contentManager !== 'undefined') {
             return contentManager.getPoemUrl(poem);
         }
-        // 检测是否在本地开发环境
-        if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-            return `poem.html?poem=${encodeURIComponent(poem.path)}`;
-        }
         return `poem/${poem.slug}.html`;
     }
     
@@ -525,12 +521,7 @@ class PoemSearcher {
             if (typeof contentManager !== 'undefined') {
                 window.location.href = contentManager.getPoemUrl(poem);
             } else {
-                // 检测是否在本地开发环境
-                if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                    window.location.href = `poem.html?poem=${encodeURIComponent(poem.path)}`;
-                } else {
-                    window.location.href = `poem/${poem.slug}.html`;
-                }
+                window.location.href = `poem/${poem.slug}.html`;
             }
         };
 
