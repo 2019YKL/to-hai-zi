@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 首页 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- 诗歌页面模板 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 七月不远 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/july-is-not-far.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 七月的大海 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sea-of-july.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 不幸 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/misfortune.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 不要问我那绿色是什么 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/dont-ask-me-what-that-green-is.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 东方山脉 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/eastern-mountains.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 中午 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/noon.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 中国器乐 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/chinese-instrumental-music.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 为了美丽 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/for-beauty.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 主人 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/master.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 亚洲铜 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/asian-copper.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 从六月到十月 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/from-june-to-october.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 你的手 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/your-hands.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 八月尾 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/end-of-august.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 写给脖子上的菩萨 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/to-the-buddha-on-the-neck.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 农耕民族 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/farming-people.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 北方门前 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/before-the-northern-gate.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 半截的诗 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/half-poem.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 单翅鸟 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/one-winged-bird.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 印度之夜 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/indian-night.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 哑脊背 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/mute-spine.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 哭泣 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/weeping.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 喜马拉雅 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/himalaya.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 在昌平的孤独 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/loneliness-in-changping.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 坐在纸箱上想起疯了的朋友们 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sitting-on-cardboard-thinking-of-mad-friends.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 坛子 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/jar.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 城里 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/in-the-city.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 夏天的太阳 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/summer-sun.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 大自然 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/nature.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 天鹅 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/swan.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 太阳·土地篇 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sun-earth-chapter.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 太阳·弑 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sun-patricide.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 太阳·弥赛亚 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sun-messiah.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 太阳·断头篇 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sun-beheading-chapter.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 太阳·诗剧 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sun-poetic-drama.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 女孩子 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/girl.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 妻子和鱼 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/wife-and-fish.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 孤独的东方人 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/lonely-oriental.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 幸福 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/happiness.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 得不到你 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/cannot-have-you.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 思念前生 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/missing-past-life.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 我们坐在一棵木头中 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/we-sit-in-a-tree.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 我感到魅惑 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/i-feel-enchanted.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 我热爱的诗人——荷尔德林 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/my-beloved-poet-holderlin.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 我的窗户里埋着一只为你祝福的杯子 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/a-cup-blessing-you-buried-in-my-window.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 我请求：雨 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/i-ask-for-rain.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 我，以及其他的证人 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/me-and-other-witnesses.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 房屋 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/house.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 打钟 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/ringing-bell.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 抱着白虎走过海洋 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/carrying-white-tiger-across-ocean.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 敦煌 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/dunhuang.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 日光 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sunlight.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 早祷与枭 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/morning-prayer-and-owl.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 明天醒来我会在哪一只鞋子里 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/which-shoe-will-i-wake-up-in-tomorrow.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 春天 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/spring.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 春天的夜晚和早晨 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/spring-nights-and-mornings.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 月 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/moon.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 木鱼儿 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/wooden-fish.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 村庄 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/village.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 村庄 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/village.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 果园 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/orchard.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 梭罗这人有脑子 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/thoreau-has-brains.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 歌或哭 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sing-or-cry.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 民间艺人 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/folk-artist.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 活在珍贵的人间 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/living-in-precious-world.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 海上 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/at-sea.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 海上婚礼 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/wedding-at-sea.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 海子小夜曲 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/haizi-serenade.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 海水没顶 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/drowned-by-seawater.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 海滩上为女士算命 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/fortune-telling-for-ladies-on-beach.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 煤堆 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/coal-pile.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 熟了麦子 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/ripe-wheat.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 爱情故事 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/love-story.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 爱情诗集 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/love-poetry-collection.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 秋天 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/autumn.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 粮食 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/grain.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 给1986 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/to-1986.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 给卡夫卡 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/to-kafka.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 给安徒生 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/to-andersen.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 给托尔斯泰 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/to-tolstoy.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 给萨福 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/to-sappho.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 自杀者之歌 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/song-of-suicide.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 自画像 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/self-portrait.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 船尾之梦 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/dream-at-stern.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 莫扎特在《安魂曲》中说 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/mozart-speaks-in-requiem.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 莲界慈航 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/lotus-realm-compassionate-boat.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 葡萄园之西的话语 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/words-west-of-vineyard.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 蓝姬的巢 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/blue-princess-nest.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 让我把脚丫搁在黄昏中一位木匠的工具箱上 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/let-me-put-feet-on-carpenters-toolbox-at-dusk.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 诗学：一份提纲 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/outline-of-poetics.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 诗集 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/poetry-collection.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 跳跃者 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/jumper.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 门关户闭 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/doors-and-windows-closed.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 阿尔的太阳 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sun-of-arles.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 麦地 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/wheat-field.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 黄金草原 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/golden-grassland.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 黎明 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/dawn.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 黑风 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/black-wind.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 龙 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/dragon.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 但是水、水 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/but-water-water.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 公鸡 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/rooster.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 南方 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/south.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 木船 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/wooden-boat.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 龟王 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/turtle-king.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 一滴水中的黑夜 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/night-in-a-drop-of-water.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 七百年前 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/seven-hundred-years-ago.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 不幸 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/misfortune.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 两座村庄 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/two-villages.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 两行诗 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/two-lines-of-poetry.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 为什么你不生活在沙漠上 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/why-dont-you-live-in-desert.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 九寨之星 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/star-of-jiuzhai.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 九月的云 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/september-clouds.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 九首诗的村庄 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/village-of-nine-poems.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 五月的麦地 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/wheat-field-in-may.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 但丁来到此时此地 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/dante-comes-here-and-now.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 你和桃花 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/you-and-peach-blossoms.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 光棍 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/bachelor.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 八月　黑色的火把 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/moon.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 八月之杯 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/cup-of-august.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 公爵的私生女 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/dukes-illegitimate-daughter.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 冬天的雨 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/winter-rain.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 北方的树林 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/northern-forest.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 十四行：夜晚的月亮 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sonnet-night-moon.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 十四行：王冠 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sonnet-crown.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 十四行：玫瑰花 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sonnet-rose.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 十四行：玫瑰花园 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sonnet-rose-garden.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 叙事诗 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/narrative-poem.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 吊半坡并给擅入都市的农民 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/mourning-banpo-to-farmers-entering-city.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 四姐妹 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/four-sisters.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 四行诗 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/quatrain.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 土地·忧郁·死亡 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/land-melancholy-death.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 在一个阿拉伯沙漠的村镇上 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/in-an-arab-desert-town.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 在大草原上预感到海的降临 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sensing-sea-arrival-on-grassland.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 在家乡 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/in-hometown.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 夜晚　亲爱的朋友 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/night-dear-friends.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 夜色 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/night-scene.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 大草原　大雪封山 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/snow.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 大风 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/strong-wind.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 太平洋上的贾宝玉 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/jia-baoyu-on-pacific.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 太平洋的献诗 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/poem-to-pacific.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 太阳和野花 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sun-and-wildflowers.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 尼采，你使我想起悲伤的热带 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/nietzsche-you-remind-me-of-sad-tropics.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 山楂树 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/hawthorn-tree.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 幸福的一日 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/happy-day.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 我飞遍草原的天空 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/i-fly-across-grassland-sky.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 折梅 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/breaking-plum-branch.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 拂晓 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/daybreak.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 无名的野花 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/nameless-wildflower.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 日出 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sunrise.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 日落时分的部落 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/tribe-at-sunset.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 昌平柿子树 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/changping-persimmon-tree.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 星 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/star.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 春天 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/spring.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 春天，十个海子 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/spring-ten-haizi.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 晨雨时光 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/morning-rain-time.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 最后一夜和第一日的献诗 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/poem-for-last-night-and-first-day.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 月光 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/moonlight.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 月全食 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/total-lunar-eclipse.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 枫 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/maple.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 桃树林 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/peach-forest.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 桃花 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/peach-blossoms.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 桃花开放 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/peach-blossoms-blooming.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 桃花时节 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/peach-blossom-season.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 水抱屈原 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/water-embraces-qu-yuan.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 海底卧室 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/underwater-bedroom.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 灯 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/lamp.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 献给太平洋 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/dedicated-to-pacific.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 献给韩波：诗歌的烈士 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/dedicated-to-rimbaud-poetry-martyr.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 生日 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/birthday.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 病少女 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/sick-girl.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 眺望北方 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/looking-north.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 神秘的二月的时光 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/mysterious-february-time.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 秋 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/autumn-simple.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 秋 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/autumn-simple.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 秋天 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/autumn.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 秋天的祖国 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/autumn-motherland.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 秋日山谷 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/autumn-valley.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 秋日黄昏 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/autumn-dusk.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 粮食两节 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/grain-two-sections.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 给伦敦 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/to-london.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 给安庆 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/to-anqing.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 绿松石 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/turquoise.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 美丽白杨树 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/beautiful-poplar-tree.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 花儿为什么这样红 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/why-are-flowers-so-red.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 西藏 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/tibet.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 跳伞塔 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/parachute-tower.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 远方 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/distant-place.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 遥远的路程 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/distant-journey.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 遥远的路程 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/distant-journey.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 酒杯 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/wine-cup.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 酒杯：情诗一束 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/bundle-of-wine-cup-love-poems.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 重建家园 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/rebuilding-homeland.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 野花 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/wildflower.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 野鸽子 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/wild-pigeon.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 长发飞舞的姑娘 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/girl-with-flowing-hair.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 雨 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/rain.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 雨鞋 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/rain-boots.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 雪 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/snow.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 青海湖 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/qinghai-lake.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 面朝大海，春暖花开 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/facing-the-sea-spring-blossoms.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 马、火、灰——鼎 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/horse-fire-ash-tripod.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 马雅可夫斯基自传 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/mayakovsky-autobiography.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 麦地　或遥远 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/wheat-field.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 麦地与诗人 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/wheat-field-and-poet.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 黎明和黄昏 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/dawn-and-dusk.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 黎明：一首小诗 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/dawn-a-small-poem.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 黑夜的献诗 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/poem-for-the-night.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 黑翅膀 -->
+  <url>
+    <loc>https://haizi.huhaitai.com/poem/black-wings.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
